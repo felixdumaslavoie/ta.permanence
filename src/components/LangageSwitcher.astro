@@ -1,0 +1,96 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+import { idFetching, urlFetching } from "../data/fetchData";
+
+interface Props {
+  numeroPage: Number;
+}
+
+const lang = getLangFromUrl(Astro.url);
+
+function returnOtherLang() {
+  return lang === "fr" ? "en" : "fr";
+}
+
+const strUrl = String(Astro.url.pathname);
+
+const idStr = idFetching(strUrl);
+
+let translationURL: string = "";
+
+const result = urlFetching(idStr, returnOtherLang());
+
+if (result !== null) {
+  translationURL = result;
+  if (result !== "") translationURL = Astro.url.origin + "/" + translationURL;
+}
+
+let doItOrNot = "";
+if (result === null)
+  // Si il n'y a pas de traduction.
+  doItOrNot = "!hidden opacity-0 pointer-events-none";
+
+let otherClasses = "languageSwitcher sm:block";
+
+const t = useTranslations(lang);
+const { numeroPage } = Astro.props;
+---
+
+<astro-langage-switcher
+  data-message={lang}
+  data-translation={translationURL}
+  data-nopage={numeroPage}
+  class={doItOrNot + otherClasses}
+>
+  <label class="flex cursor-pointer gap-2 language-switcher">
+    <span class="label-text text-slate-950">{t("langageSwitcherLeft")}</span>
+    <input
+      type="checkbox"
+      checked="true"
+      class="toggle theme-controller langageSwitcher"
+    />
+    <span class="label-text text-slate-950">{t("langageSwitcherRight")}</span>
+  </label>
+</astro-langage-switcher>
+<style>
+  .languageSwitcher {
+    display: block;
+  }
+</style>
+
+<script>
+  class AstroLangageSwitcher extends HTMLElement {
+    constructor() {
+      super();
+
+      buttons.forEach((input: HTMLInputElement) => {
+        input.checked = false;
+      });
+
+      // Read the message from the data attribute.
+      const lang = this.dataset.message;
+      const translationURL = this.dataset.translation;
+      const noPage = this.dataset.nopage;
+      //console.log(translationURL)
+      const input = this.querySelector("input");
+      if (input !== null) {
+        input.addEventListener("click", () => {
+          if (translationURL === "") {
+            if (lang === "en") window.location.replace("/fr/" + noPage);
+            else if (lang === "fr") window.location.replace("/en/" + noPage);
+          } else if (translationURL !== undefined) {
+            window.location.replace(translationURL);
+          } else {
+            throw new Error(
+              "LangageSwitcher has a bad time :(. It seems that translationURL is undefined...",
+            );
+          }
+        });
+      }
+    }
+  }
+  // Find all buttons with the `alert` class on the page.
+  const buttons = document.querySelectorAll("input.langageSwitcher");
+  customElements.define("astro-langage-switcher", AstroLangageSwitcher);
+</script>

@@ -1,0 +1,105 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+import ThemeIcon from './ThemeIcon.astro';
+import SearchModal from './SearchModal.astro';
+import LangageSwitcher from './LangageSwitcher.astro';
+
+type Props = HTMLAttributes<'a'>;
+
+const { href, class: className, ...props } = Astro.props;
+
+const { pathname } = Astro.url;
+const subpath = pathname.match(/[^\/]+/g);
+const isActive = (href === pathname)
+
+
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+---
+<div class="drawer drawer-end sm:hidden z-10 flex justify-end">
+    <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content">
+      <!-- Page content here -->
+      <label for="my-drawer-4" class="drawer-button relative z-10">
+        <div class="tham tham-e-arrow tham-w-6">
+          <div class="tham-box">
+             <div class="tham-inner" />
+             </div>
+          </div>
+      </label>
+    </div>
+    <div class="drawer-side">
+      <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay tgt"></label>
+      <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4 [&>li]:w-9/12">
+        <!-- Sidebar content here -->
+        <li>
+         <button class="btn btn-circle btn-outline tgt" >
+            <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay absolute w-12 h-full"></label>
+            <svg
+               xmlns="http://www.w3.org/2000/svg"
+               class="h-6 w-6"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke="currentColor">
+               <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12" />
+            </svg>
+         </button>
+        </li>
+        <li><a>Sidebar Item 1</a></li>
+        <!--<li><SearchModal></SearchModal></li> -->
+        <li><SearchModal searchBarId="mobileSearchBar"></SearchModal></li>
+        <li><ThemeIcon></ThemeIcon></li>
+        <li class="doIt"><LangageSwitcher></LangageSwitcher></li>
+      </ul>
+    </div>
+</div>
+
+<style>
+
+  .drawer {
+    width: auto;
+  }
+
+
+	a.display_flex {
+		display: flex;
+	}
+
+	a {
+		display: inline-block;
+		text-decoration: none;
+	}
+	a.active {
+		font-weight: bolder;
+		text-decoration: underline;
+	}
+</style>
+<script>
+  const tham = document.querySelector(".tham");
+    
+  if (tham !==null)
+    tham.addEventListener('click', () => {
+      tham.classList.toggle('tham-active');
+    });
+
+
+  const tgt = document.querySelectorAll(".tgt");
+  if (tgt !== null)  
+    tgt.forEach((elem) => {
+      elem.addEventListener("click", () => {
+        if (tham !== null)
+          tham.classList.remove('tham-active')
+      });
+    })
+
+</script>

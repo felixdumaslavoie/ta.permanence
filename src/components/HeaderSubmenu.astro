@@ -1,0 +1,121 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+import LangageSwitcher from "./LangageSwitcher.astro";
+import ThemeIcon from "./ThemeIcon.astro";
+import SearchModal from "./SearchModal.astro";
+
+interface Props {
+  numeroPage: Number;
+  href: any;
+}
+
+const { href, numeroPage } = Astro.props;
+
+//const { pathname } = Astro.url;
+//const subpath = pathname.match(/[^\/]+/g);
+//const isActive = (href === pathname)
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<ul class="menu sm:menu-horizontal rounded-box sm:flex-row sm:flex-nowrap">
+  <li>
+    <a class="display_flex" href={href}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+        ></path>
+      </svg>
+      <p class="m-0">{t("nav.home")}</p>
+    </a>
+  </li>
+  <li id="archivesLink" class="z-10">
+    <details id="archivesLinkDetails">
+      <summary id="archivesLinkSummary">Archives</summary>
+      <ul>
+        <li>
+          <details>
+            <summary>Les CUTE(s)</summary>
+            <ul>
+              <li><a>Magazines</a></li>
+              <li><a>Tracts</a></li>
+              <li><a>Affiches</a></li>
+              <li><a>Vidéos</a></li>
+              <li><a>Sites web</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </details>
+  </li>
+  <li>
+    <a class="display_flex">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <p class="m-0">{t("nav.about")}</p>
+    </a>
+  </li>
+  <li><SearchModal searchBarId="desktopSearchBar" /></li>
+  <li><ThemeIcon /></li>
+  <li><LangageSwitcher numeroPage={numeroPage} /></li>
+</ul>
+
+<style>
+  a.display_flex {
+    display: flex;
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  a.active {
+    font-weight: bolder;
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+  const box = document.getElementById("archivesLink");
+  const summary = document.getElementById("archivesLinkSummary");
+  const openOrNot = document.getElementById("archivesLinkDetails");
+
+  document.addEventListener("click", function handleClickOutsideBox(event) {
+    if (
+      box !== null &&
+      summary !== null &&
+      openOrNot !== null &&
+      event.target !== null
+    ) {
+      // @ts-ignore
+      if (!box.contains(event.target)) {
+        if (openOrNot.hasAttribute("open")) summary?.click();
+      }
+    }
+  });
+</script>
+

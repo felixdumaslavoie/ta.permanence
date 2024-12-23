@@ -1,0 +1,14 @@
+---
+import MainPage from "../../layouts/MainPage.astro";
+export function getStaticPaths() {
+  return [
+    { params: { pagination: 0 } },
+    { params: { pagination: 1 } },
+    { params: { pagination: 2 } },
+  ];
+}
+
+const { pagination } = Astro.params;
+---
+
+<MainPage numeroPage={pagination} />
