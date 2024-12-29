@@ -1,12 +1,6 @@
 import textsData from "../content/data/data.json";
 const premierNiveau = textsData;
 
-function urlCleanTests(i: number, url: string) {
-  let testA = i === 0 && url.charAt(i) === "/";
-  let testB = i === url.length - 1 && url.charAt(i) === "/";
-
-  return !(testA || testB);
-}
 
 function isMainPage(url: string): boolean {
   // Pour le savoir, je dois juste vérifier si y'a juste un no après l'url de base
@@ -24,37 +18,17 @@ function isMainPage(url: string): boolean {
   return false;
 }
 
-export function idFetching(url: string): string {
-  let finalString = "";
+// Important!!
+export function idFetching(string: string): string {
 
-  let testLang = url; // j'aimerais qu'il tombe ici si c'est la page titre.
+  //console.log(string)
 
-  // En fait, si j'ai une url du type: "en/123" avec juste des chiffres à la fin, je sais que je suis sur la page principale
-  isMainPage(url);
-  if (
-    testLang === "/fr/" ||
-    testLang === "/en/" ||
-    testLang === "/fr" ||
-    testLang === "/en" ||
-    testLang.endsWith(".html")
-  )
-    return "";
 
-  if (testLang.charAt(0) === "/") testLang = testLang.substring(1);
+  throw new Error("In id fetching!!")
 
-  let lang = testLang.substring(0, 2);
-  for (let i = 0; i < url.length; i++) {
-    if (urlCleanTests(i, url)) finalString += url.charAt(i);
-  }
+  let finalString;
 
   finalString = premierNiveau["url2id"][finalString];
-
-  if (finalString === undefined) {
-    throw new Error(
-      "Undefined string when fetchData.js is fetching data from data.json",
-    );
-  }
-
   return finalString;
 }
 

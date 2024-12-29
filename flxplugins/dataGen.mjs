@@ -13,14 +13,14 @@ const url2IDKey = "url2id"
 
 const print = console.log
 
-var data 
+var data
 
 
 //initData()
-function initData(){
-data = {}
-data["id2url"] = {}
-data["url2id"] = {}
+function initData() {
+  data = {}
+  data["id2url"] = {}
+  data["url2id"] = {}
 }
 
 
@@ -38,7 +38,7 @@ function readData() {
     writeFile(DataJSONPath, toWrite, err => {
       if (err) {
         console.error(err);
-      } 
+      }
     });
   }
   data = JSON.parse(data) // Converting data to javascript JSON object
@@ -52,42 +52,39 @@ function readData() {
 //manipulateData()
 function manipulateData() {
   try {
-      const langues = readdirSync(contentPath);
-      for (const langue of langues)
-      {
-          const textes = readdirSync(contentPath + "/" + langue);
+    const langues = readdirSync(contentPath);
+    for (const langue of langues) {
+      const textes = readdirSync(contentPath + "/" + langue);
 
-          for (const texte of textes)
-          {
-            try {
-              let aTextPath = contentPath + "/" + langue + "/" + texte;
-              
-              let frontMatterObj = getFrontmatterDataFromYAML(exctractYAMLFromText(aTextPath))
+      for (const texte of textes) {
+        try {
+          let aTextPath = contentPath + "/" + langue + "/" + texte;
 
-              let idDuTexte = texte.split("_")[0];
-              
-              if(!data[id2urlKey].hasOwnProperty(idDuTexte)) {
-                data[id2urlKey][idDuTexte] = {}
-                data[id2urlKey][idDuTexte][langue] = frontMatterObj.slug
-              }else if (!data[id2urlKey][idDuTexte].hasOwnProperty(langue)){
-                data[id2urlKey][idDuTexte][langue] = frontMatterObj.slug
-              }   
+          let frontMatterObj = getFrontmatterDataFromYAML(exctractYAMLFromText(aTextPath))
 
-              if (!data[url2IDKey].hasOwnProperty(frontMatterObj.slug))
-              {
-                data[url2IDKey][frontMatterObj.slug] = idDuTexte
-              }
+          let idDuTexte = texte.split("_")[0];
 
-            } catch (error) {
-              print(error)
+          /* if (!data[id2urlKey].hasOwnProperty(idDuTexte)) {
+             data[id2urlKey][idDuTexte] = {}
+             data[id2urlKey][idDuTexte][langue] = frontMatterObj.slug
+           } else if (!data[id2urlKey][idDuTexte].hasOwnProperty(langue)) {
+             data[id2urlKey][idDuTexte][langue] = frontMatterObj.slug
+           }
+ 
+           if (!data[url2IDKey].hasOwnProperty(frontMatterObj.slug)) {
+             data[url2IDKey][frontMatterObj.slug] = idDuTexte
+           }*/
 
-              process.exit(-1)
-            }
-          }    
-      }   
-    } catch (err) {
-      print(err);
-      process.exit(-1)
+        } catch (error) {
+          print(error)
+
+          process.exit(-1)
+        }
+      }
+    }
+  } catch (err) {
+    print(err);
+    process.exit(-1)
   }
 }
 
@@ -96,14 +93,14 @@ function manipulateData() {
 var prettyValue = 2
 
 //writeData()
-function writeData () {
+function writeData() {
   try {
-    let toWrite = JSON.stringify(data,null,prettyValue);
+    let toWrite = JSON.stringify(data, null, prettyValue);
 
     writeFileSync(DataJSONPath, toWrite, err => {
       if (err) {
         console.error(err);
-      } 
+      }
     });
   } catch (error) {
     print("Error while trying to write data.json file")
@@ -115,35 +112,34 @@ function writeData () {
 ////////////////UTILITAIRES//////////////////
 /////////////////////////////////////////////
 
-function exctractYAMLFromText(textPath){
-    let extracted = "";
-    let liner = new lineByLine.default(textPath);
-    let line;
+function exctractYAMLFromText(textPath) {
+  let extracted = "";
+  let liner = new lineByLine.default(textPath);
+  let line;
 
-    while(line !== '---' && line !== false){
+  while (line !== '---' && line !== false) {
+    line = liner.next()
+    if (line) {
+      line = line.toString(ENCODING)
+    }
+  }
+
+  if (line !== false) {
+    line = liner.next()
+    if (line) {
+      line = line.toString(ENCODING)
+    }
+    let yaml = ""
+    while (line !== '---' && line !== false) {
+      yaml += (line + "\n");
       line = liner.next()
-      if (line){
+      if (line) {
         line = line.toString(ENCODING)
       }
     }
-
-    if (line !== false)
-    {
-      line = liner.next()
-      if (line){
-        line = line.toString(ENCODING)
-      }
-      let yaml =""
-      while (line !== '---' && line !== false) {
-        yaml += (line + "\n");
-        line = liner.next()
-        if (line){
-          line = line.toString(ENCODING)
-        }
-      }
-      extracted = yaml;
-    }
-    return extracted;
+    extracted = yaml;
+  }
+  return extracted;
 }
 
 function getFrontmatterDataFromYAML(extractedData) {
@@ -153,7 +149,7 @@ function getFrontmatterDataFromYAML(extractedData) {
 ////////////////////END//////////////////////
 /////////////////////////////////////////////
 
-export function dataGen(){
+export function dataGen() {
   initData()
   readData()
   manipulateData()
