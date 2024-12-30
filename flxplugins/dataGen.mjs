@@ -60,20 +60,20 @@ function manipulateData() {
         try {
           let aTextPath = contentPath + "/" + langue + "/" + texte;
 
-          let frontMatterObj = getFrontmatterDataFromYAML(exctractYAMLFromText(aTextPath))
+          let frontMatterObj = getFrontmatterDataFromYAML(alternativeYAMLExtractor(aTextPath))
 
           let idDuTexte = texte.split("_")[0];
 
-          /* if (!data[id2urlKey].hasOwnProperty(idDuTexte)) {
-             data[id2urlKey][idDuTexte] = {}
-             data[id2urlKey][idDuTexte][langue] = frontMatterObj.slug
-           } else if (!data[id2urlKey][idDuTexte].hasOwnProperty(langue)) {
-             data[id2urlKey][idDuTexte][langue] = frontMatterObj.slug
-           }
- 
-           if (!data[url2IDKey].hasOwnProperty(frontMatterObj.slug)) {
-             data[url2IDKey][frontMatterObj.slug] = idDuTexte
-           }*/
+          if (!data[id2urlKey].hasOwnProperty(idDuTexte)) {
+            data[id2urlKey][idDuTexte] = {}
+            data[id2urlKey][idDuTexte][langue] = frontMatterObj.slug
+          } else if (!data[id2urlKey][idDuTexte].hasOwnProperty(langue)) {
+            data[id2urlKey][idDuTexte][langue] = frontMatterObj.slug
+          }
+
+          if (!data[url2IDKey].hasOwnProperty(frontMatterObj.slug)) {
+            data[url2IDKey][frontMatterObj.slug] = idDuTexte
+          }
 
         } catch (error) {
           print(error)
@@ -111,8 +111,42 @@ function writeData() {
 /////////////////////////////////////////////
 ////////////////UTILITAIRES//////////////////
 /////////////////////////////////////////////
+// Le problème est ici.
 
-function exctractYAMLFromText(textPath) {
+function decodeLine(aLine) {
+  let temp = aLine.toString(ENCODING)
+  temp = temp.replace(/[\u0000-\u001F\u007F-\u009F]/g, "") // Removing control caracters
+
+  return temp
+}
+
+// So better.
+function alternativeYAMLExtractor(filePath) {
+  let liner = new lineByLine.default(filePath);
+  let aLine = ""
+  let yaml = ""
+
+  aLine = decodeLine(liner.next())
+
+  if (aLine === "---") {
+    do {
+      aLine = decodeLine(liner.next())
+
+      if (aLine !== '---' && aLine) {
+        yaml += (aLine + "\n");
+      }
+
+    } while (aLine && aLine !== "---")
+
+  } else {
+    throw new Error("Invalid frontmatter.")
+  }
+
+  return yaml
+}
+
+/*function exctractYAMLFromText(textPath) {
+
   let extracted = "";
   let liner = new lineByLine.default(textPath);
   let line;
@@ -123,7 +157,7 @@ function exctractYAMLFromText(textPath) {
       line = line.toString(ENCODING)
     }
   }
-
+  print(" LINE? " + line)
   if (line !== false) {
     line = liner.next()
     if (line) {
@@ -137,10 +171,12 @@ function exctractYAMLFromText(textPath) {
         line = line.toString(ENCODING)
       }
     }
+
     extracted = yaml;
   }
+
   return extracted;
-}
+}*/
 
 function getFrontmatterDataFromYAML(extractedData) {
   return matter.engines.yaml.parse(extractedData)
