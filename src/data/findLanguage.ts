@@ -1,10 +1,15 @@
-import { idFetching, findCurrentLanguage } from "../data/fetchData";
+import { findPageId } from "./fetchData";
 
 // URL en entrée --> PROCESSING --> Langue du texte en question en sortie.
+function findPageLanguage() {
 
-export function findLanguage(url: string): string {
-  const idStr = idFetching(url);
+  return 'fr';
+}
 
-  return findCurrentLanguage(idStr, url);
+
+export function findLanguage(url: URL): string {
+  const idStr = findPageId(url);
+
+  return findPageLanguage();
 }
 

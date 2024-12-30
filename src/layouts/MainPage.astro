@@ -27,7 +27,7 @@ const posts = (await getCollection("blog")).sort(
 
 const langue = String(getLangFromUrl(Astro.url));
 
-let filterFunction = (post) => findLanguage(post.slug) === langue;
+let filterFunction = (post) => findLanguage(Astro.url) === langue;
 let postsDansLangue = posts.filter(filterFunction);
 
 let resultat = await getImagesMetadata();
