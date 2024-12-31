@@ -1,7 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
-import { idFetching, urlFetching } from "../data/fetchData";
+import { findPageId } from "../data/fetchData";
 
 interface Props {
   numeroPage: Number;
@@ -13,9 +13,7 @@ function returnOtherLang() {
   return lang === "fr" ? "en" : "fr";
 }
 
-const strUrl = String(Astro.url.pathname);
-
-const idStr = idFetching(strUrl);
+const idStr = findPageId(Astro.url);
 
 let translationURL: string = "";
 

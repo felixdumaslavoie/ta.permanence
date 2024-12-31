@@ -174,7 +174,6 @@ function alternativeYAMLExtractor(filePath) {
 
     extracted = yaml;
   }
-
   return extracted;
 }*/
 
