@@ -12,9 +12,9 @@ import Footer from "../components/Footer.astro";
 import { getLangFromUrl } from "../i18n/utils";
 
 // My own plugins.
-import { findLanguage } from "../data/findLanguage";
 import { getImagesMetadata } from "../data/imageManager";
 import { imageURLCorrection } from "../data/imageURLCorrection";
+import { pageLang, textLang } from "../data/fetchData";
 
 interface Props {
   numeroPage: Number;
@@ -25,9 +25,9 @@ const posts = (await getCollection("blog")).sort(
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-const langue = String(getLangFromUrl(Astro.url));
+const langue = String(textLang(Astro.url));
 
-let filterFunction = (post) => findLanguage(Astro.url) === langue;
+let filterFunction = (post) => pageLang(Astro.url) === textLang(post);
 let postsDansLangue = posts.filter(filterFunction);
 
 let resultat = await getImagesMetadata();

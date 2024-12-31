@@ -13,16 +13,9 @@ function returnOtherLang() {
   return lang === "fr" ? "en" : "fr";
 }
 
-const idStr = findPageId(Astro.url);
-
 let translationURL: string = "";
 
-const result = translatedText(idStr);
-
-if (result !== null) {
-  translationURL = result;
-  if (result !== "") translationURL = Astro.url.origin + "/" + translationURL;
-}
+const result = translatedText(Astro.url);
 
 let doItOrNot = "";
 if (result === null)

@@ -1,4 +1,3 @@
-import type { Url } from "node:url";
 import data from "../content/data/data.json";
 
 function splitUrl(url: URL) {
@@ -15,10 +14,16 @@ export function findPageId(url: URL): number {
   let split = splitUrl(url)
 
   if (split) {
-    console.log(!isNaN(Number(split[2])))
-    if (!isNaN(Number(split[2]))) // Si mainpage
+
+    let temp = split[1] // main page id or slug
+
+    if (Number.parseInt(temp)) // Si mainpage
     {
-      return Number(split[2])
+      return 0
+    }
+    else if (!Number.parseInt(temp)) {
+
+      return data["url2id"][temp]
     }
   }
 
@@ -30,11 +35,23 @@ const Languages = {
   En: "en",
 }
 
+export function textLang(post: any): String {
+  if (post.id) {
+    let extracted = post.id.split('/')[0]
+    if (extracted) {
+      return extracted
+    }
+  }
+
+  return "fr"
+}
+
 export function pageLang(url: URL): String {
+
   let split = splitUrl(url)
 
   if (split) {
-    console.log(split[1])
+    //console.log(split[1])
 
     if (Object.values(Languages).includes(split[1])) {
       return String(split[1])
@@ -52,17 +69,24 @@ function switchLang(lang: String) {
 
 export function translatedText(url: URL): URL {
 
+  //console.log(url)
+
   let currentId = findPageId(url)
   let currentLang = pageLang(url)
   let newLang = switchLang(currentLang)
-  //console.log(currentId)
 
-  let query = data["id2url"][currentId][newLang]
+
+  /*let query = data["id2url"][currentId][newLang]
 
   if (query) {
     //console.log(query)
   }
-
+  if (result !== null) {
+  translationURL = result;
+  if (result !== "") translationURL = Astro.url.origin + "/" + translationURL;
+}  
+  
+  */
   return url;
 
 
