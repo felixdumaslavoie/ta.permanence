@@ -1,7 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
-import { findPageId } from "../data/fetchData";
+import { findPageId, translatedText } from "../data/fetchData";
 
 interface Props {
   numeroPage: Number;
@@ -17,7 +17,7 @@ const idStr = findPageId(Astro.url);
 
 let translationURL: string = "";
 
-const result = urlFetching(idStr, returnOtherLang());
+const result = translatedText(idStr);
 
 if (result !== null) {
   translationURL = result;
