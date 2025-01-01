@@ -8,9 +8,6 @@ import { Picture } from "astro:assets";
 import FormattedDate from "../components/FormattedDate.astro";
 import Footer from "../components/Footer.astro";
 
-// External plugins imports.
-import { getLangFromUrl } from "../i18n/utils";
-
 // My own plugins.
 import { getImagesMetadata } from "../data/imageManager";
 import { imageURLCorrection } from "../data/imageURLCorrection";
@@ -140,6 +137,6 @@ const { numeroPage } = Astro.props;
         </ul>
       </section>
     </main>
-    <Footer />
+    <Footer numeroPage={numeroPage} />
   </body>
 </html>

@@ -15,15 +15,19 @@ export function findPageId(url: URL): number {
 
   if (split) {
 
-    let temp = split[1] // main page id or slug
+    let temp = split[2] // main page id or slug
+
+
+
 
     if (Number.parseInt(temp)) // Si mainpage
     {
       return 0
     }
     else if (!Number.parseInt(temp)) {
+      let lang = split[1]
 
-      return data["url2id"][temp]
+      return data["url2id"][lang + "/" + temp]
     }
   }
 
@@ -69,25 +73,23 @@ function switchLang(lang: String) {
 
 export function translatedText(url: URL): URL {
 
-  //console.log(url)
-
   let currentId = findPageId(url)
-  let currentLang = pageLang(url)
-  let newLang = switchLang(currentLang)
+  if (currentId) {
+    let currentLang = pageLang(url)
+    let newLang = switchLang(currentLang)
+
+    let query = data["id2url"][currentId][newLang]
 
 
-  /*let query = data["id2url"][currentId][newLang]
 
-  if (query) {
-    //console.log(query)
+    let result = `${url.origin}/${query}`
+
+    return new URL(result);
   }
-  if (result !== null) {
-  translationURL = result;
-  if (result !== "") translationURL = Astro.url.origin + "/" + translationURL;
-}  
-  
-  */
+
   return url;
-
-
 }
+
+
+
+
