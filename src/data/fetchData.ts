@@ -8,6 +8,22 @@ function splitUrl(url: URL) {
   return null;
 }
 
+export function isMainPage(url: URL): boolean {
+
+  let split = splitUrl(url)
+
+  if (split) {
+    let temp = split[2] // main page id or slug
+
+    let pageNumber = Number.parseInt(temp)
+
+    if (!isNaN(pageNumber)) // Si mainpage
+      return true;
+  }
+
+  return false;
+}
+
 
 export function findPageId(url: URL): number {
 
@@ -69,6 +85,13 @@ export function pageLang(url: URL): String {
 
 function switchLang(lang: String) {
   return lang === "fr" ? "en" : "fr";
+}
+
+export function switchMainPageLang(url: URL, pageNumber: Number): URL {
+  let currentLang = pageLang(url)
+  let newLang = switchLang(currentLang)
+
+  return new URL(`${url.origin}/${newLang}/${pageNumber}`)
 }
 
 export function translatedText(url: URL): URL {

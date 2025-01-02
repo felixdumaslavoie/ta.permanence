@@ -1,7 +1,13 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
-import { translatedText } from "../data/fetchData";
+import {
+  findPageId,
+  isMainPage,
+  pageLang,
+  switchMainPageLang,
+  translatedText,
+} from "../data/fetchData";
 
 interface Props {
   numeroPage: Number;
@@ -14,6 +20,12 @@ let translationURL: string = "";
 const result = translatedText(Astro.url);
 
 translationURL = result.pathname;
+
+let pageID = findPageId(Astro.url);
+
+if (isMainPage(Astro.url)) {
+  translationURL = switchMainPageLang(Astro.url, pageID).pathname;
+}
 
 let doItOrNot = "";
 
@@ -67,6 +79,7 @@ const { numeroPage } = Astro.props;
       if (input !== null) {
         input.addEventListener("click", () => {
           if (translationURL) {
+            console.log(translationURL);
             window.location.replace(translationURL);
           }
         });
