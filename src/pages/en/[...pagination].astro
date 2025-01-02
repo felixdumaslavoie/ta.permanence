@@ -1,6 +1,10 @@
 ---
+import { howManyTexts } from "../../data/fetchData";
 import MainPage from "../../layouts/MainPage.astro";
+
 export function getStaticPaths() {
+  console.log(howManyTexts("en"));
+
   return [
     { params: { pagination: 0 } },
     { params: { pagination: 1 } },

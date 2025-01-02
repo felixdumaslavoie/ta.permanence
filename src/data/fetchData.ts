@@ -111,6 +111,25 @@ export function translatedText(url: URL): URL {
   return url;
 }
 
+export function howManyTexts(language: string): number {
 
+  let textsNumber = 0
+
+  if (Object.values(Languages).includes(language)) {
+    let ids = data["id2url"]
+
+    for (const key in ids) {
+      if (ids[key][language] !== undefined) {
+        textsNumber++
+      }
+
+    }
+    return textsNumber
+  }
+
+
+  throw new Error("FetchData, howManTexts : this language doesn't exist.")
+
+}
 
 
