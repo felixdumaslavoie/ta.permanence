@@ -80,8 +80,6 @@ export function translatedText(url: URL): URL {
 
     let query = data["id2url"][currentId][newLang]
 
-
-
     let result = `${url.origin}/${query}`
 
     return new URL(result);

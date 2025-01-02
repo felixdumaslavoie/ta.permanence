@@ -13,8 +13,11 @@ let translationURL: string = "";
 
 const result = translatedText(Astro.url);
 
+translationURL = result.pathname;
+
 let doItOrNot = "";
-if (result === Astro.url)
+
+if (result.pathname === "/undefined")
   // Si il n'y a pas de traduction.
   doItOrNot = "!hidden opacity-0 pointer-events-none";
 
@@ -59,19 +62,12 @@ const { numeroPage } = Astro.props;
       const lang = this.dataset.message;
       const translationURL = this.dataset.translation;
       const noPage = this.dataset.nopage;
-      //console.log(translationURL)
+
       const input = this.querySelector("input");
       if (input !== null) {
         input.addEventListener("click", () => {
-          if (translationURL === "") {
-            if (lang === "en") window.location.replace("/fr/" + noPage);
-            else if (lang === "fr") window.location.replace("/en/" + noPage);
-          } else if (translationURL !== undefined) {
+          if (translationURL) {
             window.location.replace(translationURL);
-          } else {
-            throw new Error(
-              "LangageSwitcher has a bad time :(. It seems that translationURL is undefined...",
-            );
           }
         });
       }
