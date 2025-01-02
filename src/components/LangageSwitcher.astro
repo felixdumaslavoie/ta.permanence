@@ -8,6 +8,7 @@ import {
   switchMainPageLang,
   translatedText,
 } from "../data/fetchData";
+import { undefined } from "astro:schema";
 
 interface Props {
   numeroPage: Number;
@@ -24,6 +25,7 @@ translationURL = result.pathname;
 let pageID = findPageId(Astro.url);
 
 if (isMainPage(Astro.url)) {
+  pageID = 0;
   translationURL = switchMainPageLang(Astro.url, pageID).pathname;
 }
 
