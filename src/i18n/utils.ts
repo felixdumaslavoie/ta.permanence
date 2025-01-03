@@ -36,6 +36,18 @@ export function computePaths(lang: string): Array<Object> {
   return paramArray;
 }
 
+export function howManyMainPages(lang: string): number {
+  if (!Object.values(Languages).includes(lang)) {
+    throw new Error("howManyMainPages: language code not found")
+  }
+
+  let textNumber: number = howManyTexts(lang);
+
+  let pageNumber: number = Math.ceil(textNumber / textsByMainPage)
+
+  return pageNumber
+}
+
 
 export function computeMainTexts(texts: Array<Object>, pageNumber: Number): Array<Object> {
 
