@@ -116,7 +116,7 @@ let resultat = await getImagesMetadata();
   <body>
     <Header numeroPage={numeroPage} />
     <TextCarousel />
-    <main class="pt-20 md:pt-24">
+    <main class="pt-20 pb-20 md:pt-12">
       <div id="search"></div>
       <section></section>
       <section>
@@ -142,9 +142,8 @@ let resultat = await getImagesMetadata();
           }
         </ul>
       </section>
-      <Pagination numeroPage={numeroPage} />
     </main>
-
+    <Pagination numeroPage={numeroPage} />
     <Footer numeroPage={numeroPage} />
   </body>
 </html>
