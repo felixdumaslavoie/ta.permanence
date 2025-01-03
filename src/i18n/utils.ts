@@ -1,5 +1,6 @@
 import { ui, defaultLang, textsByMainPage } from './ui';
 import { howManyTexts, Languages } from "../data/fetchData";
+import type { DataCollectionKey } from 'astro:content';
 
 
 export function getLangFromUrl(url: URL) {
@@ -33,4 +34,13 @@ export function computePaths(lang: string): Array<Object> {
   });
 
   return paramArray;
+}
+
+
+export function computeMainTexts(texts: Array<Object>, pageNumber: Number): Array<Object> {
+
+  let iByN = pageNumber.valueOf() * textsByMainPage
+
+
+  return texts.slice(iByN, (iByN + textsByMainPage))
 }

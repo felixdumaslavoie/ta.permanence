@@ -12,6 +12,7 @@ import Footer from "../components/Footer.astro";
 import { getImagesMetadata } from "../data/imageManager";
 import { imageURLCorrection } from "../data/imageURLCorrection";
 import { pageLang, textLang } from "../data/fetchData";
+import { computeMainTexts } from "../i18n/utils";
 
 interface Props {
   numeroPage: Number;
@@ -27,9 +28,10 @@ const langue = String(textLang(Astro.url));
 let filterFunction = (post) => pageLang(Astro.url) === textLang(post);
 let postsDansLangue = posts.filter(filterFunction);
 
-let resultat = await getImagesMetadata();
-
 const { numeroPage } = Astro.props;
+let finalTexts: Array<Object> = computeMainTexts(postsDansLangue, numeroPage);
+
+let resultat = await getImagesMetadata();
 ---
 
 <!doctype html>
@@ -116,7 +118,7 @@ const { numeroPage } = Astro.props;
       <section>
         <ul>
           {
-            postsDansLangue.map((post: any) => (
+            finalTexts.map((post: any) => (
               <li>
                 <a href={`/${post.slug}/`}>
                   <Picture
