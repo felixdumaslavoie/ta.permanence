@@ -1,0 +1,52 @@
+---
+import { getLangFromUrl } from "../i18n/utils";
+const { numeroPage } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<astro-pagination data-nopage={numeroPage}>
+    <div class="join flex justify-center">
+        <button class="join-item btn"><a href="/">Main page</a></button>
+        <button class="join-item btn">«</button>
+        <button class="join-item btn btn-disabled">Page 22</button>
+        <button class="join-item btn">»</button>
+        <button class="join-item btn">Last page</button>
+    </div>
+</astro-pagination>
+<style>
+    .languageSwitcher {
+        display: block;
+    }
+</style>
+
+<script>
+    class AstroPagination extends HTMLElement {
+        constructor() {
+            super();
+
+            /*buttons.forEach((input: HTMLInputElement) => {
+                input.checked = false;
+            });
+
+            // Read the message from the data attribute.
+            const lang = this.dataset.message;
+            const translationURL = this.dataset.translation;
+            const noPage = this.dataset.nopage;
+
+            const input = this.querySelector("input");
+            if (input !== null) {
+                input.addEventListener("click", () => {
+                    if (translationURL) {
+                        console.log(translationURL);
+                        window.location.replace(translationURL);
+                    }
+                });
+            }*/
+        }
+    }
+
+    // Find all buttons with the `alert` class on the page.
+    const buttons = document.querySelectorAll("div.join");
+    customElements.define("astro-pagination", AstroPagination);
+</script>

@@ -6,6 +6,7 @@ import Header from "../components/Header.astro";
 import { getCollection } from "astro:content";
 import { Picture } from "astro:assets";
 import FormattedDate from "../components/FormattedDate.astro";
+import Pagination from "../components/Pagination.astro";
 import Footer from "../components/Footer.astro";
 
 // My own plugins.
@@ -138,7 +139,9 @@ let resultat = await getImagesMetadata();
           }
         </ul>
       </section>
+      <Pagination />
     </main>
+
     <Footer numeroPage={numeroPage} />
   </body>
 </html>
