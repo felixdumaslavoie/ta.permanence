@@ -3,13 +3,7 @@ import { computePaths } from "../../i18n/utils";
 import MainPage from "../../layouts/MainPage.astro";
 
 export function getStaticPaths() {
-  computePaths("fr");
-
-  return [
-    { params: { pagination: 0 } },
-    { params: { pagination: 1 } },
-    { params: { pagination: 2 } },
-  ];
+  return computePaths("fr");
 }
 
 const { pagination } = Astro.params;

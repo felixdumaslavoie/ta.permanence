@@ -14,7 +14,7 @@ export function useTranslations(lang: keyof typeof ui) {
   }
 }
 
-export function computePaths(lang: string) {
+export function computePaths(lang: string): Array<Object> {
 
   if (!Object.values(Languages).includes(lang)) {
     throw new Error("Compute paths: language code not found")
@@ -32,5 +32,5 @@ export function computePaths(lang: string) {
     };
   });
 
-  console.log(paramArray);
+  return paramArray;
 }
