@@ -29,6 +29,6 @@ export default defineConfig({
     remarkPlugins: [externalAnchorPlugin],
   },
   redirects: {
-    "/": "/fr/0",
+
   },
 });

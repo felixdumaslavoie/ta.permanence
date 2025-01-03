@@ -3,13 +3,16 @@ import { getLangFromUrl } from "../i18n/utils";
 const { numeroPage } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
+
+const no = Number(numeroPage) + 1;
 ---
 
 <astro-pagination data-nopage={numeroPage}>
     <div class="join flex justify-center">
-        <button class="join-item btn"><a href="/">Main page</a></button>
+        <button class="join-item btn"><a href=`/${lang}/0`>Main page</a></button
+        >
         <button class="join-item btn">«</button>
-        <button class="join-item btn btn-disabled">Page 22</button>
+        <button class="join-item btn btn-disabled">{no}</button>
         <button class="join-item btn">»</button>
         <button class="join-item btn">Last page</button>
     </div>
