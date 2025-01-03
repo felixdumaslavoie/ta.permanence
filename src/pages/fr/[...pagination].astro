@@ -1,6 +1,10 @@
 ---
+import { computePaths } from "../../i18n/utils";
 import MainPage from "../../layouts/MainPage.astro";
+
 export function getStaticPaths() {
+  computePaths("fr");
+
   return [
     { params: { pagination: 0 } },
     { params: { pagination: 1 } },

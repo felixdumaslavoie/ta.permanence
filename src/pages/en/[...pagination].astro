@@ -1,9 +1,9 @@
 ---
-import { howManyTexts } from "../../data/fetchData";
+import { computePaths } from "../../i18n/utils";
 import MainPage from "../../layouts/MainPage.astro";
 
 export function getStaticPaths() {
-  console.log(howManyTexts("en"));
+  computePaths("en");
 
   return [
     { params: { pagination: 0 } },

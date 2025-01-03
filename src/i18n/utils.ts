@@ -1,4 +1,6 @@
-import { ui, defaultLang } from './ui';
+import { ui, defaultLang, textsByMainPage } from './ui';
+import { howManyTexts, Languages } from "../data/fetchData";
+
 
 export function getLangFromUrl(url: URL) {
   const [, lang] = url.pathname.split('/');
@@ -10,4 +12,25 @@ export function useTranslations(lang: keyof typeof ui) {
   return function t(key: keyof typeof ui[typeof defaultLang]) {
     return ui[lang][key] || ui[defaultLang][key];
   }
+}
+
+export function computePaths(lang: string) {
+
+  if (!Object.values(Languages).includes(lang)) {
+    throw new Error("Compute paths: language code not found")
+  }
+
+  let textNumber: number = howManyTexts(lang);
+
+  let pageNumber: number = textNumber / textsByMainPage
+
+  let paramArray = new Array(Math.ceil(pageNumber)).fill({});
+
+  paramArray.forEach((paramAtom, idx) => {
+    paramArray[idx] = {
+      params: { pagination: idx },
+    };
+  });
+
+  console.log(paramArray);
 }

@@ -50,7 +50,7 @@ export function findPageId(url: URL): number {
   return 0
 }
 
-const Languages = {
+export const Languages = {
   Fr: "fr",
   En: "en",
 }
@@ -71,7 +71,6 @@ export function pageLang(url: URL): String {
   let split = splitUrl(url)
 
   if (split) {
-    //console.log(split[1])
 
     if (Object.values(Languages).includes(split[1])) {
       return String(split[1])
