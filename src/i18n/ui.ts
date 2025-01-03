@@ -20,7 +20,9 @@ export const ui = {
     'ig': SOCIALS_MEDIA.ig,
     'fb': SOCIALS_MEDIA.fb,
     'langageSwitcherLeft': 'English',
-    'langageSwitcherRight': 'Français'
+    'langageSwitcherRight': 'Français',
+    'mainPage': 'Main page',
+    'lastPage': 'Last page'
   },
   fr: {
     'site_title': SITE_TITLE.fr,
@@ -31,7 +33,9 @@ export const ui = {
     'ig': SOCIALS_MEDIA.ig,
     'fb': SOCIALS_MEDIA.fb,
     'langageSwitcherLeft': 'Français',
-    'langageSwitcherRight': 'English'
+    'langageSwitcherRight': 'English',
+    'mainPage': 'Page d\'accueil',
+    'lastPage': 'Dernière page'
   },
 } as const;
 
