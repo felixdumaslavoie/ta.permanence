@@ -27,18 +27,18 @@ const t = useTranslations(lang);
 
 <astro-pagination data-nopage={numeroPage}>
     <div class="join flex justify-center">
-        <button class=`join-item btn ${isFirst}`
-            ><a href=`/${lang}/0`>{t("mainPage")}</a></button
+        <a class=`${isFirst}` href=`/${lang}/0`>
+            <button class=`join-item btn ${isFirst}`>{t("mainPage")}</button></a
         >
-        <button class=`join-item btn ${isFirst}`
-            ><a href={`/${lang}/${noMinusOne}`}>«</a></button
+        <a class=`${isFirst}` href={`/${lang}/${noMinusOne}`}
+            ><button class=`join-item btn ${isFirst}`>«</button></a
         >
         <button class="join-item btn btn-disabled">{no + 1}</button>
-        <button class=`join-item btn ${isLast}`
-            ><a href={`/${lang}/${noPlusOne}`}>»</a></button
+        <a class=`${isLast}` href={`/${lang}/${noPlusOne}`}
+            ><button class=`join-item btn ${isLast}`>»</button></a
         >
-        <button class=`join-item btn ${isLast}`
-            ><a href={`/${lang}/${latestPage}`}>{t("lastPage")}</a></button
+        <a class=` ${isLast}` href={`/${lang}/${latestPage}`}
+            ><button class=`join-item btn ${isLast}`>{t("lastPage")}</button></a
         >
     </div>
 </astro-pagination>
