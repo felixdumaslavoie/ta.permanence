@@ -7,6 +7,8 @@ import cloudflare from "@astrojs/cloudflare";
 import { externalAnchorPlugin } from "./remarkplugins/external-anchor-plugin.mjs";
 import { dataGen } from "./flxplugins/dataGen.mjs";
 
+import alpinejs from "@astrojs/alpinejs";
+
 dataGen();
 
 // https://astro.build/config
@@ -15,7 +17,7 @@ export default defineConfig({
   build: {
     format: "directory",
   },
-  integrations: [mdx(), sitemap(), tailwind()],
+  integrations: [mdx(), sitemap(), tailwind(), alpinejs()],
   output: "hybrid",
   adapter: cloudflare(),
   i18n: {

@@ -10,12 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/alpinejs": "^0.4.1",
     "@astrojs/check": "^0.9.4",
     "@astrojs/cloudflare": "^11.2.0",
     "@astrojs/mdx": "^3.1.8",
     "@astrojs/rss": "^4.0.9",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.2",
+    "@types/alpinejs": "^3.13.11",
+    "alpinejs": "^3.14.8",
     "astro": "^4.16.7",
     "gray-matter": "^4.0.3",
     "n-readlines": "^1.0.1",
