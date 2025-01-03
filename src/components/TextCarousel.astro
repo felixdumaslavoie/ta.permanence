@@ -4,7 +4,8 @@
 
 <astro-text-carousel>
     <div
-        x-data="{            
+        x-data="{
+        autoplayIntervalTime: 4000,            
         slides: [                
             {
                 imgSrc: 'https://penguinui.s3.amazonaws.com/component-assets/carousel/default-slide-1.webp',
@@ -12,7 +13,7 @@
                 title: 'Front end developers',
                 description: 'The architects of the digital world, constantly battling against their mortal enemy – browser compatibility.',    
                 ctaUrl: 'https://example.com',
-                ctaText: 'Become a Developer',          
+                ctaText: 'Read text',          
             },                
             {                    
                 imgSrc: 'https://penguinui.s3.amazonaws.com/component-assets/carousel/default-slide-2.webp',                    
@@ -47,8 +48,22 @@
                 // If it's the last slide, go to the first slide    
                 this.currentSlideIndex = 1                
             }            
-        },        
+        },
+        autoplay() {
+        this.autoplayInterval = setInterval(() => {
+            if (! this.isPaused) {
+                this.next()
+            }
+        }, this.autoplayIntervalTime)
+        },
+        // Updates interval time   
+        setAutoplayInterval(newIntervalTime) {
+        clearInterval(this.autoplayInterval)
+        this.autoplayIntervalTime = newIntervalTime
+        this.autoplay()
+    },           
     }"
+        x-init="autoplay"
         class="relative w-full overflow-hidden z-0"
     >
         <!-- previous button -->
