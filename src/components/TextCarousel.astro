@@ -1,4 +1,5 @@
 ---
+import { late } from "astro:schema";
 import { imageURLCorrection } from "../data/imageURLCorrection";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
@@ -11,19 +12,28 @@ const t = useTranslations(lang);
 
 const { textes, images } = Astro.props;
 
-let img0 = images[imageURLCorrection(textes[0].data.heroImage)].src;
+let carousel: Array<Object> = [];
 
-let img1 =
-    textes.length > 1
-        ? images[imageURLCorrection(textes[1].data.heroImage)].src
-        : images[imageURLCorrection(textes[0].data.heroImage)].src;
+await textes.forEach((txt) => {
+    let data = {
+        imgUrl: images[imageURLCorrection(txt.data.heroImage)],
+        title: txt.data.title,
+        excerpt: txt.data.excerpt,
+        url: txt.slug,
+    };
 
-let img2 =
-    textes.length > 2
-        ? images[imageURLCorrection(textes[2].data.heroImage)].src
-        : images[imageURLCorrection(textes[0].data.heroImage)].src;
+    carousel.push(data);
+});
+let carouSize: number = carousel.length;
 
-console.log(textes);
+if (carousel.length < 2) {
+    carousel.push(carousel[0]);
+    carousel.push(carousel[0]);
+} else if (carousel.length < 3) {
+    carousel.push(carousel[0]);
+}
+
+//console.log(carousel);
 ---
 
 <astro-text-carousel>
@@ -32,23 +42,23 @@ console.log(textes);
         autoplayIntervalTime: 6000,            
         slides: [                
             {
-                imgSrc: '${img0}',
+                imgSrc: '${carousel[0].imgUrl.src}',
                 imgAlt: 'Vibrant abstract painting with swirling blue and light pink hues on a canvas.',  
-                title: '${textes[0].data.title}',
+                title: '${carousel[0].title}',
                 description: 'The architects of the digital world, constantly battling against their mortal enemy – browser compatibility.',    
-                ctaUrl: 'https://example.com',
+                ctaUrl: '${carousel[0].url}',
                 ctaText: '${t('readText')}',          
             },                
             {                    
-                imgSrc: '${img1}',                    
+                imgSrc: '${carousel[1].imgUrl.src}',                    
                 imgAlt: 'Vibrant abstract painting with swirling red, yellow, and pink hues on a canvas.',  
-                title: 'Back end developers',
+                title: '${carousel[0].title}',
                 description: 'Because not all superheroes wear capes, some wear headphones and stare at terminal screens', 
                 ctaUrl: 'https://example.com',
                 ctaText: '${t('readText')}',             
             },                
             {                    
-                imgSrc: '${img2}',                    
+                imgSrc: '${carousel[2].imgUrl.src}',                    
                 imgAlt: 'Vibrant abstract painting with swirling blue and purple hues on a canvas.',    
                 title: 'Full stack developers',
                 description: 'Where "burnout" is just a fancy term for "Tuesday".',
