@@ -1,6 +1,6 @@
 
 
-export function imageURLCorrection(url : string | undefined) : string {
+export function imageURLCorrection(url: string | undefined): string {
 
     if (url === undefined)
         return "";

@@ -1,14 +1,23 @@
 ---
+import { imageURLCorrection } from "../data/imageURLCorrection";
 
+interface Props {
+    textes: Array<Object>;
+    images: any;
+}
+
+const { textes, images } = Astro.props;
+
+console.log(images[imageURLCorrection(textes[0].data.heroImage)].src);
 ---
 
 <astro-text-carousel>
     <div
-        x-data="{
+        x-data=`{
         autoplayIntervalTime: 6000,            
         slides: [                
             {
-                imgSrc: 'https://penguinui.s3.amazonaws.com/component-assets/carousel/default-slide-1.webp',
+                imgSrc: '${images[imageURLCorrection(textes[0].data.heroImage)].src}',
                 imgAlt: 'Vibrant abstract painting with swirling blue and light pink hues on a canvas.',  
                 title: 'Front end developers',
                 description: 'The architects of the digital world, constantly battling against their mortal enemy – browser compatibility.',    
@@ -16,7 +25,7 @@
                 ctaText: 'Read text',          
             },                
             {                    
-                imgSrc: 'https://penguinui.s3.amazonaws.com/component-assets/carousel/default-slide-2.webp',                    
+                imgSrc: '${images[imageURLCorrection(textes[1].data.heroImage)].src}',                    
                 imgAlt: 'Vibrant abstract painting with swirling red, yellow, and pink hues on a canvas.',  
                 title: 'Back end developers',
                 description: 'Because not all superheroes wear capes, some wear headphones and stare at terminal screens', 
@@ -24,10 +33,10 @@
                 ctaText: 'Become a Developer',             
             },                
             {                    
-                imgSrc: 'https://penguinui.s3.amazonaws.com/component-assets/carousel/default-slide-3.webp',                    
+                imgSrc: '${images[imageURLCorrection(textes[2].data.heroImage)].src}',                    
                 imgAlt: 'Vibrant abstract painting with swirling blue and purple hues on a canvas.',    
                 title: 'Full stack developers',
-                description: 'Where &quot;burnout&quot; is just a fancy term for &quot;Tuesday&quot;.',
+                description: 'Where "burnout" is just a fancy term for "Tuesday".',
                 ctaUrl: 'https://example.com',
                 ctaText: 'Become a Developer',          
             },            
@@ -85,7 +94,7 @@
         this.autoplay()
     },           
     
-    }"
+    }`
         x-init="autoplay"
         class="relative w-full overflow-hidden z-0"
     >
