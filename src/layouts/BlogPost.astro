@@ -1,41 +1,36 @@
 ---
-
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import { findLanguage } from "../data/findLanguage";
 import { imageURLCorrection } from "../data/imageURLCorrection";
-import { Picture } from 'astro:assets';	
-import { getImagesMetadata } from '../data/imageManager';
+import { Picture } from "astro:assets";
+import { getImagesMetadata } from "../data/imageManager";
 
-const { title, excerpt, pubDate, heroImage 	} = Astro.props;
+const { title, excerpt, pubDate, heroImage } = Astro.props;
 
 let pathStr = String(Astro.url.pathname);
 
-if (pathStr.charAt(0) === '/')
-	pathStr =  pathStr.substring(1, pathStr.length) 
+if (pathStr.charAt(0) === "/") pathStr = pathStr.substring(1, pathStr.length);
 
-if (pathStr.charAt(pathStr.length - 1) === '/')
-	pathStr =  pathStr.substring(0, pathStr.length - 1)
+if (pathStr.charAt(pathStr.length - 1) === "/")
+	pathStr = pathStr.substring(0, pathStr.length - 1);
 
-const theURL = String(pathStr)
-const imagePath : string = imageURLCorrection(heroImage)
+const theURL = String(pathStr);
+const imagePath: string = imageURLCorrection(heroImage);
 
-
-let resultat = await getImagesMetadata()
-
+let resultat = await getImagesMetadata();
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);	
+const t = useTranslations(lang);
 ---
 
 <html lang={lang}>
 	<head>
-		<BaseHead title={title} description={excerpt}/>
+		<BaseHead title={title} description={excerpt} />
 		<style>
-	
 			.hero-image {
 				width: 100%;
 			}
@@ -84,45 +79,55 @@ const t = useTranslations(lang);
 				margin-bottom: -18rem;
 			}
 
-			@media (min-width: 768px) { 
+			@media (min-width: 768px) {
 				.prose {
 					padding: 1em;
 				}
 
 				.hero-image img {
-				display: block;
-				margin: 0 auto;
-				position: relative;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);	
-				height: 50vh;
+					display: block;
+					margin: 0 auto;
+					position: relative;
+					border-radius: 12px;
+					box-shadow: var(--box-shadow);
+					height: 50vh;
+				}
+				main {
+					margin: auto;
+					padding-top: 0;
+				}
 			}
-			main {
-				margin: auto;
-				padding-top: 0;
-			}
-			}
-   
-
 		</style>
 	</head>
 
 	<body>
 		<Header />
-		<main class="w-full pt-0 ps-0 pe-0 max-w-fit md:max-w-[calc(100%-2rem)] md:w-[calc(100%-2rem)] md:pt-32">
+		<main
+			class="w-full pt-0 ps-0 pe-0 max-w-fit md:max-w-[calc(100%-2rem)] md:w-[calc(100%-2rem)] md:pt-32"
+		>
 			<article>
-				<div class="hero-image md:pt-32">
-					<Picture src={resultat[imagePath]} width={1020} height={510} alt="" loading={"eager"} class="object-cover bg-fixed opacityFade" />
+				<div class="hero-image md:pt-24">
+					<Picture
+						src={resultat[imagePath]}
+						width={1020}
+						height={510}
+						alt=""
+						loading={"eager"}
+						class="object-cover bg-fixed opacityFade"
+					/>
 				</div>
 				<div class="prose">
 					<div class="title">
 						<div class="date">
-							<FormattedDate date={pubDate}  locale={findLanguage(theURL)} />
+							<FormattedDate
+								date={pubDate}
+								locale={findLanguage(theURL)}
+							/>
 						</div>
-						<h1 class="text-5xl	">{title}</h1>
+						<h1 class="text-5xl">{title}</h1>
 						<hr />
 					</div>
-					<slot/>
+					<slot />
 				</div>
 			</article>
 		</main>
@@ -131,27 +136,22 @@ const t = useTranslations(lang);
 </html>
 
 <script>
-
-
-const header = document.querySelector(".opacityFade") as HTMLElement;
-const prose = document.querySelector(".prose") as HTMLElement;
-const article = document.querySelector("article") as HTMLElement;
-window.addEventListener("scroll", function () {
-	let scrollTop = window.scrollY || document.documentElement.scrollTop;
-	let result = String(1 - scrollTop / 250);
-	if (header !== null)
-	{
-		let res = parseInt(result)
-		if (res >= 0)
-		{
-			header.style.opacity = result;	
-			prose.style.translate = `0 ${1 - scrollTop}px`
-			if (res === 1) {
-				if (!article.classList.contains("sufficent-margin"))
-					article.classList.add("sufficent-margin")
+	const header = document.querySelector(".opacityFade") as HTMLElement;
+	const prose = document.querySelector(".prose") as HTMLElement;
+	const article = document.querySelector("article") as HTMLElement;
+	window.addEventListener("scroll", function () {
+		let scrollTop = window.scrollY || document.documentElement.scrollTop;
+		let result = String(1 - scrollTop / 250);
+		if (header !== null) {
+			let res = parseInt(result);
+			if (res >= 0) {
+				header.style.opacity = result;
+				prose.style.translate = `0 ${1 - scrollTop}px`;
+				if (res === 1) {
+					if (!article.classList.contains("sufficent-margin"))
+						article.classList.add("sufficent-margin");
+				}
 			}
 		}
-	}
-});
-
+	});
 </script>
