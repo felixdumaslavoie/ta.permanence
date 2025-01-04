@@ -22,7 +22,8 @@ export const ui = {
     'langageSwitcherLeft': 'English',
     'langageSwitcherRight': 'Français',
     'mainPage': 'Main page',
-    'lastPage': 'Last page'
+    'lastPage': 'Last page',
+    'readText': 'Read text',
   },
   fr: {
     'site_title': SITE_TITLE.fr,
@@ -35,7 +36,8 @@ export const ui = {
     'langageSwitcherLeft': 'Français',
     'langageSwitcherRight': 'English',
     'mainPage': 'Page d\'accueil',
-    'lastPage': 'Dernière page'
+    'lastPage': 'Dernière page',
+    'readText': 'Lire',
   },
 } as const;
 

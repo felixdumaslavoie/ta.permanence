@@ -1,14 +1,27 @@
 ---
 import { imageURLCorrection } from "../data/imageURLCorrection";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 interface Props {
     textes: Array<Object>;
     images: any;
 }
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const { textes, images } = Astro.props;
 
-console.log(images[imageURLCorrection(textes[0].data.heroImage)].src);
+let img0 = images[imageURLCorrection(textes[0].data.heroImage)].src;
+
+let img1 =
+    textes.length > 1
+        ? images[imageURLCorrection(textes[1].data.heroImage)].src
+        : images[imageURLCorrection(textes[0].data.heroImage)].src;
+
+let img2 =
+    textes.length > 2
+        ? images[imageURLCorrection(textes[2].data.heroImage)].src
+        : images[imageURLCorrection(textes[0].data.heroImage)].src;
 ---
 
 <astro-text-carousel>
@@ -17,28 +30,28 @@ console.log(images[imageURLCorrection(textes[0].data.heroImage)].src);
         autoplayIntervalTime: 6000,            
         slides: [                
             {
-                imgSrc: '${images[imageURLCorrection(textes[0].data.heroImage)].src}',
+                imgSrc: '${img0}',
                 imgAlt: 'Vibrant abstract painting with swirling blue and light pink hues on a canvas.',  
                 title: 'Front end developers',
                 description: 'The architects of the digital world, constantly battling against their mortal enemy – browser compatibility.',    
                 ctaUrl: 'https://example.com',
-                ctaText: 'Read text',          
+                ctaText: '${t('readText')}',          
             },                
             {                    
-                imgSrc: '${images[imageURLCorrection(textes[1].data.heroImage)].src}',                    
+                imgSrc: '${img1}',                    
                 imgAlt: 'Vibrant abstract painting with swirling red, yellow, and pink hues on a canvas.',  
                 title: 'Back end developers',
                 description: 'Because not all superheroes wear capes, some wear headphones and stare at terminal screens', 
                 ctaUrl: 'https://example.com',
-                ctaText: 'Become a Developer',             
+                ctaText: '${t('readText')}',             
             },                
             {                    
-                imgSrc: '${images[imageURLCorrection(textes[2].data.heroImage)].src}',                    
+                imgSrc: '${img2}',                    
                 imgAlt: 'Vibrant abstract painting with swirling blue and purple hues on a canvas.',    
                 title: 'Full stack developers',
                 description: 'Where "burnout" is just a fancy term for "Tuesday".',
                 ctaUrl: 'https://example.com',
-                ctaText: 'Become a Developer',          
+                ctaText: '${t('readText')}',          
             },            
         ],            
         currentSlideIndex: 1,
