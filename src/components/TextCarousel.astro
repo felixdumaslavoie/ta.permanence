@@ -18,8 +18,10 @@ await textes.forEach((txt) => {
         imgUrl: images[imageURLCorrection(txt.data.heroImage)],
         title: txt.data.title,
         excerpt: txt.data.excerpt,
-        url: txt.slug,
+        url: txt.slug.split("/")[1],
     };
+
+    console.log(txt.slug.split("/")[1]);
 
     carousel.push(data);
 });
@@ -47,7 +49,7 @@ const data = {
             imgAlt: "Vibrant abstract painting with swirling red, yellow, and pink hues on a canvas.",
             title: carousel[1].title,
             description: carousel[1].excerpt,
-            ctaUrl: "https://example.com",
+            ctaUrl: carousel[1].url,
             ctaText: t("readText"),
         },
         {
@@ -55,7 +57,7 @@ const data = {
             imgAlt: "Vibrant abstract painting with swirling blue and purple hues on a canvas.",
             title: carousel[2].title,
             description: carousel[2].excerpt,
-            ctaUrl: "https://example.com",
+            ctaUrl: carousel[2].url,
             ctaText: t("readText"),
         },
     ],
@@ -63,7 +65,7 @@ const data = {
 };
 ---
 
-<astro-text-carousel>
+<astro-text-carousel class="main-carousel">
     <div
         x-data={JSON.stringify(data)}
         class="relative w-full overflow-hidden z-0"
@@ -138,7 +140,7 @@ const data = {
                             x-bind:id="'slide' + (index + 1) + 'Description'"
                         >
                         </p>
-                        <a
+                        <a x-bind:href="slide.ctaUrl"
                             ><button
                                 type="button"
                                 x-cloak
