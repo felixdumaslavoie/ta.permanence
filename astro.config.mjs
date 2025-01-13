@@ -18,7 +18,7 @@ export default defineConfig({
     format: "directory",
   },
   integrations: [mdx(), sitemap(), tailwind(), alpinejs()],
-  output: "hybrid",
+  output: "static",
   adapter: cloudflare(),
   i18n: {
     defaultLocale: "fr",
