@@ -14,10 +14,6 @@ interface Props {
 
 const { href, numeroPage } = Astro.props;
 
-//const { pathname } = Astro.url;
-//const subpath = pathname.match(/[^\/]+/g);
-//const isActive = (href === pathname)
-
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---

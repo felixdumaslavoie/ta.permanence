@@ -1,7 +1,7 @@
 ---
 enum ViewportsIds {
-  desktop = "desktopSearchBar",
-  mobile = "mobileSearchBar"
+    desktop = "desktopSearchBar",
+    mobile = "mobileSearchBar",
 }
 
 interface Props {
@@ -10,77 +10,79 @@ interface Props {
 
 const { searchBarId } = Astro.props;
 
-let hiddenSpanId = ""
-let dialogId = ""
+let hiddenSpanId = "";
+let dialogId = "";
 
-if (searchBarId === ViewportsIds.desktop)
-{
-    hiddenSpanId = `${ViewportsIds.desktop}Id`
-    dialogId = `${ViewportsIds.desktop}Dialog`
-}
-else if (searchBarId === ViewportsIds.mobile)
-{
-    hiddenSpanId = `${ViewportsIds.mobile}Id`
-    dialogId = `${ViewportsIds.mobile}Dialog`
-}
-else
-    throw new Error("SearchModal prop Id" + searchBarId + " doesnt exist.");
-
+if (searchBarId === ViewportsIds.desktop) {
+    hiddenSpanId = `${ViewportsIds.desktop}Id`;
+    dialogId = `${ViewportsIds.desktop}Dialog`;
+} else if (searchBarId === ViewportsIds.mobile) {
+    hiddenSpanId = `${ViewportsIds.mobile}Id`;
+    dialogId = `${ViewportsIds.mobile}Dialog`;
+} else throw new Error("SearchModal prop Id" + searchBarId + " doesnt exist.");
 ---
 
 <!-- Open the modal using ID.showModal() method -->
 <astro-search-modal class="pt-0" data-searchid={searchBarId}>
-<span id={hiddenSpanId} class="hidden">{searchBarId}</span>
-<button class="colorThemeToggle text-neutral-950 btn bg-transparent border-none " onclick={dialogId + ".showModal()"}>
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="size-6">
-        <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-        ></path>
-    </svg>
-</button>
-<dialog id={dialogId} class="modal flex">
-    <div class="modal-box mt-0 m-auto md:w-1/2">
-        <div id={searchBarId}>
-        <script>
-           
-            window.addEventListener('DOMContentLoaded', (event) => {
-                let spanId = (window.screen.width >= 640) ? "desktopSearchBarId" : "mobileSearchBarId";
+    <span id={hiddenSpanId} class="hidden">{searchBarId}</span>
+    <button
+        class="colorThemeToggle text-neutral-950 btn bg-transparent border-none"
+        onclick={dialogId + ".showModal()"}
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+            ></path>
+        </svg>
+    </button>
+    <dialog id={dialogId} class="modal flex">
+        <div class="modal-box mt-0 m-auto md:w-1/2">
+            <div id={searchBarId}>
+                <script>
+                    window.addEventListener("DOMContentLoaded", (event) => {
+                        let spanId =
+                            window.screen.width >= 640
+                                ? "desktopSearchBarId"
+                                : "mobileSearchBarId";
 
-                const temp = document.getElementById(spanId)
-                
-                let searchId = ""
+                        const temp = document.getElementById(spanId);
 
-                if (temp != null)
-                    searchId = temp.innerText
+                        let searchId = "";
 
-                // @ts-ignore
-                new PagefindUI({ element: "#" + searchId, showSubResults: true });
-            });
-        </script>
+                        if (temp != null) searchId = temp.innerText;
+
+                        // @ts-ignore
+                        new PagefindUI({
+                            element: "#" + searchId,
+                            showSubResults: true,
+                        });
+                    });
+                </script>
+            </div>
         </div>
-    </div>
-    <form method="dialog" class="modal-backdrop">
-        <button class="absolute w-screen h-screen left-0 top-0">close</button>
-    </form>
-</dialog>
+        <form method="dialog" class="modal-backdrop">
+            <button class="absolute w-screen h-screen left-0 top-0"
+                >close</button
+            >
+        </form>
+    </dialog>
 </astro-search-modal>
-
-
 
 <script>
     class AstroSearchModal extends HTMLElement {
-      constructor() {
-        super();
-      }
+        constructor() {
+            super();
+        }
     }
     // Find all buttons with the `alert` class on the page.
     customElements.define("astro-search-modal", AstroSearchModal);
-  </script>
+</script>
