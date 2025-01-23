@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import cloudflare from "@astrojs/cloudflare";
 
 import { externalAnchorPlugin } from "./remarkplugins/external-anchor-plugin.mjs";
 import { dataGen } from "./flxplugins/dataGen.mjs";
@@ -19,7 +18,6 @@ export default defineConfig({
   },
   integrations: [mdx(), sitemap(), tailwind(), alpinejs()],
   output: "static",
-  adapter: cloudflare(),
   i18n: {
     defaultLocale: "fr",
     locales: ["fr", "en"],
@@ -31,6 +29,6 @@ export default defineConfig({
     remarkPlugins: [externalAnchorPlugin],
   },
   redirects: {
-
+    '/': '/fr/0'
   },
 });
