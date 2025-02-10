@@ -16,7 +16,7 @@ let pathStr = String(Astro.url.pathname);
 if (pathStr.charAt(0) === "/") pathStr = pathStr.substring(1, pathStr.length);
 
 if (pathStr.charAt(pathStr.length - 1) === "/")
-	pathStr = pathStr.substring(0, pathStr.length - 1);
+  pathStr = pathStr.substring(0, pathStr.length - 1);
 
 const theURL = String(pathStr);
 const imagePath: string = imageURLCorrection(heroImage);
@@ -28,130 +28,127 @@ const t = useTranslations(lang);
 ---
 
 <html lang={lang}>
-	<head>
-		<BaseHead title={title} description={excerpt} />
-		<style>
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				position: relative;
-				top: 0;
-				left: 0;
-				right: 0;
-				opacity: 1;
-				margin: 0 auto;
-				margin-left: auto;
-				margin-right: auto;
-				border-radius: 0;
-				box-shadow: var(--box-shadow);
-				z-index: 1;
-			}
+  <head>
+    <BaseHead title={title} description={excerpt} />
+    <style>
+      .hero-image {
+        width: 100%;
+      }
+      .hero-image img {
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        opacity: 1;
+        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 0;
+        box-shadow: var(--box-shadow);
+        z-index: 1;
+      }
 
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				color: rgb(var(--gray-dark));
-				z-index: 1;
-				position: relative;
-				padding-top: 40px;
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: black;
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
+      .prose {
+        width: 720px;
+        max-width: calc(100% - 2em);
+        margin: auto;
+        color: rgb(var(--gray-dark));
+        z-index: 1;
+        position: relative;
+        padding-top: 40px;
+      }
+      .title {
+        margin-bottom: 1em;
+        padding: 1em 0;
+        text-align: center;
+        line-height: 1;
+      }
+      .title h1 {
+        margin: 0 0 0.5em 0;
+      }
+      .date {
+        margin-bottom: 0.5em;
+        color: black;
+      }
+      .last-updated-on {
+        font-style: italic;
+      }
 
-			.sufficent-margin {
-				margin-bottom: -18rem;
-			}
+      .sufficent-margin {
+        margin-bottom: -18rem;
+      }
 
-			@media (min-width: 768px) {
-				.prose {
-					padding: 1em;
-				}
+      @media (min-width: 768px) {
+        .prose {
+          padding: 1em;
+        }
 
-				.hero-image img {
-					display: block;
-					margin: 0 auto;
-					position: relative;
-					border-radius: 12px;
-					box-shadow: var(--box-shadow);
-					height: 50vh;
-				}
-				main {
-					margin: auto;
-					padding-top: 0;
-				}
-			}
-		</style>
-	</head>
+        .hero-image img {
+          display: block;
+          margin: 0 auto;
+          position: relative;
+          border-radius: 12px;
+          box-shadow: var(--box-shadow);
+          height: 50vh;
+        }
+        main {
+          margin: auto;
+          padding-top: 0;
+        }
+      }
+    </style>
+  </head>
 
-	<body>
-		<Header numeroPage={0} />
-		<main
-			class="w-full pt-0 ps-0 pe-0 max-w-fit md:max-w-[calc(100%-2rem)] md:w-[calc(100%-2rem)] md:pt-32"
-		>
-			<article>
-				<div class="hero-image md:pt-24">
-					<Picture
-						src={resultat[imagePath]}
-						width={1020}
-						height={510}
-						alt=""
-						loading={"eager"}
-						class="object-cover bg-fixed opacityFade"
-					/>
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate
-								date={pubDate}
-								locale={findLanguage(theURL)}
-							/>
-						</div>
-						<h1 class="text-5xl">{title}</h1>
-						<hr />
-					</div>
-					<slot />
-				</div>
-			</article>
-		</main>
-		<Footer />
-	</body>
+  <body>
+    <Header numeroPage={0} />
+    <main
+      class="w-full pt-0 ps-0 pe-0 max-w-fit md:max-w-[calc(100%-2rem)] md:w-[calc(100%-2rem)] md:pt-32"
+    >
+      <article>
+        <div class="hero-image md:pt-24">
+          <Picture
+            src={resultat[imagePath]}
+            width={1020}
+            height={510}
+            alt=""
+            loading={"eager"}
+            class="object-cover bg-fixed opacityFade"
+          />
+        </div>
+        <div class="prose">
+          <div class="title">
+            <div class="date">
+              <FormattedDate date={pubDate} locale={findLanguage(theURL)} />
+            </div>
+            <h1 class="text-5xl">{title}</h1>
+            <hr />
+          </div>
+          <slot />
+        </div>
+      </article>
+    </main>
+    <Footer numeroPage={0} />
+  </body>
 </html>
 
 <script>
-	const header = document.querySelector(".opacityFade") as HTMLElement;
-	const prose = document.querySelector(".prose") as HTMLElement;
-	const article = document.querySelector("article") as HTMLElement;
-	window.addEventListener("scroll", function () {
-		let scrollTop = window.scrollY || document.documentElement.scrollTop;
-		let result = String(1 - scrollTop / 250);
-		if (header !== null) {
-			let res = parseInt(result);
-			if (res >= 0) {
-				header.style.opacity = result;
-				prose.style.translate = `0 ${1 - scrollTop}px`;
-				if (res === 1) {
-					if (!article.classList.contains("sufficent-margin"))
-						article.classList.add("sufficent-margin");
-				}
-			}
-		}
-	});
+  const header = document.querySelector(".opacityFade") as HTMLElement;
+  const prose = document.querySelector(".prose") as HTMLElement;
+  const article = document.querySelector("article") as HTMLElement;
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+    let result = String(1 - scrollTop / 250);
+    if (header !== null) {
+      let res = parseInt(result);
+      if (res >= 0) {
+        header.style.opacity = result;
+        prose.style.translate = `0 ${1 - scrollTop}px`;
+        if (res === 1) {
+          if (!article.classList.contains("sufficent-margin"))
+            article.classList.add("sufficent-margin");
+        }
+      }
+    }
+  });
 </script>
