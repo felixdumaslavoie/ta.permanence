@@ -1,10 +1,8 @@
 ---
-//import type { GetStaticPaths } from "astro";
-import { type CollectionEntry, getCollection, getEntry } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import BlogPost from "../layouts/BlogPost.astro";
 
 // Solution pour réparer le problème actuel: https://marcwan.com/posts/astro-error-post-render-is-not-a-function/
-
 
 export async function getStaticPaths() {
   return (await getCollection("blog")).map((it) => ({
@@ -15,7 +13,7 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 
-const posts = await getCollection('blog');
+const posts = await getCollection("blog");
 type Props = CollectionEntry<"blog">;
 
 const post = posts.find((page) => page.slug === slug);
@@ -27,4 +25,3 @@ const { Content } = await post.render();
 <BlogPost {...post.data}>
   <Content />
 </BlogPost>
-
