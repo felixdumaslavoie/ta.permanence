@@ -245,6 +245,13 @@ sup {
 	font-size: 90%;
 }
 
+html.dark .pageFindIsItDark  .pagefind-ui.svelte-e9gkc3, html.dark .pagefind-ui__result-title.svelte-4xnkmf .pagefind-ui__result-link.svelte-4xnkmf{
+  color: #bea963;
+}
+
+input.pagefind-ui__search-input.svelte-e9gkc3 {
+  color: black;
+}
 
 @media (max-width: 720px) {
 	body {
