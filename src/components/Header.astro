@@ -16,14 +16,17 @@ const { numeroPage } = Astro.props;
 
 <header
   id="navbar"
-  class="z-10 fixed w-full transition ease-in-out delay-150 pt-10 md:pt-0"
+  class="noPaddingInline z-10 fixed w-full transition ease-in-out delay-150 pt-10 md:pt-0"
 >
   <nav class="[&>h2]:sm:text-base">
-    <h2 class="text-base"><a href=`/${lang}/0`>{t("site_title")}</a></h2>
+    <h2 class="text-base !mt-[12px]">
+      <a href=`/${lang}/0`>{t("site_title")}</a>
+    </h2>
+
+    <MobileDrawer />
     <div class="internal-links hidden sm:block">
       <HeaderSubmenu href=`/${lang}/0` numeroPage={numeroPage} />
     </div>
-    <MobileDrawer />
     <div class="social-links">
       <div class="social-links items-center">
         <a href={t("fb")} target="_blank" transition:name="Our Facebook page.">

@@ -23,7 +23,7 @@ export const ui = {
     'langageSwitcherRight': 'Français',
     'mainPage': 'Main page',
     'lastPage': 'Last page',
-    'readText': 'Read text',
+    'readText': 'Read',
   },
   fr: {
     'site_title': SITE_TITLE.fr,
