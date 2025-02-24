@@ -163,7 +163,7 @@ const data = {
             >
               <template x-for="(slide, index) in slides">
                 <button
-                  class="anIndicator size-2 cursor-pointer rounded-full transition"
+                  class="anIndicator size-4 cursor-pointer rounded-full transition"
                   x-on:click="(currentSlideIndex = index + 1)"
                   x-bind:class="[currentSlideIndex === index + 1 ? 'bg-neutral-300' : 'bg-neutral-300/50']"
                   x-bind:aria-label="'slide ' + (index + 1)"></button>
