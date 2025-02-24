@@ -40,7 +40,7 @@ const t = useTranslations(lang);
       <p class="m-0">{t("nav.home")}</p>
     </a>
   </li>
-  <li id="archivesLink" class="z-10 pt-3">
+  <li id="archivesLink" class="z-10 pt-[0.6rem]">
     <details id="archivesLinkDetails">
       <summary id="archivesLinkSummary">Archives</summary>
       <ul>
@@ -59,7 +59,7 @@ const t = useTranslations(lang);
       </ul>
     </details>
   </li>
-  <li>
+  <li class="pt-1">
     <a class="display_flex">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -77,8 +77,8 @@ const t = useTranslations(lang);
       <p class="m-0">{t("nav.about")}</p>
     </a>
   </li>
-  <li><SearchModal searchBarId="desktopSearchBar" /></li>
-  <li><ThemeIcon /></li>
+  <li class="pt-1"><SearchModal searchBarId="desktopSearchBar" /></li>
+  <li class="pt-1"><ThemeIcon /></li>
   <li class="pt-2"><LangageSwitcher numeroPage={numeroPage} /></li>
 </ul>
 
