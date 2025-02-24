@@ -296,7 +296,7 @@ const data = {
   }
 
   let selector = 0;
-  const maxElements = 2;
+  const maxElements = 3;
 
   document.addEventListener("DOMContentLoaded", () => {
     const titles: NodeListOf<HTMLElement> =
@@ -309,7 +309,7 @@ const data = {
       titles[2].innerHTML,
     ]; // Your text goes here
     var speed = 10; // ms per frame
-    var increment = 8; // frames per step. Must be >2
+    var increment = 3; // frames per step. Must be >2
 
     var clen = ctnt[selector].length;
     var si = 0;
@@ -318,6 +318,27 @@ const data = {
     var fixed = "";
 
     playAnimation();
+
+    function resetValues() {
+      si = 0;
+      stri = 0;
+      block = "";
+      fixed = "";
+      console.log(selector);
+      clen = ctnt[selector].length;
+    }
+
+    function selectFirst() {
+      selector = 0;
+    }
+
+    function selectSecond() {
+      selector = 1;
+    }
+
+    function slectThird() {
+      selector = 2;
+    }
 
     function playAnimation() {
       //Call self x times, whole function wrapped in setTimeout
@@ -361,9 +382,9 @@ const data = {
     const nextButton: HTMLElement | null =
       document.querySelector(".theNextButton");
 
-    const indicators: NodeListOf<HTMLElement> =
+    const indicators: NodeListOf<HTMLButtonElement> =
       document.querySelectorAll(".anIndicator");
-    indicators.forEach((indicator: HTMLBodyElement, idx: number) => {
+    indicators.forEach((indicator: HTMLButtonElement, idx: number) => {
       indicator.onclick = () => {
         selector = idx;
       };
@@ -371,9 +392,10 @@ const data = {
 
     if (previousButton) {
       previousButton.onclick = () => {
+        resetValues();
         playAnimation();
-        selector -= 1;
-
+        selector--;
+        selector %= maxElements;
         if (selector < 0) selector = maxElements;
         indicators[selector].click();
       };
@@ -381,12 +403,14 @@ const data = {
 
     if (nextButton) {
       nextButton.onclick = () => {
+        resetValues();
         playAnimation();
-        selector += 1;
-        if (selector > maxElements) selector = 0;
+        selector++;
+        selector %= maxElements;
         indicators[selector].click();
       };
     }
+
     setInterval(() => {
       if (nextButton !== null) nextButton.click();
     }, 12500);
