@@ -241,6 +241,14 @@ ol>li::marker {
 	color: var(--accent);
 }
 
+ ul.hideScripts li script {
+  display: none;
+}
+
+ul.alignLis li {
+  flex-direction: row;
+}
+
 sup {
 	font-size: 90%;
 }
