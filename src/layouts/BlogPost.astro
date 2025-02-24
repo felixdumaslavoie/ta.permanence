@@ -18,7 +18,7 @@ if (pathStr.charAt(0) === "/") pathStr = pathStr.substring(1, pathStr.length);
 if (pathStr.charAt(pathStr.length - 1) === "/")
   pathStr = pathStr.substring(0, pathStr.length - 1);
 
-const theURL = String(pathStr);
+//const theURL = String(pathStr);
 const imagePath: string = imageURLCorrection(heroImage);
 
 let resultat = await getImagesMetadata();
