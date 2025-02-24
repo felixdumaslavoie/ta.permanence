@@ -61,7 +61,27 @@ const t = useTranslations(lang);
           </svg>
         </button>
       </li>
-      <li><a>Sidebar Item 1</a></li>
+      <li><a>{t("nav.about")}</a></li>
+      <li id="archivesLink" class="z-10 pt-[0.6rem]">
+        <details id="archivesLinkDetails">
+          <summary id="archivesLinkSummary">Archives</summary>
+          <ul>
+            <li>
+              <details>
+                <summary>Les CUTE(s)</summary>
+                <ul>
+                  <li><a>Magazines</a></li>
+                  <li><a>Tracts</a></li>
+                  <li><a>Affiches</a></li>
+                  <li><a>Vidéos</a></li>
+                  <li><a>Sites web</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </details>
+      </li>
+
       <!--<li><SearchModal></SearchModal></li> -->
       <li><SearchModal searchBarId="mobileSearchBar" /></li>
       <li><ThemeIcon /></li>
@@ -104,4 +124,3 @@ const t = useTranslations(lang);
       });
     });
 </script>
-
