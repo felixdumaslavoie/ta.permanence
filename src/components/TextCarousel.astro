@@ -165,6 +165,7 @@ const data = {
                 <button
                   class="anIndicator size-4 cursor-pointer rounded-full transition"
                   x-on:click="(currentSlideIndex = index + 1)"
+                  x-bind:id="index"
                   x-bind:class="[currentSlideIndex === index + 1 ? 'bg-neutral-300' : 'bg-neutral-300/50']"
                   x-bind:aria-label="'slide ' + (index + 1)"></button>
               </template>
@@ -303,7 +304,7 @@ const data = {
       document.querySelectorAll(".animatedTitle");
 
     var theLetters = "abcdefghijklmnopqrstuvwxyz#%&^+=-"; //You can customize what letters it will cycle through
-    var ctnt: Array<string> = [
+    const ctnt: Array<string> = [
       titles[0].innerHTML,
       titles[1].innerHTML,
       titles[2].innerHTML,
@@ -311,7 +312,7 @@ const data = {
     var speed = 10; // ms per frame
     var increment = 3; // frames per step. Must be >2
 
-    var clen = ctnt[selector].length;
+    var clen = ctnt;
     var si = 0;
     var stri = 0;
     var block = "";
@@ -324,20 +325,7 @@ const data = {
       stri = 0;
       block = "";
       fixed = "";
-      console.log(selector);
-      clen = ctnt[selector].length;
-    }
-
-    function selectFirst() {
-      selector = 0;
-    }
-
-    function selectSecond() {
-      selector = 1;
-    }
-
-    function slectThird() {
-      selector = 2;
+      clen = ctnt;
     }
 
     function playAnimation() {
@@ -350,9 +338,9 @@ const data = {
           nextFrame(i);
           si = si + 1;
         }, speed);
-      })(clen * increment + 1);
+      })(clen[selector].length * increment + 1);
       function nextFrame(pos) {
-        for (var i = 0; i < clen - stri; i++) {
+        for (var i = 0; i < clen[selector].length - stri; i++) {
           //Random number
           var num = Math.floor(theLetters.length * Math.random());
           //Get random letter
@@ -384,16 +372,17 @@ const data = {
 
     const indicators: NodeListOf<HTMLButtonElement> =
       document.querySelectorAll(".anIndicator");
-    indicators.forEach((indicator: HTMLButtonElement, idx: number) => {
-      indicator.onclick = () => {
-        selector = idx;
-      };
+
+    indicators.forEach((indicator, idx) => {
+      indicator.addEventListener("click", () => {
+        selector = Number(indicator.id);
+        resetValues();
+        playAnimation();
+      });
     });
 
     if (previousButton) {
       previousButton.onclick = () => {
-        resetValues();
-        playAnimation();
         selector--;
         selector %= maxElements;
         if (selector < 0) selector = maxElements;
@@ -403,8 +392,6 @@ const data = {
 
     if (nextButton) {
       nextButton.onclick = () => {
-        resetValues();
-        playAnimation();
         selector++;
         selector %= maxElements;
         indicators[selector].click();
