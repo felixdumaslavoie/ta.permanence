@@ -180,12 +180,14 @@ const data = {
               >
               </h3>
               <p
-                class="w-full h-20 text-pretty sm:h-20 sm:mt-7 text-sm text-neutral-300"
+                class="w-full h-20 ml-8 sm:ml-0 text-pretty sm:h-20 sm:mt-7 text-sm text-neutral-300"
                 x-text="slide.description"
                 x-bind:id="'slide' + (index + 1) + 'Description'"
               >
               </p>
-              <div class="w-full">
+              <div
+                class="absolute sm:relative top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-full max-w-fit ml-auto mr-auto"
+              >
                 <a x-bind:href="slide.ctaUrl"
                   ><button
                     type="button"
