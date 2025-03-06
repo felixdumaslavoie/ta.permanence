@@ -40,9 +40,9 @@ const t = useTranslations(lang);
       <p class="m-0">{t("nav.home")}</p>
     </a>
   </li>
-  <li id="archivesLink" class="z-10 pt-[0.6rem]">
-    <details id="archivesLinkDetails">
-      <summary id="archivesLinkSummary">Archives</summary>
+  <li class="archivesLink z-10 pt-[0.6rem]">
+    <details class="archivesLinkDetails">
+      <summary class="archivesLinkSummary">Archives</summary>
       <ul>
         <li>
           <details>
@@ -98,9 +98,12 @@ const t = useTranslations(lang);
 </style>
 
 <script>
-  const box = document.getElementById("archivesLink");
-  const summary = document.getElementById("archivesLinkSummary");
-  const openOrNot = document.getElementById("archivesLinkDetails");
+  const box = document.getElementsByClassName("archivesLink");
+  const summary: HTMLCollectionOf<HTMLLinkElement> =
+    document.getElementsByClassName(
+      "archivesLinkSummary",
+    ) as HTMLCollectionOf<HTMLLinkElement>;
+  const openOrNot = document.getElementsByClassName("archivesLinkDetails");
 
   document.addEventListener("click", function handleClickOutsideBox(event) {
     if (
@@ -110,8 +113,8 @@ const t = useTranslations(lang);
       event.target !== null
     ) {
       // @ts-ignore
-      if (!box.contains(event.target)) {
-        if (openOrNot.hasAttribute("open")) summary?.click();
+      if (!box[0].contains(event.target)) {
+        if (openOrNot[0].hasAttribute("open")) summary[0]?.click();
       }
     }
   });
