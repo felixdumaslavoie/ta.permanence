@@ -3,7 +3,14 @@ modification: 2025-03-06T17:19:39.000Z
 title: L'autonomie réellement existante
 slug: fr/lautonomie-reellement-existante
 pubDate: 2019-11-06
-tags: CUTE
+topics:
+  - "CUTE"
+  - "Autonomie"
+  - "Editorial"
+  - "Organisation interne"
+trends:
+  - "Unitaire"
+  - "Affinitaire"
 editors:
   - "Cute Magazine"
 authors:
@@ -15,7 +22,6 @@ heroImage: 2019/autonomieReellementExistante.png
 
 ```
 ORGANISATION INTERNE
-
 ```
 
 Mi-juin, le gouvernement annonçait que les étudiant.e.s de seize programmes dans les domaines de la santé et des services sociaux pourront recevoir une compensation variant entre 900$ et 4000$, notamment selon leur niveau d’études et la durée du stage. Bien que le programme de bourses mis en place par le gouvernement ne réponde pas aux revendications défendues par les grévistes, c’est la première fois que le mouvement étudiant peut se réclamer d’un gain réel dans les 40 dernières années. Au fil du temps, on nous avait habitué.e.s à un mouvement défensif, mobilisé au gré des différentes attaques à l’encontre de l’accès à l’éducation. On freinait ainsi des reculs, mais on n’avançait pas pour autant.

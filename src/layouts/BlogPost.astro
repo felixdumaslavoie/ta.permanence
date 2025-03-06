@@ -9,7 +9,7 @@ import { imageURLCorrection } from "../data/imageURLCorrection";
 import { Picture } from "astro:assets";
 import { getImagesMetadata } from "../data/imageManager";
 
-const { title, excerpt, pubDate, heroImage } = Astro.props;
+const { title, excerpt, authors, pubDate, heroImage } = Astro.props;
 
 let pathStr = String(Astro.url.pathname);
 
@@ -18,7 +18,8 @@ if (pathStr.charAt(0) === "/") pathStr = pathStr.substring(1, pathStr.length);
 if (pathStr.charAt(pathStr.length - 1) === "/")
   pathStr = pathStr.substring(0, pathStr.length - 1);
 
-//const theURL = String(pathStr);
+const autrices: Array<string> = authors;
+
 const imagePath: string = imageURLCorrection(heroImage);
 
 let resultat = await getImagesMetadata();
@@ -125,6 +126,8 @@ const t = useTranslations(lang);
               />
             </div>
             <h1 class="text-5xl">{title}</h1>
+            <p>Par</p>
+            {autrices.map((autrice: string) => <h5>{autrice}</h5>)}
             <hr />
           </div>
           <slot />
