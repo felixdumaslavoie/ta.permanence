@@ -1,10 +1,19 @@
 ---
-title: Les soins c’est pour les autres  
-slug: fr/les-soins-cest-pour-les-autres  
-pubDate: 2018-02-25T23:22:28.000Z  
-tags: CUTE  
-postedBy: Cute Magazine  
-excerpt: J’aspire à faire un des métiers les plus gratifiants qui soient, un métier où je prends soin des gens dans toutes les sphères de leur vie et où je m’assure qu’ils et elles puissent vivre de la meilleure façon possible. J’ai choisi un métier, pas une vocation. J’ai choisi d’aider les autres, mais pas à mes dépens.  
+modification: 2025-03-06T17:19:39.000Z
+title: Les soins c’est pour les autres
+slug: fr/les-soins-cest-pour-les-autres
+authors:
+  - "Kaëlla Stapels"
+pubDate: 2018-02-25T23:22:28.000Z
+topics:
+  - "CUTE"
+  - "Témoignage"
+  - "Rémunération des stages"
+trends:
+  - "Prise de parole sur sa condition"
+editors:
+  - "Cute Magazine"
+excerpt: J’aspire à faire un des métiers les plus gratifiants qui soient, un métier où je prends soin des gens dans toutes les sphères de leur vie et où je m’assure qu’ils et elles puissent vivre de la meilleure façon possible. J’ai choisi un métier, pas une vocation. J’ai choisi d’aider les autres, mais pas à mes dépens.
 heroImage: 2018/lesSoinsCestPourLesAutres.jpg
 ---
 
@@ -20,8 +29,8 @@ On me demande souvent pourquoi j’avance, pourquoi je milite, pourquoi j’ai c
 
 **Kaëlla Stapels**
 
-***   *   ***
+**\*   \*   \***
 
-*Cet article a été publié dans le **[numéro de l’hiver 2018 du CUTE Magazine](/files/archives/cute/materiel/magazines/cutemag-3-fr-hiver-2018_january_28.pdf)**.    
+\*Cet article a été publié dans le **[numéro de l’hiver 2018 du CUTE Magazine](/files/archives/cute/materiel/magazines/cutemag-3-fr-hiver-2018_january_28.pdf)**.
 
-**Pour te tenir informé.e sur la lutte pour la pleine reconnaissance du travail étudiant, pour en discuter ou pour y contribuer, tu peux nous contacter via la [page CUTE Campagne sur le travail étudiant](https://www.facebook.com/campagnetravailetudiant/).*
+\*_Pour te tenir informé.e sur la lutte pour la pleine reconnaissance du travail étudiant, pour en discuter ou pour y contribuer, tu peux nous contacter via la [page CUTE Campagne sur le travail étudiant](https://www.facebook.com/campagnetravailetudiant/)._

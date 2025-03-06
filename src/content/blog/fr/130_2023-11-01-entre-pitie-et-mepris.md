@@ -1,19 +1,27 @@
 ---
+modification: 2025-03-06T17:19:39.000Z
 title: Entre pitié et mépris
 slug: fr/entre-pitie-et-mepris
+excerpt: Les associations étudiantes nationales n’ont jamais servi la cause des stagiaires.
 pubDate: 2023-11-01
-categories: 
-  - "federations-etudiantes"
-tags: 
+authors:
+  - "Gabrielle Laverdière"
+  - "Félix Dumas-Lavoie"
+topics:
   - "cadeul"
-  - "decentralisation"
   - "fecq"
   - "mobilisation"
   - "stagiaires"
   - "ueq"
-postedBy: Gabrielle Laverdière
-excerpt: Les associations étudiantes nationales n’ont jamais servi la cause des stagiaires.
-heroImage: 2023/pitieeMepris.png  
+  - "federations étudiantes"
+trends:
+  - "décentralisation"
+  - "autonomie"
+
+editors:
+  - "Gabrielle Laverdière"
+
+heroImage: 2023/pitieeMepris.png
 ---
 
 Le 5 septembre dernier paraissait dans La Presse une lettre ouverte[^1] signée James Boudreau, président de la CADEUL. Dans cette lettre, James prenait la parole au nom de ces stagiaires sans salaire. Cet homme s’accordait le droit de parler au nom de stagiaires des domaines féminisés qu’il faudrait prendre en pitié. Une semaine plus tard, la présidente de l’UEQ[^2] prenait le micro à l'assemblée nationale[^3]. Elle affirmait, fièrement, prendre la parole pour les personnes stagiaires. « Brûlées à la tâche », iels méritent rémunération et représentation, mais pas voix au chapitre. Entre pitié et mépris, il n’y a qu’un pas.
@@ -28,10 +36,10 @@ Les fédérations étudiantes ne sont pas seulement des lieux de réappropriatio
 
 Pour mener une grève qui mènera à un salaire, il faut ancrer les revendications dans les expériences vécues des stagiaires plutôt que dans des structures absurdes et aliénantes. Bien sûr, faire des ponts avec les autres étudiant-es et leur condition reste nécessaire: une lutte des stagiaires victorieuse nécessitera l’aide et l'appui de nombreux.ses allié.es et le décloisonnement des stages comme lutte étudiante distincte. Stagiaires et étudiant.es doivent prendre la parole pour témoigner de leurs conditions sans passer par le filtre de la représentation par autrui. Les fédérations n’ont jamais servi leur cause et il est difficile de croire que cela changera. Toute participation des associations étudiantes nationales dans cette lutte devrait être accueillie avec un brin de méfiance. **Les stagiaires se suffisent à iels-mêmes et le contexte actuel prouve que leur pouvoir n’a jamais été aussi manifeste.**
 
-- Gabrielle Laverdière 
+- Gabrielle Laverdière
 - Félix Dumas-Lavoie
 
-* * *
+---
 
 [^1]: La Presse, Une énième rentrée marquée par des stages non rémunérés: [lien](https://www.lapresse.ca/debats/opinions/2023-09-05/cegeps-et-universites/une-enieme-rentree-marquee-par-des-stages-non-remuneres.php)
 

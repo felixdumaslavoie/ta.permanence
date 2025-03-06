@@ -4,14 +4,39 @@
     "blog": {
       "type": "object",
       "properties": {
+        "modification": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
         "title": {
           "type": "string"
         },
         "excerpt": {
           "type": "string"
         },
-        "postedBy": {
-          "type": "string"
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "editors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "pubDate": {
           "anyOf": [
@@ -37,10 +62,13 @@
         }
       },
       "required": [
+        "modification",
         "title",
         "excerpt",
-        "postedBy",
-        "pubDate"
+        "authors",
+        "editors",
+        "pubDate",
+        "heroImage"
       ],
       "additionalProperties": false
     }

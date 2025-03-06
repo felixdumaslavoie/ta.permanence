@@ -1,9 +1,13 @@
 ---
+modification: 2025-03-06T17:19:39.000Z
 title: Care Is For Others
 slug: en/care-is-for-others
+authors:
+  - "Kaëlla Stapels"
 pubDate: 2018-02-27T12:01:18.000Z
 tags: CUTE
-postedBy: Cute Magazine
+editors:
+  - "Cute Magazine"
 excerpt: I aspire to join one of the most gratifying trades there is, a job where I take care of people in every aspect of their life and where I make sure they can live in the best way possible. I’ve chosen a trade, not a calling. I’ve chosen to help others, but not at my expense.
 heroImage: 2018/lesSoinsCestPourLesAutres.jpg
 ---
@@ -26,4 +30,4 @@ translation by **Paolo Miriello**
 
 This article was published in the [Winter 2018 issue of the english edition of CUTE Magazine](/files/archives/cute/materiel/magazines/cutemag-3-en-winter-2018_january_30.pdf).
 
-To learn more about the struggle for the full recognition of student work, to discuss or contribute to it, we can contact us via the *[CUTE Campagne sur le travail étudiant](https://www.facebook.com/campagnetravailetudiant/)* page or the [SWUC– Student Work Unitary Committee](https://www.facebook.com/swucwork/) page.
+To learn more about the struggle for the full recognition of student work, to discuss or contribute to it, we can contact us via the _[CUTE Campagne sur le travail étudiant](https://www.facebook.com/campagnetravailetudiant/)_ page or the [SWUC– Student Work Unitary Committee](https://www.facebook.com/swucwork/) page.
