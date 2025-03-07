@@ -38,4 +38,4 @@ C’est seulement de cette façon que le gouvernement flanchera.
 
 [^5]: Tract de QS à ce sujet : [https://quebecsolidaire.net/nouvelle/tract-remunerer-les-stages-ca-presse](https://quebecsolidaire.net/nouvelle/tract-remunerer-les-stages-ca-presse).
 
-Cet article a été publié dans le [numéro de l'automne 2018 du CUTE Magazine](https://issuu.com/cute-mv/docs/2018_08_cutemagazine_fr). Pour te tenir informé.e sur la lutte pour la pleine reconnaissance du travail étudiant, pour en discuter ou pour y contribuer, tu peux nous contacter via la page [CUTE Campagne sur le travail étudiant](https://www.facebook.com/campagnetravailetudiant/).
+Cet article a été publié dans le [numéro de l'automne 2018 du CUTE Magazine](/archives/cute/materiel/magazines/cutemag-4-fr-automne-2018_august_21.pdf). Pour te tenir informé.e sur la lutte pour la pleine reconnaissance du travail étudiant, pour en discuter ou pour y contribuer, tu peux nous contacter via la page [CUTE Campagne sur le travail étudiant](https://www.facebook.com/campagnetravailetudiant/).
