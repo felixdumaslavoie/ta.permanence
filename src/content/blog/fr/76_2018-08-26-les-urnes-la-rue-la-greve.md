@@ -28,14 +28,14 @@ C’est seulement de cette façon que le gouvernement flanchera.
 
 ---
 
-[^1] Selon IRIS, il y aurait eu plus de 4 milliards $ de coupures dans les services publics entre 2014 et 2016. Observatoire des conséquences des mesures d’austérité au Québec : [https://austerite.iris-recherche.qc.ca/](https://austerite.iris-recherche.qc.ca/). [↩︎](#fnref1)
+[^1]: Selon l'IRIS, il y aurait eu plus de 4 milliards $ de coupures dans les services publics entre 2014 et 2016. Observatoire des conséquences des mesures d’austérité au Québec : [https://austerite.iris-recherche.qc.ca/](https://austerite.iris-recherche.qc.ca/).
 
-[^2] Campagne de revendications et d'actions interuniversitaires pour les étudiants et étudiantes d'éducation en stage [↩︎](#fnref2)
+[^2]: Campagne de revendications et d'actions interuniversitaires pour les étudiants et étudiantes d'éducation en stage
 
-[^3] Union étudiante du Québec [↩︎](#fnref3)
+[^3]: Union étudiante du Québec
 
-[^4] Cette stratégie avouée de Québec solidaire est également utilisée par la Coalition avenir Québec : [http://www.journaldequebec.com/2018/02/15/quebec-solidaire-lance-une-petition-pour-demettre-barrette](http://www.journaldequebec.com/2018/02/15/quebec-solidaire-lance-une-petition-pour-demettre-barrette). [↩︎](#fnref4)
+[^4]: Cette stratégie avouée de Québec solidaire est également utilisée par la Coalition avenir Québec : [http://www.journaldequebec.com/2018/02/15/quebec-solidaire-lance-une-petition-pour-demettre-barrette](http://www.journaldequebec.com/2018/02/15/quebec-solidaire-lance-une-petition-pour-demettre-barrette).
 
-[^5] Tract de QS à ce sujet : [https://quebecsolidaire.net/nouvelle/tract-remunerer-les-stages-ca-presse](https://quebecsolidaire.net/nouvelle/tract-remunerer-les-stages-ca-presse). [↩︎](#fnref5)
+[^5]: Tract de QS à ce sujet : [https://quebecsolidaire.net/nouvelle/tract-remunerer-les-stages-ca-presse](https://quebecsolidaire.net/nouvelle/tract-remunerer-les-stages-ca-presse).
 
 Cet article a été publié dans le [numéro de l'automne 2018 du CUTE Magazine](https://issuu.com/cute-mv/docs/2018_08_cutemagazine_fr). Pour te tenir informé.e sur la lutte pour la pleine reconnaissance du travail étudiant, pour en discuter ou pour y contribuer, tu peux nous contacter via la page [CUTE Campagne sur le travail étudiant](https://www.facebook.com/campagnetravailetudiant/).
