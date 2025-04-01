@@ -26,10 +26,12 @@ const posts = (await getCollection("blog")).sort(
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
+
 const langue = String(textLang(Astro.url));
 
 let filterFunction = (post) => pageLang(Astro.url) === textLang(post);
 let postsDansLangue = posts.filter(filterFunction);
+
 
 const { numeroPage } = Astro.props;
 let finalTexts: Array<Object> = computeMainTexts(postsDansLangue, numeroPage);

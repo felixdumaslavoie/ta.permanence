@@ -43,11 +43,4 @@ export const ui = {
   },
 } as const;
 
-export const routes = {
-  en: {
-    'services': 'leistungen',
-  },
-  fr: {
-    'services': 'prestations-de-service',
-  },
-}
+

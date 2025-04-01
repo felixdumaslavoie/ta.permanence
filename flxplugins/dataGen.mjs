@@ -3,7 +3,7 @@ import * as lineByLine from 'n-readlines';
 import matter from 'gray-matter';
 
 const ENCODING = 'utf8'
-const contentPath = './src/content/blog'
+const contentPath = './src/content/blog/rdm'
 const DataJSONPath = './src/content/data/data.json'
 
 // JSON keys

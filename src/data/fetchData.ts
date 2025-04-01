@@ -56,8 +56,9 @@ export const Languages = {
 }
 
 export function textLang(post: any): String {
+
   if (post.id) {
-    let extracted = post.id.split('/')[0]
+    let extracted = post.id.split('/')[1]
     if (extracted) {
       return extracted
     }

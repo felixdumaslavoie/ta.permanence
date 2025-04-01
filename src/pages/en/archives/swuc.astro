@@ -1,10 +1,14 @@
 ---
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import Archives from "../../../layouts/Archives.astro";
 import { computePaths } from "../../../i18n/utils";
 
 export function getStaticPaths() {
   return computePaths("en");
 }
+
+//## SITE_TITLE
+let site_title = "";
 ---
 
-<Archives />
+<Archives title={"allo"} />
