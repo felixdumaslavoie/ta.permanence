@@ -24,6 +24,7 @@ export const ui = {
     'mainPage': 'Main page',
     'lastPage': 'Last page',
     'readText': 'Read',
+    'by': 'By',
   },
   fr: {
     'site_title': SITE_TITLE.fr,
@@ -38,6 +39,7 @@ export const ui = {
     'mainPage': 'Page d\'accueil',
     'lastPage': 'Dernière page',
     'readText': 'Lire',
+    'by': 'Par',
   },
 } as const;
 

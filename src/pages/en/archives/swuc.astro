@@ -1,0 +1,10 @@
+---
+import Archives from "../../../layouts/Archives.astro";
+import { computePaths } from "../../../i18n/utils";
+
+export function getStaticPaths() {
+  return computePaths("en");
+}
+---
+
+<Archives />
