@@ -5,7 +5,7 @@ excerpt: Between 2016 and 2019, a campaign for the recognition of work done in a
 material:
   magazines:
     excerpt: "Revue d'organisation des Comités Unitaires sur le Travail Étudiant"
-    mag:
+    magazines:
       - CUTE Magazine Numéro 0 - Automne 2016:
           file: "public/archives/cute/materiel/magazines/cutemag-0-fr-automne-2016_september_1st.pdf"
           thumbnail: ""

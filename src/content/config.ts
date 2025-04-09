@@ -32,4 +32,4 @@ const archives = defineCollection({
 });
 
 
-export const collections = { blog };
+export const collections = { blog, archives };

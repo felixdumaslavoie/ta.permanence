@@ -1,10 +1,17 @@
 ---
 import Archives from "../../../layouts/Informative.astro";
-import { computePaths } from "../../../i18n/utils";
 
-export function getStaticPaths() {
-  return computePaths("fr");
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  return (await getCollection("archives")).map((it) => ({
+    props: it,
+  }));
 }
+
+/*export function getStaticPaths() {
+  return computePaths("fr");
+}**/
 ---
 
-<Archives />
+<Archives props={} />
