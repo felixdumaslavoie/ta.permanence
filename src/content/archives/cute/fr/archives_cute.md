@@ -11,7 +11,6 @@ material:
       - CUTE Magazine Numéro 0 - Automne 2016:
           file: "public/archives/cute/materiel/magazines/cutemag-0-fr-automne-2016_september_1st.pdf"
           thumbnail: ""
-
   tracts:
     - Journée internationale des stagiaires (Montréal 2017.11.10):
         file: ""

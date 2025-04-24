@@ -6,11 +6,9 @@ import Footer from "../components/Footer.astro";
 import { getCollection } from "astro:content";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
-const { props } = Astro.props;
+const { archives } = Astro.props;
 
-const archives = await getCollection("archives");
-
-console.log(archives);
+console.log(Astro.props);
 
 let pathStr = String(Astro.url.pathname);
 

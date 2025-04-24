@@ -12,6 +12,7 @@ export async function getStaticPaths() {
 /*export function getStaticPaths() {
   return computePaths("fr");
 }**/
+const archives = await getCollection("archives");
 ---
 
-<Archives props={} />
+<Archives props={archives} />
