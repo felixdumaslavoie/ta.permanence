@@ -23,39 +23,127 @@
         "title": {
           "type": "string"
         },
+        "era": {
+          "type": "string"
+        },
         "excerpt": {
           "type": "string"
         },
-        "authors": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "editors": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "pubDate": {
-          "anyOf": [
-            {
-              "type": "string",
-              "format": "date-time"
-            },
-            {
-              "type": "string",
-              "format": "date"
-            },
-            {
-              "type": "integer",
-              "format": "unix-time"
-            }
-          ]
-        },
-        "heroImage": {
+        "heroVideo": {
           "type": "string"
+        },
+        "material": {
+          "type": "object",
+          "properties": {
+            "magazines": {
+              "type": "object",
+              "properties": {
+                "excerpt": {
+                  "type": "string"
+                },
+                "magazine": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object",
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        },
+                        "thumbnail": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "file",
+                        "thumbnail"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                }
+              },
+              "required": [
+                "excerpt",
+                "magazine"
+              ],
+              "additionalProperties": false
+            },
+            "tracts": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "file": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "file"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "affiches": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/archives/properties/material/properties/tracts/items"
+              }
+            },
+            "video": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    },
+                    "excerpt": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "url",
+                    "excerpt"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "websites": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    },
+                    "excerpt": {
+                      "type": "string"
+                    },
+                    "thumbnail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "url",
+                    "excerpt",
+                    "thumbnail"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "additionalProperties": false
         },
         "$schema": {
           "type": "string"
@@ -64,11 +152,10 @@
       "required": [
         "modification",
         "title",
+        "era",
         "excerpt",
-        "authors",
-        "editors",
-        "pubDate",
-        "heroImage"
+        "heroVideo",
+        "material"
       ],
       "additionalProperties": false
     }
