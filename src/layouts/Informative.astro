@@ -6,9 +6,13 @@ import Footer from "../components/Footer.astro";
 import { getCollection } from "astro:content";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
-const { archives } = Astro.props;
+const { props } = Astro.props;
 
-console.log(Astro.props);
+let temp = await props;
+
+const data = temp.remarkPluginFrontmatter;
+
+console.log(data);
 
 let pathStr = String(Astro.url.pathname);
 
@@ -104,12 +108,51 @@ const t = useTranslations(lang);
         <div class="prose">
           <div class="title">
             <div class="date"></div>
-            <h1 class="text-5xl">Archives</h1>
-            <p>Par</p>
-
+            <h1 class="text-5xl">{data.title}</h1>
+            <p>{data.era}</p>
             <hr />
           </div>
+
+          <p>{data.excerpt}</p>
           <slot />
+          <div class="join join-vertical bg-base-100">
+            <div
+              class="collapse collapse-arrow join-item border-base-300 border"
+            >
+              <input type="radio" name="my-accordion-4" checked="checked" />
+              <div class="collapse-title font-semibold">
+                {data.material.magazines.excerpt}
+              </div>
+              <div class="collapse-content text-sm">
+                Click the "Sign Up" button in the top right corner and follow
+                the registration process.
+              </div>
+            </div>
+            <div
+              class="collapse collapse-arrow join-item border-base-300 border"
+            >
+              <input type="radio" name="my-accordion-4" />
+              <div class="collapse-title font-semibold">
+                I forgot my password. What should I do?
+              </div>
+              <div class="collapse-content text-sm">
+                Click on "Forgot Password" on the login page and follow the
+                instructions sent to your email.
+              </div>
+            </div>
+            <div
+              class="collapse collapse-arrow join-item border-base-300 border"
+            >
+              <input type="radio" name="my-accordion-4" />
+              <div class="collapse-title font-semibold">
+                How do I update my profile information?
+              </div>
+              <div class="collapse-content text-sm">
+                Go to "My Account" settings and select "Edit Profile" to make
+                changes.
+              </div>
+            </div>
+          </div>
         </div>
       </article>
     </main>

@@ -1,14 +1,16 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import Archives from "../../../layouts/Informative.astro";
-import { computePaths } from "../../../i18n/utils";
 
-export function getStaticPaths() {
-  return computePaths("en");
-}
+import { getCollection } from "astro:content";
 
-//## SITE_TITLE
-let site_title = "";
+//export async function getStaticPaths() {
+//  return (await getCollection("archives")).map((it) => ({
+//    props: it,
+//  }));
+//}
+
+const archives = await getCollection("archives");
+const content = archives[1].render();
 ---
 
-<Archives title={"allo"} />
+<Archives props={content} />

@@ -2,11 +2,11 @@
 modification: 2025-03-06T17:19:39.000Z
 title: Archives des CUTE
 era: 2016-2019
-excerpt: Between 2016 and 2019, a campaign for the recognition of work done in a student environment is led by the CUTE (Comités unitaires sur le travail étudiant).
+excerpt: Entre 2016 et 2019, les CUTE (Comités unitaires sur le travail étudiant) mènent une campagne pour faire reconnaitre le travail effectué en milieu scolaire par les étudiantEs en revendiquant le salariat étudiant et la rémunération des stages.
 heroVideo: archives/cute/video/
 material:
   magazines:
-    excerpt: "Revue d'organisation des Comités Unitaires sur le Travail Étudiant"
+    excerpt: "Revues d'organisation des Comités Unitaires sur le Travail Étudiant (CUTE Magazine)"
     magazine:
       - CUTE Magazine Numéro 0 - Automne 2016:
           file: "public/archives/cute/materiel/magazines/cutemag-0-fr-automne-2016_september_1st.pdf"
