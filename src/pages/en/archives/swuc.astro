@@ -3,12 +3,6 @@ import Archives from "../../../layouts/Informative.astro";
 
 import { getCollection } from "astro:content";
 
-//export async function getStaticPaths() {
-//  return (await getCollection("archives")).map((it) => ({
-//    props: it,
-//  }));
-//}
-
 const archives = await getCollection("archives");
 const content = archives[1].render();
 ---

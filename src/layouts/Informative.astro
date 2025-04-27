@@ -1,9 +1,9 @@
 ---
+import { Picture } from "astro:assets";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-import { getCollection } from "astro:content";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const { props } = Astro.props;
@@ -123,9 +123,27 @@ const t = useTranslations(lang);
               <div class="collapse-title font-semibold">
                 {data.material.magazines.excerpt}
               </div>
+
               <div class="collapse-content text-sm">
-                Click the "Sign Up" button in the top right corner and follow
-                the registration process.
+                <ul>
+                  {console.log(data.material.magazines.magazine)}
+                  {
+                    data.material.magazines.magazine.map((magazine: any) => (
+                      <li>
+                        <a href={`/${magazine.file}/`}>
+                          <Picture
+                            src={magazine}
+                            formats={["avif", "webp"]}
+                            width={720}
+                            height={360}
+                            alt="{}"
+                          />
+                          <h4 class="title">{magazine.toString()}</h4>
+                        </a>
+                      </li>
+                    ))
+                  }
+                </ul>
               </div>
             </div>
             <div
