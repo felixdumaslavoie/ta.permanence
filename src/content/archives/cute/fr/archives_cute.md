@@ -9,8 +9,8 @@ material:
     excerpt: "Revues d'organisation des Comités Unitaires sur le Travail Étudiant (CUTE Magazine)"
     magazine:
       - CUTE Magazine Numéro 0 - Automne 2016:
-          file: "public/archives/cute/materiel/magazines/cutemag-0-fr-automne-2016_september_1st.pdf"
-          thumbnail: "public/archives/cute/images/magazines/cuteMag0Fr.png"
+          file: "archives/cute/materiel/magazines/cutemag-0-fr-automne-2016_september_1st.pdf"
+          thumbnail: "archives/cute/images/magazines/cuteMag0Fr.png"
   tracts:
     - Journée internationale des stagiaires (Montréal 2017.11.10):
         file: ""
