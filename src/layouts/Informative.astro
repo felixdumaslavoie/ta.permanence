@@ -126,19 +126,34 @@ const t = useTranslations(lang);
 
               <div class="collapse-content text-sm">
                 <ul>
-                  {console.log(data.material.magazines.magazine)}
+                  {
+                    console.log(
+                      data.material.magazines.magazine[0][
+                        "CUTE Magazine Numéro 0 - Automne 2016"
+                      ],
+                    )
+                  }
                   {
                     data.material.magazines.magazine.map((magazine: any) => (
                       <li>
-                        <a href={`/${magazine.file}/`}>
+                        <a
+                          href={`${Astro.url.origin}/${
+                            magazine[Object.keys(magazine).toString()].file
+                          }`}
+                        >
                           <Picture
-                            src={magazine}
+                            src={`${Astro.url.origin}/${
+                              magazine[Object.keys(magazine).toString()]
+                                .thumbnail
+                            }`}
                             formats={["avif", "webp"]}
                             width={720}
                             height={360}
                             alt="{}"
                           />
-                          <h4 class="title">{magazine.toString()}</h4>
+                          <h4 class="title">
+                            {Object.keys(magazine).toString()}
+                          </h4>
                         </a>
                       </li>
                     ))
