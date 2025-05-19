@@ -124,7 +124,7 @@ const t = useTranslations(lang);
                 {data.material.magazines.excerpt}
               </div>
 
-              <div class="collapse-content text-sm">
+              <div class="collapse-content text-sm magazines">
                 <ul>
                   {
                     console.log(
@@ -140,6 +140,7 @@ const t = useTranslations(lang);
                           href={`${Astro.url.origin}/${
                             magazine[Object.keys(magazine).toString()].file
                           }`}
+                          target="_blank"
                         >
                           <Picture
                             src={`${Astro.url.origin}/${
