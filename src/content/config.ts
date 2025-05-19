@@ -60,9 +60,22 @@ const archives = defineCollection({
           description: z.string(),
           tract: z.array(tractSchema).optional()
         }).optional(),
-        affiches: z.array(tractSchema).optional(),
-        video: z.array(videoSchema).optional(),
-        websites: z.array(websiteSchema).optional(),
+        affiches: z.object({
+          name: z.string(),
+          description: z.string(),
+          affiche: z.array(magazineSchema)
+        }).optional(),
+        videos: z.object({
+          name: z.string(),
+          description: z.string(),
+          video: z.array(videoSchema).optional()
+        }),
+        websites:
+          z.object({
+            name: z.string(),
+            description: z.string(),
+            website: z.array(websiteSchema).optional()
+          })
       }
     ),
   }),

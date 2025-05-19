@@ -109,60 +109,113 @@
               "additionalProperties": false
             },
             "affiches": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/archives/properties/material/properties/tracts/properties/tract/items"
-              }
-            },
-            "video": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "object",
-                  "properties": {
-                    "url": {
-                      "type": "string"
-                    },
-                    "excerpt": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "url",
-                    "excerpt"
-                  ],
-                  "additionalProperties": false
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "affiche": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/archives/properties/material/properties/magazines/properties/magazine/items"
+                  }
                 }
-              }
+              },
+              "required": [
+                "name",
+                "description",
+                "affiche"
+              ],
+              "additionalProperties": false
+            },
+            "videos": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "video": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object",
+                      "properties": {
+                        "url": {
+                          "type": "string"
+                        },
+                        "excerpt": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "url",
+                        "excerpt"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                }
+              },
+              "required": [
+                "name",
+                "description"
+              ],
+              "additionalProperties": false
             },
             "websites": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "object",
-                  "properties": {
-                    "url": {
-                      "type": "string"
-                    },
-                    "excerpt": {
-                      "type": "string"
-                    },
-                    "thumbnail": {
-                      "type": "string"
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "website": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object",
+                      "properties": {
+                        "url": {
+                          "type": "string"
+                        },
+                        "excerpt": {
+                          "type": "string"
+                        },
+                        "thumbnail": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "url",
+                        "excerpt",
+                        "thumbnail"
+                      ],
+                      "additionalProperties": false
                     }
-                  },
-                  "required": [
-                    "url",
-                    "excerpt",
-                    "thumbnail"
-                  ],
-                  "additionalProperties": false
+                  }
                 }
-              }
+              },
+              "required": [
+                "name",
+                "description"
+              ],
+              "additionalProperties": false
             }
           },
+          "required": [
+            "videos",
+            "websites"
+          ],
           "additionalProperties": false
         },
         "$schema": {
