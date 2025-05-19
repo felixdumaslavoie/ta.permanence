@@ -6,18 +6,22 @@ excerpt: Between 2016 and 2019, a campaign for the recognition of work done in a
 heroVideo: archives/cute/video/
 material:
   magazines:
-    excerpt: The Comités Unitaires sur le travail étudiant's Organizing Publication
+    name: "SWUC Magazines"
+    description: The Comités Unitaires sur le travail étudiant's organizing publication
     magazine:
       - CUTE Magazine Numéro 0 - Automne 2016:
           file: public/archives/cute/materiel/magazines/cutemag-0-fr-automne-2016_september_1st.pdf
-          thumbnail: ""
+          thumbnail: "archives/cute/images/magazines/cuteMag0Fr.png"
   tracts:
-    - Journée internationale des stagiaires (Montréal 2017.11.10):
-        file: ""
-    - Violences sexuelles dans les établissements d'enseignement, UQAM (Montréal 2017.08.21):
-        file: ""
-    - Violences sexuelles dans les établissements d'enseignement, UdeM (Montréal 2017.08.21):
-        file: ""
+    name: "Zines"
+    description: "Zines produced by the SWUC comitees"
+    tract:
+      - Journée internationale des stagiaires (Montréal 2017.11.10):
+          file: "archives/cute/materiel/tracts/10novembre_Tract.pdf"
+      - Violences sexuelles dans les établissements d'enseignement, UQAM (Montréal 2017.08.21):
+          file: "archives/cute/materiel/tracts/CUTE_UQAM_Violence_Sexuelle.pdf"
+      - Violences sexuelles dans les établissements d'enseignement, UdeM (Montréal 2017.08.21):
+          file: "archives/cute/materiel/tracts/CUTE_UdeM_Violence_Sexuelle.pdf"
   affiches:
     - Journée internationale des stagiaires (Montréal 2017.11.10):
         file: ""

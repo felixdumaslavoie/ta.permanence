@@ -116,42 +116,45 @@ const t = useTranslations(lang);
           <p>{data.excerpt}</p>
           <slot />
           <div class="join join-vertical bg-base-100">
-            <div
+            <section
               class="collapse collapse-arrow join-item border-base-300 border"
             >
               <input type="radio" name="my-accordion-4" checked="checked" />
               <div class="collapse-title font-semibold">
-                {data.material.magazines.excerpt}
+                {data.material.magazines.name}
               </div>
 
               <div class="collapse-content text-sm magazines">
                 <ul>
                   {
                     console.log(
-                      data.material.magazines.magazine[0][
-                        "CUTE Magazine Numéro 0 - Automne 2016"
-                      ],
+                      `${Astro.url.origin}/${data.material.tracts.tract[0]["Journée internationale des stagiaires (Montréal 2017.11.10)"].file}`,
                     )
                   }
                   {
                     data.material.magazines.magazine.map((magazine: any) => (
                       <li>
+                        <p class="text-base flex justify-center">
+                          {data.material.magazines.description}
+                        </p>
                         <a
                           href={`${Astro.url.origin}/${
                             magazine[Object.keys(magazine).toString()].file
                           }`}
                           target="_blank"
                         >
-                          <Picture
-                            src={`${Astro.url.origin}/${
-                              magazine[Object.keys(magazine).toString()]
-                                .thumbnail
-                            }`}
-                            formats={["avif", "webp"]}
-                            width={720}
-                            height={360}
-                            alt="{}"
-                          />
+                          <div class="flex justify-center">
+                            <Picture
+                              src={`${Astro.url.origin}/${
+                                magazine[Object.keys(magazine).toString()]
+                                  .thumbnail
+                              }`}
+                              formats={["avif", "webp"]}
+                              width={250}
+                              height={360}
+                              alt="{}"
+                            />
+                          </div>
                           <h4 class="title">
                             {Object.keys(magazine).toString()}
                           </h4>
@@ -161,20 +164,39 @@ const t = useTranslations(lang);
                   }
                 </ul>
               </div>
-            </div>
-            <div
+            </section>
+            <section
               class="collapse collapse-arrow join-item border-base-300 border"
             >
               <input type="radio" name="my-accordion-4" />
               <div class="collapse-title font-semibold">
-                I forgot my password. What should I do?
+                {data.material.tracts.name}
               </div>
               <div class="collapse-content text-sm">
-                Click on "Forgot Password" on the login page and follow the
-                instructions sent to your email.
+                <ul>
+                  <p class="text-base flex justify-center">
+                    {data.material.tracts.description}
+                  </p>
+                  {
+                    data.material.tracts.tract.map((tract: any) => (
+                      <li>
+                        <a
+                          href={`${Astro.url.origin}/${
+                            tract[Object.keys(tract).toString()].file
+                          }`}
+                          target="_blank"
+                        >
+                          <p class="text-base">
+                            {Object.keys(tract).toString()}
+                          </p>
+                        </a>
+                      </li>
+                    ))
+                  }
+                </ul>
               </div>
-            </div>
-            <div
+            </section>
+            <section
               class="collapse collapse-arrow join-item border-base-300 border"
             >
               <input type="radio" name="my-accordion-4" />
@@ -185,7 +207,7 @@ const t = useTranslations(lang);
                 Go to "My Account" settings and select "Edit Profile" to make
                 changes.
               </div>
-            </div>
+            </section>
           </div>
         </div>
       </article>

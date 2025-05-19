@@ -6,18 +6,22 @@ excerpt: Entre 2016 et 2019, les CUTE (Comités unitaires sur le travail étudia
 heroVideo: archives/cute/video/
 material:
   magazines:
-    excerpt: "Revues d'organisation des Comités Unitaires sur le Travail Étudiant (CUTE Magazine)"
+    name: "CUTE magazines"
+    description: "Revues d'organisation des Comités Unitaires sur le Travail Étudiant (CUTE Magazine)"
     magazine:
       - CUTE Magazine Numéro 0 - Automne 2016:
           file: "archives/cute/materiel/magazines/cutemag-0-fr-automne-2016_september_1st.pdf"
           thumbnail: "archives/cute/images/magazines/cuteMag0Fr.png"
   tracts:
-    - Journée internationale des stagiaires (Montréal 2017.11.10):
-        file: ""
-    - Violences sexuelles dans les établissements d'enseignement, UQAM (Montréal 2017.08.21):
-        file: ""
-    - Violences sexuelles dans les établissements d'enseignement, UdeM (Montréal 2017.08.21):
-        file: ""
+    name: "Tracts"
+    description: "Matériel de mobilisation sous forme de petit livrets"
+    tract:
+      - Journée internationale des stagiaires (Montréal 2017.11.10):
+          file: "archives/cute/materiel/tracts/10novembre_Tract.pdf"
+      - Violences sexuelles dans les établissements d'enseignement, UQAM (Montréal 2017.08.21):
+          file: "archives/cute/materiel/tracts/CUTE_UQAM_Violence_Sexuelle.pdf"
+      - Violences sexuelles dans les établissements d'enseignement, UdeM (Montréal 2017.08.21):
+          file: "archives/cute/materiel/tracts/CUTE_UdeM_Violence_Sexuelle.pdf"
   affiches:
     - Journée internationale des stagiaires (Montréal 2017.11.10):
         file: ""

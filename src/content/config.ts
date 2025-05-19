@@ -51,10 +51,15 @@ const archives = defineCollection({
     material: z.object(
       {
         magazines: z.object({
-          excerpt: z.string(),
+          name: z.string(),
+          description: z.string(),
           magazine: z.array(magazineSchema)
         }).optional(),
-        tracts: z.array(tractSchema).optional(),
+        tracts: z.object({
+          name: z.string(),
+          description: z.string(),
+          tract: z.array(tractSchema).optional()
+        }).optional(),
         affiches: z.array(tractSchema).optional(),
         video: z.array(videoSchema).optional(),
         websites: z.array(websiteSchema).optional(),

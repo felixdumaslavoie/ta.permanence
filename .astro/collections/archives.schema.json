@@ -38,7 +38,10 @@
             "magazines": {
               "type": "object",
               "properties": {
-                "excerpt": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
                   "type": "string"
                 },
                 "magazine": {
@@ -65,33 +68,50 @@
                 }
               },
               "required": [
-                "excerpt",
+                "name",
+                "description",
                 "magazine"
               ],
               "additionalProperties": false
             },
             "tracts": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "object",
-                  "properties": {
-                    "file": {
-                      "type": "string"
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "tract": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object",
+                      "properties": {
+                        "file": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "file"
+                      ],
+                      "additionalProperties": false
                     }
-                  },
-                  "required": [
-                    "file"
-                  ],
-                  "additionalProperties": false
+                  }
                 }
-              }
+              },
+              "required": [
+                "name",
+                "description"
+              ],
+              "additionalProperties": false
             },
             "affiches": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/archives/properties/material/properties/tracts/items"
+                "$ref": "#/definitions/archives/properties/material/properties/tracts/properties/tract/items"
               }
             },
             "video": {
