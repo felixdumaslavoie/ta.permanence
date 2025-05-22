@@ -18,7 +18,7 @@ import { pageLang, textLang } from "../data/fetchData";
 import { computeMainTexts } from "../i18n/utils";
 
 interface Props {
-  numeroPage: Number;
+  numeroPage: String;
 }
 
 const posts = (await getCollection("blog")).sort(
@@ -26,15 +26,16 @@ const posts = (await getCollection("blog")).sort(
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-
 const langue = String(textLang(Astro.url));
 
 let filterFunction = (post) => pageLang(Astro.url) === textLang(post);
 let postsDansLangue = posts.filter(filterFunction);
 
-
 const { numeroPage } = Astro.props;
-let finalTexts: Array<Object> = computeMainTexts(postsDansLangue, numeroPage);
+
+let noPage = Number(numeroPage);
+
+let finalTexts: Array<Object> = computeMainTexts(postsDansLangue, noPage);
 
 let resultat = await getImagesMetadata();
 ---

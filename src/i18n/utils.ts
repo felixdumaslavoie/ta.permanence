@@ -49,9 +49,15 @@ export function howManyMainPages(lang: string): number {
 }
 
 
-export function computeMainTexts(texts: Array<Object>, pageNumber: Number): Array<Object> {
+export function computeMainTexts(texts: Array<Object>, pageNumber: String): Array<Object> {
 
-  let iByN = pageNumber.valueOf() * textsByMainPage
+  let test = Number(pageNumber)
+  let pages = 0
+  if (!isNaN(test)) {
+    pages = test
+  }
+
+  let iByN = pages.valueOf() * textsByMainPage
 
 
   return texts.slice(iByN, (iByN + textsByMainPage))
