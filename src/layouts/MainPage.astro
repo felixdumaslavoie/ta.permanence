@@ -33,9 +33,7 @@ let postsDansLangue = posts.filter(filterFunction);
 
 const { numeroPage } = Astro.props;
 
-let noPage = Number(numeroPage);
-
-let finalTexts: Array<Object> = computeMainTexts(postsDansLangue, noPage);
+let finalTexts: Array<Object> = computeMainTexts(postsDansLangue, numeroPage);
 
 let resultat = await getImagesMetadata();
 ---

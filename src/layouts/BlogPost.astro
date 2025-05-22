@@ -102,7 +102,7 @@ const t = useTranslations(lang);
   </head>
 
   <body>
-    <Header numeroPage={0} />
+    <Header numeroPage={`0`} />
     <main
       class="w-full pt-0 ps-0 pe-0 max-w-fit md:max-w-[calc(100%-2rem)] md:w-[calc(100%-2rem)] md:pt-32"
     >
@@ -126,7 +126,7 @@ const t = useTranslations(lang);
               />
             </div>
             <h1 class="text-5xl">{title}</h1>
-            <p>{t('by')}</p>
+            <p>{t("by")}</p>
             {autrices.map((autrice: string) => <h5>{autrice}</h5>)}
             <hr />
           </div>
@@ -134,7 +134,7 @@ const t = useTranslations(lang);
         </div>
       </article>
     </main>
-    <Footer numeroPage={0} />
+    <Footer numeroPage={`0`} />
   </body>
 </html>
 

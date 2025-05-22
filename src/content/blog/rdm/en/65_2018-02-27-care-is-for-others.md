@@ -28,6 +28,6 @@ translation by **Paolo Miriello**
 
 ---
 
-This article was published in the [Winter 2018 issue of the english edition of CUTE Magazine](/files/archives/cute/materiel/magazines/cutemag-3-en-winter-2018_january_30.pdf).
+This article was published in the [Winter 2018 issue of the english edition of CUTE Magazine](/archives/cute/materiel/magazines/cutemag-3-en-winter-2018_january_30.pdf).
 
 To learn more about the struggle for the full recognition of student work, to discuss or contribute to it, we can contact us via the _[CUTE Campagne sur le travail étudiant](https://www.facebook.com/campagnetravailetudiant/)_ page or the [SWUC– Student Work Unitary Committee](https://www.facebook.com/swucwork/) page.
