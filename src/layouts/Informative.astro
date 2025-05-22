@@ -5,7 +5,6 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import { object } from "astro:schema";
 
 const { props } = Astro.props;
 
@@ -192,6 +191,55 @@ const t = useTranslations(lang);
                           <p class="text-base">
                             {Object.keys(tract).toString()}
                           </p>
+                        </a>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </section>
+            <section
+              class="collapse collapse-arrow join-item border-base-300 border"
+            >
+              <input type="radio" name="my-accordion-4" checked="checked" />
+              <div class="collapse-title font-semibold">
+                {data.material.affiches.name}
+              </div>
+
+              <div class="collapse-content text-sm magazines">
+                <ul>
+                  {
+                    console.log(
+                      `${Astro.url.origin}/${data.material.tracts.tract[0]["Journée internationale des stagiaires (Montréal 2017.11.10)"].file}`,
+                    )
+                  }
+                  <p class="text-base flex justify-center">
+                    {data.material.affiches.description}
+                  </p>
+                  {
+                    data.material.affiches.affiche.map((affiche: any) => (
+                      <li>
+                        <a
+                          href={`${Astro.url.origin}/${
+                            affiche[Object.keys(affiche).toString()].file
+                          }`}
+                          target="_blank"
+                        >
+                          <div class="flex justify-center">
+                            <Picture
+                              src={`${Astro.url.origin}/${
+                                affiche[Object.keys(affiche).toString()]
+                                  .thumbnail
+                              }`}
+                              formats={["avif", "webp"]}
+                              width={250}
+                              height={360}
+                              alt="{}"
+                            />
+                          </div>
+                          <h4 class="title">
+                            {Object.keys(affiche).toString()}
+                          </h4>
                         </a>
                       </li>
                     ))

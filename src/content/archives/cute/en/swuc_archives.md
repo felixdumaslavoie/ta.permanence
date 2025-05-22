@@ -12,7 +12,7 @@ material:
     description: The Comités Unitaires sur le travail étudiant's organizing publication
     magazine:
       - CUTE Magazine Numéro 0 - Automne 2016:
-          file: public/archives/cute/materiel/magazines/cutemag-0-fr-automne-2016_september_1st.pdf
+          file: archives/cute/materiel/magazines/cutemag-0-fr-automne-2016_september_1st.pdf
           thumbnail: "archives/cute/images/magazines/cuteMag0Fr.png"
   tracts:
     name: "Zines"
@@ -25,12 +25,19 @@ material:
       - Violences sexuelles dans les établissements d'enseignement, UdeM (Montréal 2017.08.21):
           file: "archives/cute/materiel/tracts/CUTE_UdeM_Violence_Sexuelle.pdf"
   affiches:
-    name: "Affiches"
-    description: ""
+    name: "Posters"
+    description: "Posters produced between 2016-2019"
     affiche:
       - Journée internationale des stagiaires (Montréal 2017.11.10):
-          file: ""
+          file: "archives/cute/materiel/affiches/10novembre_Affiche_Fr.pdf"
           thumbnail: ""
+      - À la maison comme à l'école (Montréal 2017.11.02):
+          file: "archives/cute/materiel/affiches/CUTE_affiche_2_novembre_DOMESTIQUE.pdf"
+          thumbnail: ""
+      - L'exploitation n'est pas une vocation (Montréal 2017.11.02):
+          file: "archives/cute/materiel/affiches/CUTE_affiche_2_novembre_STAGES.pdf"
+          thumbnail: ""
+
   videos:
     name: "Videos"
     description: ""
