@@ -9,7 +9,7 @@ import {
 } from "../data/fetchData";
 
 interface Props {
-  numeroPage: Number;
+  numeroPage: String;
 }
 
 const lang = getLangFromUrl(Astro.url);
@@ -71,16 +71,25 @@ const { numeroPage } = Astro.props;
       });
 
       // Read the message from the data attribute.
-      const lang = this.dataset.message;
-      const translationURL = this.dataset.translation;
-      const noPage = this.dataset.nopage;
+      let translationURL = this.dataset.translation;
+      let noPage = this.dataset.nopage;
+
+      if (noPage) {
+        let test = Number(noPage);
+        if (isNaN(test)) {
+          translationURL = `/${noPage}`;
+
+          if (noPage.at(0) === "/") {
+            translationURL = noPage;
+          }
+        }
+      }
 
       const input = this.querySelector("input");
       if (input !== null) {
         input.addEventListener("click", () => {
           if (translationURL) {
-            console.log(translationURL);
-            window.location.replace(translationURL);
+            window.location.assign(translationURL);
           }
         });
       }

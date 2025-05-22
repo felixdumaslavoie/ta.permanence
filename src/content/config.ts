@@ -48,6 +48,10 @@ const archives = defineCollection({
     era: z.string(),
     excerpt: z.string(),
     heroVideo: z.string(),
+    translations: z.object({
+      en: z.string().optional(),
+      fr: z.string().optional(),
+    }).optional(),
     material: z.object(
       {
         magazines: z.object({

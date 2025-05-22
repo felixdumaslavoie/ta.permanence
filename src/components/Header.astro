@@ -5,7 +5,7 @@ import MobileDrawer from "./MobileDrawer.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 interface Props {
-  numeroPage: Number;
+  numeroPage: String;
 }
 
 const lang = getLangFromUrl(Astro.url);

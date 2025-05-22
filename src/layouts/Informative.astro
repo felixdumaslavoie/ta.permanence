@@ -5,6 +5,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { object } from "astro:schema";
 
 const { props } = Astro.props;
 
@@ -12,7 +13,7 @@ let temp = await props;
 
 const data = temp.remarkPluginFrontmatter;
 
-//console.log(data);
+console.log(data.translations[Object.keys(data.translations).toString()]);
 
 let pathStr = String(Astro.url.pathname);
 
@@ -99,7 +100,9 @@ const t = useTranslations(lang);
   </head>
 
   <body>
-    <Header numeroPage={0} />
+    <Header
+      numeroPage={data.translations[Object.keys(data.translations).toString()]}
+    />
     <main
       class="w-full pt-0 ps-0 pe-0 max-w-fit md:max-w-[calc(100%-2rem)] md:w-[calc(100%-2rem)] md:pt-32"
     >

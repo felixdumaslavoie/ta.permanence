@@ -5,7 +5,7 @@ era: 2016-2019
 excerpt: Between 2016 and 2019, a campaign for the recognition of work done as a student is led by the CUTE (Comités unitaires sur le travail étudiant).
 heroVideo: archives/cute/video/
 translations:
-  - fr: "fr/archives/cute"
+  fr: "fr/archives/cute"
 material:
   magazines:
     name: "SWUC Magazines"

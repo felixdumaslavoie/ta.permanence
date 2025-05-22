@@ -5,7 +5,7 @@ era: 2016-2019
 excerpt: Entre 2016 et 2019, les CUTE (Comités unitaires sur le travail étudiant) mènent une campagne pour faire reconnaitre le travail effectué par les étudiantEs en revendiquant le salariat étudiant et la rémunération des stages.
 heroVideo: archives/cute/video/
 translations:
-  - en: "en/archives/swuc"
+  en: "en/archives/swuc"
 material:
   magazines:
     name: "CUTE magazines"

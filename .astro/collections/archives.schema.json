@@ -32,6 +32,18 @@
         "heroVideo": {
           "type": "string"
         },
+        "translations": {
+          "type": "object",
+          "properties": {
+            "en": {
+              "type": "string"
+            },
+            "fr": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
         "material": {
           "type": "object",
           "properties": {
