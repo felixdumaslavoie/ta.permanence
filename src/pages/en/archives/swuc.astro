@@ -4,7 +4,16 @@ import Archives from "../../../layouts/Informative.astro";
 import { getCollection } from "astro:content";
 
 const archives = await getCollection("archives");
-const content = archives[1].render();
+
+let index = 0;
+
+const lang = "en";
+
+archives.forEach((archive, idx) => {
+  if (archive.id.split("/")[1] === lang) index = idx;
+});
+
+const content = archives[index].render();
 ---
 
 <Archives props={content} />
