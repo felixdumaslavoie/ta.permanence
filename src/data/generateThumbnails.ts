@@ -17,13 +17,14 @@ const getFiles = async source =>
 export async function generateThumbnails() {
   let counter = 1;
 
-  const materielFolder = "./public/archives/cute/materiel";
+  const materielFolder = "./public/archives/cute/materiel/";
+  const imagesFolder = "./public/archives/cute/images/"
 
   getDirectories(materielFolder).then((res) => {
 
     res.forEach((dossier) => {
 
-      getFiles(`${materielFolder}/${dossier}/`).then((files) => {
+      getFiles(`${materielFolder}${dossier}`).then((files) => {
 
         console.log(files)
       })
