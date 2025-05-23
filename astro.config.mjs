@@ -6,9 +6,13 @@ import tailwind from "@astrojs/tailwind";
 import { externalAnchorPlugin } from "./remarkplugins/external-anchor-plugin.mjs";
 import { dataGen } from "./flxplugins/dataGen.mjs";
 
+// Thumbnais
+import { generateThumbnails } from "./src/data/generateThumbnails";
+
 import alpinejs from "@astrojs/alpinejs";
 
 dataGen();
+generateThumbnails();
 
 // https://astro.build/config
 export default defineConfig({
