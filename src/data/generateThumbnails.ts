@@ -52,7 +52,8 @@ export async function generateThumbnails() {
 
 async function writeImage(ancienDossier: string, nouveauDossier: string, oldName: string, fileName: string) {
   // Le page number commence à un :( ! 
-  const document = (await pdf(`${ancienDossier}${oldName}`, { scale: 3 })).getPage(Number(1));
+  const PAGE: number = 1
+  const document = (await pdf(`${ancienDossier}${oldName}`, { scale: 0.7 })).getPage(Number(PAGE));
   await document.then((img) => {
 
     fs.writeFile(`${nouveauDossier}${fileName}`, img);
