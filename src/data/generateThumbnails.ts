@@ -25,8 +25,25 @@ export async function generateThumbnails() {
     res.forEach((dossier) => {
 
       getFiles(`${materielFolder}${dossier}`).then((files) => {
+        files.forEach((file) => {
+          let split: string[] = file.split(".")
 
-        console.log(files)
+          if (split.at(split.length - 1) === "pdf") {
+            console.log(file)
+            let corrected = split.pop()
+
+            let fuse: string = ""
+            if (corrected) {
+              split.push(".png")
+              split.forEach((fragment: string) => {
+                fuse += fragment
+              })
+              console.log(fuse)
+              //writeImage(`${materielFolder}${dossier}/`, `${imagesFolder}${dossier}/`,fuse)
+
+            }
+          }
+        })
       })
     })
 
@@ -41,6 +58,7 @@ export async function generateThumbnails() {
 async function writeImage(ancienDossier: string, nouveauDossier: string, fileName: string) {
   const document = (await pdf(`${ancienDossier}${fileName}`, { scale: 3 })).getPage(0);
   await document.then((img) => {
+
     fs.writeFile(`${nouveauDossier}${fileName}`, img);
   })
 }
