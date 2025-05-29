@@ -29,7 +29,7 @@ export async function generateThumbnails() {
           let split: string[] = file.split(".")
 
           if (split.at(split.length - 1) === "pdf") {
-            console.log(file)
+            //console.log(file)
             let corrected = split.pop()
 
             let fuse: string = ""
@@ -38,8 +38,8 @@ export async function generateThumbnails() {
               split.forEach((fragment: string) => {
                 fuse += fragment
               })
-              console.log(fuse)
-              //writeImage(`${materielFolder}${dossier}/`, `${imagesFolder}${dossier}/`,fuse)
+              //console.log(`${imagesFolder}${dossier}/`)
+              writeImage(`${materielFolder}${dossier}/`, `${imagesFolder}${dossier}/`, file, fuse)
 
             }
           }
@@ -48,15 +48,11 @@ export async function generateThumbnails() {
     })
 
   })
-
-
-
-
-  // you can also read a specific page number:
 }
 
-async function writeImage(ancienDossier: string, nouveauDossier: string, fileName: string) {
-  const document = (await pdf(`${ancienDossier}${fileName}`, { scale: 3 })).getPage(0);
+async function writeImage(ancienDossier: string, nouveauDossier: string, oldName: string, fileName: string) {
+  // Le page number commence à un :( ! 
+  const document = (await pdf(`${ancienDossier}${oldName}`, { scale: 3 })).getPage(Number(1));
   await document.then((img) => {
 
     fs.writeFile(`${nouveauDossier}${fileName}`, img);
