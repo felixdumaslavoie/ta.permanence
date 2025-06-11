@@ -17,13 +17,9 @@ export const SOCIALS_MEDIA = {
   fb: "https://www.facebook.com/razdemareeluttesetudiantes",
 } as const;
 
-
-export const routes = {
-  fr: {
-    'cute': 'cute',
-  },
-  en: {
-    'swuc': 'swuc',
-  },
-
+// Routes pour les archives
+export const ROUTES_ARCHIVES_CUTE = {
+  fr: '/fr/archives/cute',
+  en: '/en/archives/swuc',
 }
+

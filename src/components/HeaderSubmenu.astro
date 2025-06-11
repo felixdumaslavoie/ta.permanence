@@ -7,6 +7,8 @@ import LangageSwitcher from "./LangageSwitcher.astro";
 import ThemeIcon from "./ThemeIcon.astro";
 import SearchModal from "./SearchModal.astro";
 
+import { ROUTES_ARCHIVES_CUTE } from "../consts";
+
 interface Props {
   numeroPage: String;
   href: any;
@@ -15,6 +17,9 @@ interface Props {
 const { href, numeroPage } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
+
+let routeArchives = ROUTES_ARCHIVES_CUTE[lang];
+
 const t = useTranslations(lang);
 ---
 
@@ -46,13 +51,16 @@ const t = useTranslations(lang);
       <ul>
         <li>
           <details>
-            <summary>Les CUTE(s)</summary>
+            <summary>{t("lesCUTE")}</summary>
             <ul>
-              <li><a>Magazines</a></li>
-              <li><a>Tracts</a></li>
-              <li><a>Affiches</a></li>
-              <li><a>Vidéos</a></li>
-              <li><a>Sites web</a></li>
+              <li>
+                <a href={`${routeArchives}#magazines`}>Magazines</a>
+              </li>
+
+              <li><a href={`${routeArchives}#tracts`}>{t("tracts")}</a></li>
+              <li><a href={`${routeArchives}#affiches`}>{t("affiches")}</a></li>
+              <li><a href={`${routeArchives}#videos`}>{t("videos")}</a></li>
+              <li><a href={`${routeArchives}#web`}>{t("siteWeb")}</a></li>
             </ul>
           </details>
         </li>

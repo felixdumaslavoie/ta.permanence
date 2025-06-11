@@ -25,6 +25,11 @@ export const ui = {
     'lastPage': 'Last page',
     'readText': 'Read',
     'by': 'By',
+    'lesCUTE': 'SWUC(s)',
+    'tracts': 'Zines',
+    'affiches': 'Posters',
+    'videos': 'Videos',
+    'siteWeb': 'Websites'
   },
   fr: {
     'site_title': SITE_TITLE.fr,
@@ -40,6 +45,13 @@ export const ui = {
     'lastPage': 'Dernière page',
     'readText': 'Lire',
     'by': 'Par',
+    'lesCUTE': 'Les CUTE(s)',
+    'tracts': 'Tracts',
+    'affiches': 'Affiches',
+    'videos': 'Vidéos',
+    'siteWeb': 'Sites web'
+
+
   },
 } as const;
 
