@@ -15,8 +15,6 @@ const getFiles = async source =>
     .map(dirent => dirent.name)
 
 export async function generateThumbnails() {
-  let counter = 1;
-
   const materielFolder = "./public/archives/cute/materiel/";
   const imagesFolder = "./public/archives/cute/images/"
 
