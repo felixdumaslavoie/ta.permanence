@@ -23,7 +23,7 @@ export const routes = {
     'cute': 'cute',
   },
   en: {
-    'cute': 'swuc',
+    'swuc': 'swuc',
   },
 
 }

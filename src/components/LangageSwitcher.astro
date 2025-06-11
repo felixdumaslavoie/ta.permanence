@@ -31,9 +31,9 @@ let doItOrNot = "";
 
 if (result.pathname === "/undefined")
   // Si il n'y a pas de traduction.
-  doItOrNot = "!hidden opacity-0 pointer-events-none";
+  doItOrNot = "opacity-0 pointerNone ";
 
-let otherClasses = "languageSwitcher sm:block";
+let otherClasses = " languageSwitcher sm:block";
 
 const t = useTranslations(lang);
 const { numeroPage } = Astro.props;
@@ -58,6 +58,10 @@ const { numeroPage } = Astro.props;
 <style>
   .languageSwitcher {
     display: block;
+  }
+
+  .pointerNone {
+    pointer-events: none;
   }
 </style>
 

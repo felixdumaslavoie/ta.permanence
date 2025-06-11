@@ -7,6 +7,7 @@ heroVideo: archives/cute/video/
 translations:
   en: "en/archives/swuc"
 material:
+  type: accordeon
   magazines:
     name: "CUTE magazines"
     description: "Revues d'organisation des Comités Unitaires sur le Travail Étudiant (CUTE Magazine)"
@@ -26,7 +27,7 @@ material:
           file: "archives/cute/materiel/tracts/CUTE_UdeM_Violence_Sexuelle.pdf"
   affiches:
     name: "Affiches"
-    description: "Affiches réalisés dans le cadre de la campagne"
+    description: "Affiches produites dans le cadre de la campagne"
     affiche:
       - Journée internationale des stagiaires (Montréal 2017.11.10):
           file: ""

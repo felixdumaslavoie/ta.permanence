@@ -1,8 +1,8 @@
 ---
 import {
-    getLangFromUrl,
-    howManyMainPages,
-    useTranslations,
+  getLangFromUrl,
+  howManyMainPages,
+  useTranslations,
 } from "../i18n/utils";
 const { numeroPage } = Astro.props;
 
@@ -26,36 +26,36 @@ const t = useTranslations(lang);
 ---
 
 <astro-pagination data-nopage={numeroPage}>
-    <div class="join flex justify-center">
-        <a class=`${isFirst}` href=`/${lang}/0`>
-            <button class=`join-item btn ${isFirst}`>{t("mainPage")}</button></a
-        >
-        <a class=`${isFirst}` href={`/${lang}/${noMinusOne}`}
-            ><button class=`join-item btn ${isFirst}`>«</button></a
-        >
-        <button class="join-item btn btn-disabled">{no + 1}</button>
-        <a class=`${isLast}` href={`/${lang}/${noPlusOne}`}
-            ><button class=`join-item btn ${isLast}`>»</button></a
-        >
-        <a class=` ${isLast}` href={`/${lang}/${latestPage}`}
-            ><button class=`join-item btn ${isLast}`>{t("lastPage")}</button></a
-        >
-    </div>
+  <div class="px-12 join flex justify-center">
+    <a class=`${isFirst}` href=`/${lang}/0`>
+      <button class=`join-item btn ${isFirst}`>{t("mainPage")}</button></a
+    >
+    <a class=`${isFirst}` href={`/${lang}/${noMinusOne}`}
+      ><button class=`join-item btn ${isFirst}`>«</button></a
+    >
+    <button class="join-item btn btn-disabled">{no + 1}</button>
+    <a class=`${isLast}` href={`/${lang}/${noPlusOne}`}
+      ><button class=`join-item btn ${isLast}`>»</button></a
+    >
+    <a class=` ${isLast}` href={`/${lang}/${latestPage}`}
+      ><button class=`join-item btn ${isLast}`>{t("lastPage")}</button></a
+    >
+  </div>
 </astro-pagination>
 <style>
-    .languageSwitcher {
-        display: block;
-    }
+  .languageSwitcher {
+    display: block;
+  }
 </style>
 
 <script>
-    class AstroPagination extends HTMLElement {
-        constructor() {
-            super();
-        }
+  class AstroPagination extends HTMLElement {
+    constructor() {
+      super();
     }
+  }
 
-    // Find all buttons with the `alert` class on the page.
-    const buttons = document.querySelectorAll("div.join");
-    customElements.define("astro-pagination", AstroPagination);
+  // Find all buttons with the `alert` class on the page.
+  const buttons = document.querySelectorAll("div.join");
+  customElements.define("astro-pagination", AstroPagination);
 </script>
