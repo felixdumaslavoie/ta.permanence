@@ -50,7 +50,6 @@ export async function generatePDF() {
 
 
 async function writePDF(ancienDossier: string, nouveauDossier: string, oldName: string, fileName: string) {
-  // Le page number commence à un :( ! 
 
   createReadStream(`${ancienDossier}${oldName}`)
     .pipe(markdownpdf())

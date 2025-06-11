@@ -207,6 +207,7 @@ code {
 pre {
 	padding: 1.5em;
 	border-radius: 8px;
+  margin-block: 30px;
 }
 
 pre>code {
