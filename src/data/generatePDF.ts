@@ -1,6 +1,6 @@
 import { promises as fs } from "node:fs";
 import { createReadStream, createWriteStream } from "node:fs";
-
+import { marked } from 'marked';
 
 const getDirectories = async source =>
   (await fs.readdir(source, { withFileTypes: true }))
@@ -95,12 +95,11 @@ async function convertMD2PDF(ancienDossier: string, nouveauDossier: string, oldN
   }
   if (writeFlag) {
     console.log(`${nouveauDossier}${fileName} ${ancienDossier}${oldName}`)
-    markdownpdf().from(`${ancienDossier}${oldName}`).to(`${nouveauDossier}${fileName}`, function () {
-      console.log("Done")
-    })
+    const html = marked.parse('# Marked in Node.js\n\nRendered by **marked**.');
   }
-
-
-
-
 }
+
+
+
+
+
