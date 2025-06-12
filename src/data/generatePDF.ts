@@ -1,7 +1,8 @@
 import { promises as fs } from "node:fs";
 import { createReadStream, createWriteStream } from "node:fs";
 
-var markdownpdf = require('markdown-pdf')
+import pkg from 'markdown-pdf';
+const { markdownpdf } = pkg;
 
 const getDirectories = async source =>
   (await fs.readdir(source, { withFileTypes: true }))
@@ -15,14 +16,18 @@ const getFiles = async source =>
 
 export async function generatePDF() {
 
-  const blogFolder = "./src/content/blog/rdm";
+  const blogFolder = "./src/content/blog/rdm/";
   const pdfFolder = "./public/blog/pdf/"
 
   getDirectories(blogFolder).then((res) => {
 
+
     res.forEach((dossier) => {
 
+
       getFiles(`${blogFolder}${dossier}`).then((files) => {
+
+        console.log(files)
         files.forEach((file) => {
           let split: string[] = file.split(".")
 
@@ -36,9 +41,9 @@ export async function generatePDF() {
               split.forEach((fragment: string) => {
                 fuse += fragment
               })
-              //console.log(`${imagesFolder}${dossier}/`)
+              //console.log(`${pdfFolder}${dossier}/${fuse}`)
 
-              writePDF(`${blogFolder}${dossier}/`, `${pdfFolder}${dossier}/`, file, fuse)
+              //writePDF(`${blogFolder}${dossier}/`, `${pdfFolder}${dossier}/`, file, fuse)
             }
           }
         })

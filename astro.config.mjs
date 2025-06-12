@@ -10,9 +10,11 @@ import { dataGen } from "./flxplugins/dataGen.mjs";
 import { generateThumbnails } from "./src/data/generateThumbnails";
 
 import alpinejs from "@astrojs/alpinejs";
+import { generatePDF } from "./src/data/generatePDF";
 
 dataGen();
 generateThumbnails();
+//generatePDF();
 
 // https://astro.build/config
 export default defineConfig({

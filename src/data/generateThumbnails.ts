@@ -51,10 +51,39 @@ export async function generateThumbnails() {
 async function writeImage(ancienDossier: string, nouveauDossier: string, oldName: string, fileName: string) {
   // Le page number commence à un :( ! 
   const PAGE: number = 1
-  const document = (await pdf(`${ancienDossier}${oldName}`, { scale: 0.7 })).getPage(Number(PAGE));
-  await document.then((img) => {
+  var writeFlag = false
 
-    fs.writeFile(`${nouveauDossier}${fileName}`, img);
+
+  fs.stat(`${nouveauDossier}${fileName}`).then((statDest, errDest) => {
+    if (errDest == null) {
+      fs.stat(`${ancienDossier}${oldName}`).then((stat, err) => {
+
+        const srcDate = Date.parse(stat.mtime)
+        const destDate = Date.parse(statDest.mtime)
+
+
+        if (destDate < srcDate) {
+          writeFlag = true
+        }
+
+      });
+    } else if (errDest.code === 'ENOENT') {
+      // File doesnt exist
+      writeFlag = true
+    } else {
+      console.log("Erreur dans la lecture du fichier png. ")
+    }
+
   })
+
+
+  if (writeFlag) {
+    const document = (await pdf(`${ancienDossier}${oldName}`, { scale: 0.7 })).getPage(Number(PAGE));
+    await document.then((img) => {
+
+      fs.writeFile(`${nouveauDossier}${fileName}`, img);
+    })
+  }
+
 }
 
