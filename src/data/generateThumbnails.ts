@@ -54,21 +54,23 @@ async function writeImage(ancienDossier: string, nouveauDossier: string, oldName
   var writeFlag = false
 
 
-  fs.stat(`${nouveauDossier}${fileName}`).then((statDest, errDest) => {
-    if (errDest == null) {
-      fs.stat(`${ancienDossier}${oldName}`).then((stat, err) => {
+  fs.stat(`${nouveauDossier}${fileName}`).then((statDest) => {
 
-        const srcDate = Date.parse(stat.mtime)
-        const destDate = Date.parse(statDest.mtime)
+    fs.stat(`${ancienDossier}${oldName}`).then((stat) => {
+
+      const srcDate = stat.mtime
+      const destDate = statDest.mtime
 
 
-        if (destDate < srcDate) {
-          writeFlag = true
-        }
+      if (destDate < srcDate) {
+        writeFlag = true
+      }
 
-      });
-    } else if (errDest.code === 'ENOENT') {
-      // File doesnt exist
+    });
+
+  }).catch((errDest) => {
+    // Le fichier de destination n'existe pas
+    if (errDest.code === 'ENOENT') {
       writeFlag = true
     } else {
       console.log("Erreur dans la lecture du fichier png. ")
@@ -77,13 +79,24 @@ async function writeImage(ancienDossier: string, nouveauDossier: string, oldName
   })
 
 
-  if (writeFlag) {
-    const document = (await pdf(`${ancienDossier}${oldName}`, { scale: 0.7 })).getPage(Number(PAGE));
-    await document.then((img) => {
 
-      fs.writeFile(`${nouveauDossier}${fileName}`, img);
-    })
-  }
+
+
+
+
+
+
+
+}
+
+
+if (writeFlag) {
+  const document = (await pdf(`${ancienDossier}${oldName}`, { scale: 0.7 })).getPage(Number(PAGE));
+  await document.then((img) => {
+
+    fs.writeFile(`${nouveauDossier}${fileName}`, img);
+  })
+}
 
 }
 
