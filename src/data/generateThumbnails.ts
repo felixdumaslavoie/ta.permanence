@@ -50,7 +50,6 @@ export async function generateThumbnails() {
 
 async function writeImage(ancienDossier: string, nouveauDossier: string, oldName: string, fileName: string) {
   // Le page number commence à un :( ! 
-  const PAGE: number = 1
   var writeFlag = false
 
 
@@ -64,7 +63,9 @@ async function writeImage(ancienDossier: string, nouveauDossier: string, oldName
 
       if (destDate < srcDate) {
         writeFlag = true
+
       }
+
 
     });
 
@@ -76,27 +77,25 @@ async function writeImage(ancienDossier: string, nouveauDossier: string, oldName
       console.log("Erreur dans la lecture du fichier png. ")
     }
 
+  }).finally(() => {
+
+    convertPDF2Image(ancienDossier, nouveauDossier, oldName, fileName, writeFlag)
   })
 
 
 
+}
 
 
-
-
-
-
-
-
-
+async function convertPDF2Image(ancienDossier: string, nouveauDossier: string, oldName: string, fileName: string, writeFlag: boolean) {
+  const PAGE: number = 1
 
   if (writeFlag) {
+
     const document = (await pdf(`${ancienDossier}${oldName}`, { scale: 0.7 })).getPage(Number(PAGE));
     await document.then((img) => {
 
       fs.writeFile(`${nouveauDossier}${fileName}`, img);
     })
   }
-
 }
-
