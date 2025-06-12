@@ -87,16 +87,16 @@ async function writeImage(ancienDossier: string, nouveauDossier: string, oldName
 
 
 
-}
 
 
-if (writeFlag) {
-  const document = (await pdf(`${ancienDossier}${oldName}`, { scale: 0.7 })).getPage(Number(PAGE));
-  await document.then((img) => {
 
-    fs.writeFile(`${nouveauDossier}${fileName}`, img);
-  })
-}
+  if (writeFlag) {
+    const document = (await pdf(`${ancienDossier}${oldName}`, { scale: 0.7 })).getPage(Number(PAGE));
+    await document.then((img) => {
+
+      fs.writeFile(`${nouveauDossier}${fileName}`, img);
+    })
+  }
 
 }
 
