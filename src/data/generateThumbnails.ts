@@ -66,7 +66,6 @@ async function writeImage(ancienDossier: string, nouveauDossier: string, oldName
 
       }
 
-
     });
 
   }).catch((errDest) => {

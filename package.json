@@ -20,7 +20,6 @@
     "alpinejs": "^3.14.8",
     "astro": "^5.9.2",
     "gray-matter": "^4.0.3",
-    "markdown-pdf": "^11.0.0",
     "n-readlines": "^1.0.1",
     "pagefind": "^1.1.0",
     "pdf-to-img": "^4.4.0",

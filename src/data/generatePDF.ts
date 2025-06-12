@@ -1,8 +1,6 @@
 import { promises as fs } from "node:fs";
 import { createReadStream, createWriteStream } from "node:fs";
 
-import pkg from 'markdown-pdf';
-const { markdownpdf } = pkg;
 
 const getDirectories = async source =>
   (await fs.readdir(source, { withFileTypes: true }))
@@ -27,7 +25,6 @@ export async function generatePDF() {
 
       getFiles(`${blogFolder}${dossier}`).then((files) => {
 
-        console.log(files)
         files.forEach((file) => {
           let split: string[] = file.split(".")
 
@@ -43,7 +40,7 @@ export async function generatePDF() {
               })
               //console.log(`${pdfFolder}${dossier}/${fuse}`)
 
-              //writePDF(`${blogFolder}${dossier}/`, `${pdfFolder}${dossier}/`, file, fuse)
+              writePDF(`${blogFolder}${dossier}/`, `${pdfFolder}${dossier}/`, file, fuse)
             }
           }
         })
@@ -54,10 +51,56 @@ export async function generatePDF() {
 }
 
 
-async function writePDF(ancienDossier: string, nouveauDossier: string, oldName: string, fileName: string) {
 
-  createReadStream(`${ancienDossier}${oldName}`)
-    .pipe(markdownpdf())
-    .pipe(createWriteStream(`${nouveauDossier}${fileName}`))
+async function writePDF(ancienDossier: string, nouveauDossier: string, oldName: string, fileName: string) {
+  // Le page number commence à un :( ! 
+  var writeFlag = false
+
+
+  fs.stat(`${nouveauDossier}${fileName}`).then((statDest) => {
+
+    fs.stat(`${ancienDossier}${oldName}`).then((stat) => {
+
+      const srcDate = stat.mtime
+      const destDate = statDest.mtime
+
+
+      if (destDate < srcDate) {
+        writeFlag = true
+      }
+
+    });
+
+  }).catch((errDest) => {
+    // Le fichier de destination n'existe pas
+    if (errDest.code === 'ENOENT') {
+      writeFlag = true
+    } else {
+      console.log("Erreur dans la lecture du fichier md. ")
+    }
+
+  }).finally(() => {
+
+    convertMD2PDF(ancienDossier, nouveauDossier, oldName, fileName, writeFlag)
+  })
+
+
+
 }
 
+async function convertMD2PDF(ancienDossier: string, nouveauDossier: string, oldName: string, fileName: string, writeFlag: boolean) {
+
+  if (nouveauDossier === null) {
+    console.log("YAY")
+  }
+  if (writeFlag) {
+    console.log(`${nouveauDossier}${fileName} ${ancienDossier}${oldName}`)
+    markdownpdf().from(`${ancienDossier}${oldName}`).to(`${nouveauDossier}${fileName}`, function () {
+      console.log("Done")
+    })
+  }
+
+
+
+
+}
