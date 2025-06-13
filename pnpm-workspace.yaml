@@ -1,6 +1,7 @@
 onlyBuiltDependencies:
   - canvas
   - core-js
+  - puppeteer
 
 ignoredBuiltDependencies:
   - phantomjs-prebuilt

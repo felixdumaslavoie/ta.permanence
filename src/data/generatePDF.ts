@@ -2,7 +2,9 @@ import { promises as fs } from "node:fs";
 import { marked } from 'marked';
 import markedFootnote from 'marked-footnote'
 import matter from "gray-matter";
-import jsPDF from "jspdf";
+import htmlPdfNode from "html-pdf-node"
+import { pdf } from "pdf-to-img";
+
 
 const getDirectories = async source =>
   (await fs.readdir(source, { withFileTypes: true }))
@@ -94,7 +96,7 @@ async function convertMD2PDF(ancienDossier: string, nouveauDossier: string, oldN
 
 
   if (writeFlag) {
-    console.log(`${nouveauDossier}${fileName} ${ancienDossier}${oldName}`)
+    //console.log(`${nouveauDossier}${fileName} ${ancienDossier}${oldName}`)
 
     fs.readFile(`${ancienDossier}${oldName}`, 'utf8').then((rawData) => {
 
@@ -102,27 +104,20 @@ async function convertMD2PDF(ancienDossier: string, nouveauDossier: string, oldN
 
       let heroImage = `./src/content/files/pictures/${data.data.heroImage}`;
 
-      const html = convertMD2HTML(data).then((html) => {
+      const html = convertMD2HTML(data).then((htmlString) => {
 
-        var doc = new jsPDF();
-        doc.html(html, {
-          callback: function (doc) {
-            // Save the PDF
-            doc.save(`${nouveauDossier}${fileName}`);
-          },
-          x: 15,
-          y: 15,
-          width: 170, //target width in the PDF document
-          windowWidth: 650 //window width in CSS pixels
-        });
+        let options = { format: 'A4' };
+        let file = { content: htmlString };
 
+        convertHTML2PDF(file, options).then((pdf) => {
+
+          fs.writeFile(`${nouveauDossier}${fileName}`, pdf)
+        })
 
       })
 
-      console.log(html)
       //console.log(`${heroImage} ${ancienDossier}${oldName}`)
-      //
-      //
+
 
 
     }).catch((error) => {
@@ -139,5 +134,12 @@ async function convertMD2HTML(data) {
   return html;
 }
 
+async function convertHTML2PDF(file: Object, options: Object) {
+
+
+  let pdf = await htmlPdfNode.generatePdf(file, options)
+
+  return pdf;
+}
 
 
