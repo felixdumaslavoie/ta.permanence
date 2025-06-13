@@ -102,10 +102,28 @@ async function convertMD2PDF(ancienDossier: string, nouveauDossier: string, oldN
 
       let heroImage = `./src/content/files/pictures/${data.data.heroImage}`;
 
-      const html = marked.use(markedFootnote()).parse(data.content);
+      const html = convertMD2HTML(data).then((html) => {
+
+        var doc = new jsPDF();
+        doc.html(html, {
+          callback: function (doc) {
+            // Save the PDF
+            doc.save(`${nouveauDossier}${fileName}`);
+          },
+          x: 15,
+          y: 15,
+          width: 170, //target width in the PDF document
+          windowWidth: 650 //window width in CSS pixels
+        });
+
+
+      })
 
       console.log(html)
       //console.log(`${heroImage} ${ancienDossier}${oldName}`)
+      //
+      //
+
 
     }).catch((error) => {
       console.log(`Erreur de lecture du fichier md (2) ${error}`)
@@ -114,7 +132,12 @@ async function convertMD2PDF(ancienDossier: string, nouveauDossier: string, oldN
   }
 }
 
+async function convertMD2HTML(data) {
 
+  let html = await marked.use(markedFootnote()).parse(data.content)
+
+  return html;
+}
 
 
 
