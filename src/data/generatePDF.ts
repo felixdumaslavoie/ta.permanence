@@ -104,9 +104,17 @@ async function convertMD2PDF(ancienDossier: string, nouveauDossier: string, oldN
 
       let heroImage = `./src/content/files/pictures/${data.data.heroImage}`;
 
+      console.log(data)
+
       const html = convertMD2HTML(data).then((htmlString) => {
 
+
+        var headerTemplate: string = `<div><div class="date">${Date.parse(data.data.pubDate).toLocaleString('en')}</div><h1 class="title">${data.data.title}</h1></div>`
+
         let options = { format: 'A4' };
+
+        htmlString = `${headerTemplate}${htmlString}`
+
         let file = { content: htmlString };
 
         convertHTML2PDF(file, options).then((pdf) => {
@@ -116,7 +124,6 @@ async function convertMD2PDF(ancienDossier: string, nouveauDossier: string, oldN
 
       })
 
-      //console.log(`${heroImage} ${ancienDossier}${oldName}`)
 
 
 
