@@ -1,5 +1,6 @@
 onlyBuiltDependencies:
   - canvas
+  - core-js
 
 ignoredBuiltDependencies:
   - phantomjs-prebuilt

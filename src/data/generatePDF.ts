@@ -1,6 +1,8 @@
 import { promises as fs } from "node:fs";
-import { createReadStream, createWriteStream } from "node:fs";
 import { marked } from 'marked';
+import markedFootnote from 'marked-footnote'
+import matter from "gray-matter";
+import jsPDF from "jspdf";
 
 const getDirectories = async source =>
   (await fs.readdir(source, { withFileTypes: true }))
@@ -90,12 +92,25 @@ async function writePDF(ancienDossier: string, nouveauDossier: string, oldName: 
 
 async function convertMD2PDF(ancienDossier: string, nouveauDossier: string, oldName: string, fileName: string, writeFlag: boolean) {
 
-  if (nouveauDossier === null) {
-    console.log("YAY")
-  }
+
   if (writeFlag) {
     console.log(`${nouveauDossier}${fileName} ${ancienDossier}${oldName}`)
-    const html = marked.parse('# Marked in Node.js\n\nRendered by **marked**.');
+
+    fs.readFile(`${ancienDossier}${oldName}`, 'utf8').then((rawData) => {
+
+      let data = matter(rawData)
+
+      let heroImage = `./src/content/files/pictures/${data.data.heroImage}`;
+
+      const html = marked.use(markedFootnote()).parse(data.content);
+
+      console.log(html)
+      //console.log(`${heroImage} ${ancienDossier}${oldName}`)
+
+    }).catch((error) => {
+      console.log(`Erreur de lecture du fichier md (2) ${error}`)
+    })
+
   }
 }
 

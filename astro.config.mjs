@@ -14,7 +14,7 @@ import { generatePDF } from "./src/data/generatePDF";
 
 dataGen();
 generateThumbnails();
-//generatePDF();
+generatePDF();
 
 // https://astro.build/config
 export default defineConfig({
