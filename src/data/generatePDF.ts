@@ -107,18 +107,20 @@ async function convertMD2PDF(
           day: "2-digit",
         });
 
-        var headerTemplate: string = `<div><div class="date">${
-          formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1)
-        }</div><h1 class="title">${data.data.title}</h1><img src=${heroImage}></img></div>`;
+        fs.readFile(heroImage).then((imgData) => {
+          var headerTemplate: string = `<div><div class="date">${formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1)
+            }</div><h1 class="title">${data.data.title}</h1><img src="data:image/jpeg;base64,${imgData.toString("base64")
+            }"></img></div>`;
 
-        let options = { format: "A4" };
+          let options = { format: "A4" };
 
-        htmlString = `${headerTemplate}${htmlString}`;
+          htmlString = `${headerTemplate}${htmlString}`;
 
-        let file = { content: htmlString };
+          let file = { content: htmlString };
 
-        convertHTML2PDF(file, options).then((pdf) => {
-          fs.writeFile(`${nouveauDossier}${fileName}`, pdf);
+          convertHTML2PDF(file, options).then((pdf) => {
+            fs.writeFile(`${nouveauDossier}${fileName}`, pdf);
+          });
         });
       });
     }).catch((error) => {
