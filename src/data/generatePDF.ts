@@ -103,9 +103,9 @@ async function convertMD2PDF(
         authorsHtml += `<h2 style="text-align: center;">${author}</h2>`;
       });
 
-      console.log(authorsHtml);
+      //console.log(authorsHtml);
 
-      const html = convertMD2HTML(data).then((htmlString) => {
+      const html = convertMD2HTML(data, lang).then((htmlString) => {
         var date = new Date(data.data.pubDate);
 
         var formattedDate = date.toLocaleDateString(lang, {
@@ -145,8 +145,25 @@ margin-left: auto;
   }
 }
 
-async function convertMD2HTML(data) {
+async function convertMD2HTML(data, lang: string) {
   let html = await marked.use(markedFootnote()).parse(data.content);
+
+  let str = `<section class="footnotes"`;
+
+  let strReplaced =
+    `<section class="footnotes" style="display: inline-block; page-break-inside: avoid; "`;
+
+  html = html.replace(str, strReplaced);
+
+  if (lang === "fr") {
+    let labelStr = `<h2 id="footnote-label" class="sr-only">Footnotes</h2>`;
+
+    let labelstrreplaced = `<h2 id="footnote-label" class="sr-only">Notes</h2>`;
+
+    html = html.replace(labelStr, labelstrreplaced);
+  }
+
+  //console.log(html);
 
   return html;
 }
