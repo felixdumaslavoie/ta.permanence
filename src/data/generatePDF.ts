@@ -97,6 +97,14 @@ async function convertMD2PDF(
       let heroImage = `./src/content/files/pictures/${data.data.heroImage}`;
       let lang = data.data.slug.split("/")[0];
 
+      let authorsHtml = "";
+
+      data.data.authors.forEach((author) => {
+        authorsHtml += `<h2 style="text-align: center;">${author}</h2>`;
+      });
+
+      console.log(authorsHtml);
+
       const html = convertMD2HTML(data).then((htmlString) => {
         var date = new Date(data.data.pubDate);
 
@@ -107,12 +115,20 @@ async function convertMD2PDF(
           day: "2-digit",
         });
 
+        var parBy = (lang === "fr") ? "Écrit par " : "By ";
+
         fs.readFile(heroImage).then((imgData) => {
           var headerTemplate: string = `<div><div class="date">${formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1)
-            }</div><h1 class="title">${data.data.title}</h1><img src="data:image/jpeg;base64,${imgData.toString("base64")
-            }"></img></div>`;
+            }</div><h1 class="title" style="text-align: center;">${data.data.title}</h1><img src="data:image/jpeg;base64,${imgData.toString("base64")
+            }" style=" display: block;
+margin-left: auto;
+  margin-right: auto;
+  width: 40%;"></img><h3 style="text-align: center;">${parBy}</h3>${authorsHtml}</div>`;
 
-          let options = { format: "A4" };
+          let options = {
+            format: "A4",
+            margin: { top: "50", right: "50", bottom: "75", left: "50" },
+          };
 
           htmlString = `${headerTemplate}${htmlString}`;
 
