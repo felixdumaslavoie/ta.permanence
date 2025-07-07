@@ -9,6 +9,11 @@ import { imageURLCorrection } from "../data/imageURLCorrection";
 import { Picture } from "astro:assets";
 import { getImagesMetadata } from "../data/imageManager";
 
+import { Image } from "astro:assets";
+import localPrintImage from "../content/Icons/print-svgrepo-com.svg";
+import localMarkdownImage from "../content/Icons/markdown-svgrepo-com.svg";
+import localPDFImage from "../content/Icons/pdf-svgrepo-com.svg";
+
 const { title, excerpt, authors, pubDate, heroImage } = Astro.props;
 
 let pathStr = String(Astro.url.pathname);
@@ -133,6 +138,30 @@ const t = useTranslations(lang);
                 <h5 class="m-0 mb-3">{autrice}</h5>
               ))
             }
+            <div class="flex justify-end align-bottom">
+              <a href=""
+                ><Image
+                  width="50"
+                  src={localMarkdownImage}
+                  alt="Download a pdf version"
+                /></a
+              >
+
+              <a href=""
+                ><Image
+                  height="35"
+                  src={localPDFImage}
+                  alt="Download a pdf version"
+                /></a
+              >
+              <a href=""
+                ><Image
+                  width="50"
+                  src={localPrintImage}
+                  alt="Download a pdf version"
+                /></a
+              >
+            </div>
             <hr />
           </div>
           <slot />
