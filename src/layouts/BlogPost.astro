@@ -138,23 +138,23 @@ const t = useTranslations(lang);
                 <h5 class="m-0 mb-3">{autrice}</h5>
               ))
             }
-            <div class="flex justify-end align-bottom">
+            <div class="flex justify-around align-bottom m-2">
               <a href=""
                 ><Image
-                  width="50"
-                  src={localMarkdownImage}
+                  width="45"
+                  src={localPDFImage}
                   alt="Download a pdf version"
                 /></a
               >
 
               <a href=""
                 ><Image
-                  height="35"
-                  src={localPDFImage}
+                  height="50"
+                  src={localMarkdownImage}
                   alt="Download a pdf version"
                 /></a
               >
-              <a href=""
+              <a href="javascript:if(window.print)window.print()"
                 ><Image
                   width="50"
                   src={localPrintImage}

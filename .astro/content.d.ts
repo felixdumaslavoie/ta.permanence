@@ -173,7 +173,15 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"archives": Record<string, {
+		"Icons": Record<string, {
+  id: string;
+  body?: string;
+  collection: "Icons";
+  data: any;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"archives": Record<string, {
   id: string;
   render(): Render[".md"];
   slug: string;
