@@ -293,3 +293,34 @@ input.pagefind-ui__search-input.svelte-e9gkc3 {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+
+@media print {
+
+  header {
+    display: none;
+  }
+
+   main article div.hero-image {
+    width: 500px !important;
+    margin: auto;
+    display: block;
+  }
+
+main article div.prose {
+    padding: 25px;
+  }
+
+
+
+ main article div.prose p {
+break-inside: avoid; 
+    font-size: 16px;
+  }
+
+  .utilitaires-texte {
+    display: none;
+  }
+
+ 
+}

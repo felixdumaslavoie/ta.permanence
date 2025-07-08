@@ -138,7 +138,7 @@ const t = useTranslations(lang);
                 <h5 class="m-0 mb-3">{autrice}</h5>
               ))
             }
-            <div class="flex justify-around align-bottom m-2">
+            <div class="utilitaires-texte flex justify-around align-bottom m-8">
               <a href=""
                 ><Image
                   width="45"
@@ -176,9 +176,12 @@ const t = useTranslations(lang);
   const header = document.querySelector(".opacityFade") as HTMLElement;
   const prose = document.querySelector(".prose") as HTMLElement;
   const article = document.querySelector("article") as HTMLElement;
+
+  let result = "";
+  let scrollTop = 0;
   window.addEventListener("scroll", function () {
-    let scrollTop = window.scrollY || document.documentElement.scrollTop;
-    let result = String(1 - scrollTop / 250);
+    scrollTop = window.scrollY || document.documentElement.scrollTop;
+    result = String(1 - scrollTop / 250);
     if (header !== null) {
       let res = parseInt(result);
       if (res >= 0) {
@@ -190,5 +193,15 @@ const t = useTranslations(lang);
         }
       }
     }
+
+    window.onbeforeprint = function () {
+      header.style.opacity = "1";
+      prose.style.translate = `0px`;
+    };
+
+    window.onafterprint = function () {
+      header.style.opacity = result;
+      prose.style.translate = `0 ${1 - scrollTop}px`;
+    };
   });
 </script>
