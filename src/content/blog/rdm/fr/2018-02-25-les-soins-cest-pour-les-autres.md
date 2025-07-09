@@ -1,10 +1,11 @@
 ---
+id: 65
+pubDate: 2018-02-25T23:22:28.000Z
+slug: fr/les-soins-cest-pour-les-autres
 modification: 2025-03-06T17:19:39.000Z
 title: Les soins c’est pour les autres
-slug: fr/les-soins-cest-pour-les-autres
 authors:
   - "Kaëlla Stapels"
-pubDate: 2018-02-25T23:22:28.000Z
 topics:
   - "CUTE"
   - "Témoignage"

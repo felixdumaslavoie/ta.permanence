@@ -1,10 +1,11 @@
 ---
+id: 65
+pubDate: 2018-02-27T12:01:18.000Z
+slug: en/care-is-for-others
 modification: 2025-03-06T17:19:39.000Z
 title: Care Is For Others
-slug: en/care-is-for-others
 authors:
   - "Kaëlla Stapels"
-pubDate: 2018-02-27T12:01:18.000Z
 tags: CUTE
 editors:
   - "Cute Magazine"

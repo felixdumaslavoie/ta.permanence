@@ -1,8 +1,9 @@
 ---
+id: 124
+pubDate: 2019-11-06
+slug: fr/lautonomie-reellement-existante
 modification: 2025-03-06T17:19:39.000Z
 title: L'autonomie réellement existante
-slug: fr/lautonomie-reellement-existante
-pubDate: 2019-11-06
 topics:
   - "CUTE"
   - "Autonomie"
@@ -115,4 +116,3 @@ Tout s’est passé comme prévu, rien ne s’est passé comme prévu. On avait 
 [^7]: Voir l’appel large à la mobilisation à la suite des élections provinciales : [lien](https://www.ababord.org/Un-gouvernement-CAQ-et-puis-quoi-apres)
 
 [^8]: Voir la liste des appuis syndicaux et communautaires : [www.grevedesstages.info](http://www.grevedesstages.info/appuis)
-

@@ -14,7 +14,11 @@ import localPrintImage from "../content/Icons/print-svgrepo-com.svg";
 import localMarkdownImage from "../content/Icons/markdown-svgrepo-com.svg";
 import localPDFImage from "../content/Icons/pdf-svgrepo-com.svg";
 
-const { title, excerpt, authors, pubDate, heroImage } = Astro.props;
+const { id, title, slug, excerpt, authors, pubDate, heroImage } = Astro.props;
+
+const pdfUrl = `${pubDate.toISOString().split("T")[0]}-${slug}`;
+
+console.log(pdfUrl);
 
 let pathStr = String(Astro.url.pathname);
 

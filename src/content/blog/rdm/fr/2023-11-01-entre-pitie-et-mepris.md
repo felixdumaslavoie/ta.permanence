@@ -1,9 +1,10 @@
 ---
+id: 130
+pubDate: 2023-11-01
+slug: fr/entre-pitie-et-mepris
 modification: 2025-03-06T17:19:39.000Z
 title: Entre pitié et mépris
-slug: fr/entre-pitie-et-mepris
 excerpt: Les associations étudiantes nationales n’ont jamais servi la cause des stagiaires.
-pubDate: 2023-11-01
 authors:
   - "Gabrielle Laverdière"
   - "Félix Dumas-Lavoie"
@@ -17,7 +18,6 @@ topics:
 trends:
   - "décentralisation"
   - "autonomie"
-
 editors:
   - "Gabrielle Laverdière"
 

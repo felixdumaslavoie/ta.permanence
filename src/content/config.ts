@@ -1,45 +1,52 @@
-import { defineCollection, z } from 'astro:content';
-
+import { defineCollection, z } from "astro:content";
 const blog = defineCollection({
-  type: 'content',
+  type: "content",
   // Type-check frontmatter using a schema
   schema: z.object({
+    id: z.number(),
+    pubDate: z.coerce.date(),
+    slug: z.coerce.string(),
     modification: z.coerce.date(),
     title: z.string(),
     excerpt: z.string(),
     authors: z.array(z.string()),
     editors: z.array(z.string()),
     // Transform string to Date object
-    pubDate: z.coerce.date(),
     heroImage: z.string(),
   }),
 });
-
-const magazineSchema = z.record(z.string(), z.object({
-  file: z.string(),
-  thumbnail: z.string()
-}))
-
-const tractSchema = z.record(z.string(), z.object({
-  file: z.string()
-}))
-
-const videoSchema = z.record(z.string(), z.object({
-  url: z.string(),
-  excerpt: z.string()
-}))
-
-const websiteSchema = z.record(z.string(), z.object(
-  {
+const magazineSchema = z.record(
+  z.string(),
+  z.object({
+    file: z.string(),
+    thumbnail: z.string(),
+  }),
+);
+const tractSchema = z.record(
+  z.string(),
+  z.object({
+    file: z.string(),
+  }),
+);
+const videoSchema = z.record(
+  z.string(),
+  z.object({
     url: z.string(),
     excerpt: z.string(),
-    thumbnail: z.string(),
-  }
-))
-
-
+  }),
+);
+const websiteSchema = z.record(
+  z.string(),
+  z.object(
+    {
+      url: z.string(),
+      excerpt: z.string(),
+      thumbnail: z.string(),
+    },
+  ),
+);
 const archives = defineCollection({
-  type: 'content',
+  type: "content",
   // Type-check frontmatter using a schema
   schema: z.object({
     // Transform string to Date object
@@ -57,33 +64,30 @@ const archives = defineCollection({
         magazines: z.object({
           name: z.string(),
           description: z.string(),
-          magazine: z.array(magazineSchema)
+          magazine: z.array(magazineSchema),
         }).optional(),
         tracts: z.object({
           name: z.string(),
           description: z.string(),
-          tract: z.array(tractSchema).optional()
+          tract: z.array(tractSchema).optional(),
         }).optional(),
         affiches: z.object({
           name: z.string(),
           description: z.string(),
-          affiche: z.array(magazineSchema)
+          affiche: z.array(magazineSchema),
         }).optional(),
         videos: z.object({
           name: z.string(),
           description: z.string(),
-          video: z.array(videoSchema).optional()
+          video: z.array(videoSchema).optional(),
         }),
-        websites:
-          z.object({
-            name: z.string(),
-            description: z.string(),
-            website: z.array(websiteSchema).optional()
-          })
-      }
+        websites: z.object({
+          name: z.string(),
+          description: z.string(),
+          website: z.array(websiteSchema).optional(),
+        }),
+      },
     ),
   }),
 });
-
-
 export const collections = { blog, archives };

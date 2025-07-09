@@ -15,10 +15,10 @@
     }
   },
   "url2id": {
-    "en/care-is-for-others": "65",
-    "fr/lautonomie-reellement-existante": "124",
-    "fr/entre-pitie-et-mepris": "130",
-    "fr/les-soins-cest-pour-les-autres": "65",
-    "fr/les-urnes-la-rue-la-greve": "76"
+    "en/care-is-for-others": 65,
+    "fr/les-soins-cest-pour-les-autres": 65,
+    "fr/les-urnes-la-rue-la-greve": 76,
+    "fr/lautonomie-reellement-existante": 124,
+    "fr/entre-pitie-et-mepris": 130
   }
 }
