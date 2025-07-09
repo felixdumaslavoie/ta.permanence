@@ -302,9 +302,14 @@ input.pagefind-ui__search-input.svelte-e9gkc3 {
   }
 
    main article div.hero-image {
-    width: 500px !important;
+    width: 300px !important;
     margin: auto;
     display: block;
+    margin-top: 100px;
+  }
+
+  main article div.title {
+    break-after: page;
   }
 
 main article div.prose {
@@ -323,5 +328,28 @@ break-inside: avoid;
     display: none;
   }
 
- 
+
+a[href*="://"]::after,
+a:not([href^="/"])::after
+{
+  content: " (" attr(href) ")";
 }
+ 
+
+html body footer  {
+    display: none;
+  }
+
+
+
+.data-footnote-backref{
+    display: none;
+}
+
+  sup a::after {
+    display: none;
+  }
+
+
+}
+
