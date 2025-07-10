@@ -6,7 +6,7 @@ import BlogPost from "../layouts/BlogPost.astro";
 
 export async function getStaticPaths() {
   return (await getCollection("blog")).map((it) => ({
-    params: { slug: it.slug },
+    params: { slug: it.slug.substring(10, it.slug.length - 3) },
     props: it,
   }));
 }

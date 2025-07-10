@@ -23,9 +23,6 @@
             }
           ]
         },
-        "slug": {
-          "type": "string"
-        },
         "modification": {
           "anyOf": [
             {

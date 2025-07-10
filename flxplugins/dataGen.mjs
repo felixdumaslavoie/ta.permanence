@@ -2,7 +2,7 @@ import { readdirSync, readFileSync, writeFile, writeFileSync } from "node:fs";
 import * as lineByLine from "n-readlines";
 import matter from "gray-matter";
 const ENCODING = "utf8";
-const contentPath = "./src/content/blog/rdm";
+const contentPath = "./src/content/blog";
 const DataJSONPath = "./src/content/data/data.json";
 // JSON keys
 const id2urlKey = "id2url";
@@ -47,15 +47,17 @@ function manipulateData() {
           let frontMatterObj = getFrontmatterDataFromYAML(
             alternativeYAMLExtractor(aTextPath),
           );
+          var slug = texte.slice(11);
+          slug = slug.substring(0, slug.length - 3);
           let idDuTexte = frontMatterObj.id;
           if (!data[id2urlKey].hasOwnProperty(idDuTexte)) {
             data[id2urlKey][idDuTexte] = {};
-            data[id2urlKey][idDuTexte][langue] = frontMatterObj.slug;
+            data[id2urlKey][idDuTexte][langue] = slug;
           } else if (!data[id2urlKey][idDuTexte].hasOwnProperty(langue)) {
-            data[id2urlKey][idDuTexte][langue] = frontMatterObj.slug;
+            data[id2urlKey][idDuTexte][langue] = slug;
           }
-          if (!data[url2IDKey].hasOwnProperty(frontMatterObj.slug)) {
-            data[url2IDKey][frontMatterObj.slug] = idDuTexte;
+          if (!data[url2IDKey].hasOwnProperty(slug)) {
+            data[url2IDKey][slug] = idDuTexte;
           }
         } catch (error) {
           print(error);

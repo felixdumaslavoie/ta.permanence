@@ -16,7 +16,7 @@ const getFiles = async (source) =>
     .map((dirent) => dirent.name);
 
 export async function generatePDF() {
-  const blogFolder = "./src/content/blog/rdm/";
+  const blogFolder = "./src/content/blog/";
   const pdfFolder = "./public/blog/pdf/";
 
   getDirectories(blogFolder).then((res) => {

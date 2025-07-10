@@ -1,7 +1,6 @@
 ---
 id: 76
 pubDate: 2018-08-26T21:09:53.000Z
-slug: fr/les-urnes-la-rue-la-greve
 modification: 2025-03-06T17:19:39.000Z
 title: Les urnes, la rue, la grève
 tags: Grève, magazine, Rémunération des stages, Travail étudiant, Stage, CUTE

@@ -1,7 +1,6 @@
 ---
 id: 124
 pubDate: 2019-11-06
-slug: fr/lautonomie-reellement-existante
 modification: 2025-03-06T17:19:39.000Z
 title: L'autonomie réellement existante
 topics:
