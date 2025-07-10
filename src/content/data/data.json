@@ -1,24 +1,24 @@
 {
   "id2url": {
     "65": {
-      "en": "care-is-for-others",
-      "fr": "les-soins-cest-pour-les-autres"
+      "en": "-others",
+      "fr": "est-pour-les-autres"
     },
     "76": {
-      "fr": "les-urnes-la-rue-la-greve"
+      "fr": "a-rue-la-greve"
     },
     "124": {
-      "fr": "lautonomie-reellement-existante"
+      "fr": "reellement-existante"
     },
     "130": {
-      "fr": "entre-pitie-et-mepris"
+      "fr": "-et-mepris"
     }
   },
   "url2id": {
-    "care-is-for-others": 65,
-    "les-soins-cest-pour-les-autres": 65,
-    "les-urnes-la-rue-la-greve": 76,
-    "lautonomie-reellement-existante": 124,
-    "entre-pitie-et-mepris": 130
+    "-others": 65,
+    "-et-mepris": 130,
+    "reellement-existante": 124,
+    "est-pour-les-autres": 65,
+    "a-rue-la-greve": 76
   }
 }

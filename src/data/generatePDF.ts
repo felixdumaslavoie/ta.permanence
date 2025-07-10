@@ -3,7 +3,6 @@ import { marked } from "marked";
 import markedFootnote from "marked-footnote";
 import matter from "gray-matter";
 import htmlPdfNode from "html-pdf-node";
-import { pdf } from "pdf-to-img";
 
 const getDirectories = async (source) =>
   (await fs.readdir(source, { withFileTypes: true }))
@@ -26,7 +25,7 @@ export async function generatePDF() {
           let split: string[] = file.split(".");
 
           if (split.at(split.length - 1) === "md") {
-            //console.log(file)
+            console.log(file);
             let corrected = split.pop();
 
             let fuse: string = "";

@@ -26,7 +26,7 @@ const posts = (await getCollection("blog")).sort(
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-console.log(posts[0].slug);
+//console.log(posts);
 
 const langue = String(textLang(Astro.url));
 
