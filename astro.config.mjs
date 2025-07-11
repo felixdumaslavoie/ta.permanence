@@ -8,13 +8,17 @@ import { dataGen } from "./flxplugins/dataGen.mjs";
 
 // Thumbnais
 import { generateThumbnails } from "./src/data/generateThumbnails";
+// pdf
+import { generatePDF } from "./src/data/generatePDF";
+// markdown
+import { copyMarkdown } from "./src/data/copyMarkdown.ts";
 
 import alpinejs from "@astrojs/alpinejs";
-import { generatePDF } from "./src/data/generatePDF";
 
 dataGen();
 generateThumbnails();
 generatePDF();
+copyMarkdown();
 
 // https://astro.build/config
 export default defineConfig({
@@ -35,6 +39,6 @@ export default defineConfig({
     remarkPlugins: [externalAnchorPlugin],
   },
   redirects: {
-    '/': '/fr/0'
+    "/": "/fr/0",
   },
 });

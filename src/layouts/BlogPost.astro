@@ -20,6 +20,8 @@ const pathNameSplit = Astro.url.pathname.split("/");
 
 const pdfUrl = `http://${Astro.url.host}/blog/pdf/${pathNameSplit[1]}/${pathNameSplit[2]}.pdf`;
 
+const markdownUrl = `http://${Astro.url.host}/blog/markdown/${pathNameSplit[1]}/${pathNameSplit[2]}.md`;
+
 let pathStr = String(Astro.url.pathname);
 
 if (pathStr.charAt(0) === "/") pathStr = pathStr.substring(1, pathStr.length);
@@ -151,8 +153,8 @@ const t = useTranslations(lang);
                 /></a
               >
 
-              <a href=""
-                ><Image
+              <a href={markdownUrl} download>
+                <Image
                   height="50"
                   src={localMarkdownImage}
                   alt="Download a pdf version"
