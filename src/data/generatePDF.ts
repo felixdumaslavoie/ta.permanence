@@ -25,7 +25,7 @@ export async function generatePDF() {
           let split: string[] = file.split(".");
 
           if (split.at(split.length - 1) === "md") {
-            console.log(file);
+            //console.log(file);
             let corrected = split.pop();
 
             let fuse: string = "";
@@ -89,20 +89,20 @@ async function convertMD2PDF(
 ) {
   if (writeFlag) {
     //console.log(`${nouveauDossier}${fileName} ${ancienDossier}${oldName}`)
+    //
+    //
 
     fs.readFile(`${ancienDossier}${oldName}`, "utf8").then((rawData) => {
       let data = matter(rawData);
 
       let heroImage = `./src/content/files/pictures/${data.data.heroImage}`;
-      let lang = data.data.slug.split("/")[0];
+      let lang = (ancienDossier.includes("/en/")) ? "en" : "fr";
 
       let authorsHtml = "";
 
       data.data.authors.forEach((author) => {
         authorsHtml += `<h2 style="text-align: center;">${author}</h2>`;
       });
-
-      //console.log(authorsHtml);
 
       const html = convertMD2HTML(data, lang).then((htmlString) => {
         var date = new Date(data.data.pubDate);

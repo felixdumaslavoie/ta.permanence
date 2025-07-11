@@ -16,9 +16,9 @@ import localPDFImage from "../content/Icons/pdf-svgrepo-com.svg";
 
 const { title, slug, excerpt, authors, pubDate, heroImage } = Astro.props;
 
-const pdfUrl = `${pubDate.toISOString().split("T")[0]}-${slug}`;
+const pathNameSplit = Astro.url.pathname.split("/");
 
-//console.log(slug);
+const pdfUrl = `http://${Astro.url.host}/blog/pdf/${pathNameSplit[1]}/${pathNameSplit[2]}.pdf`;
 
 let pathStr = String(Astro.url.pathname);
 
@@ -143,11 +143,11 @@ const t = useTranslations(lang);
               ))
             }
             <div class="utilitaires-texte flex justify-around align-bottom m-8">
-              <a href=""
+              <a href={pdfUrl} target="_blank"
                 ><Image
                   width="45"
                   src={localPDFImage}
-                  alt="Download a pdf version"
+                  alt="Download a pdf version / Télécharger une version pdf"
                 /></a
               >
 
