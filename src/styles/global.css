@@ -108,6 +108,10 @@ button.colorThemeToggle {
 	font-display: swap;
 }
 
+.prose p.atkinson {
+	font-family: 'Atkinson', sans-serif;
+}
+
 body {
 	font-family: 'Atkinson', sans-serif;
 	margin: 0;
@@ -188,7 +192,7 @@ p {
 
 .prose p {
 	font-family: 'Baskervville';
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 }
 textarea {
 	width: 100%;
@@ -265,6 +269,10 @@ ul.alignLis li {
 
 sup {
 	font-size: 90%;
+}
+
+html.dark .utilitaires-texte {
+	filter: invert(100%);
 }
 
 html.dark .pageFindIsItDark  .pagefind-ui.svelte-e9gkc3, html.dark .pagefind-ui__result-title.svelte-4xnkmf .pagefind-ui__result-link.svelte-4xnkmf{
