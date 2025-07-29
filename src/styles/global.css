@@ -101,8 +101,8 @@ button.colorThemeToggle {
 }
 
 @font-face {
-	font-family: 'Baskervville';
-	src: url('/fonts/LibreBaskerville-Regular.woff2') format('woff2');
+	font-family: 'Calluna';
+	src: url('/fonts/Calluna-Regular.woff2') format('woff2');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -191,7 +191,7 @@ p {
 }
 
 .prose p {
-	font-family: 'Baskervville';
+	font-family: 'Calluna';
 	font-size: 1.2rem;
 }
 textarea {
