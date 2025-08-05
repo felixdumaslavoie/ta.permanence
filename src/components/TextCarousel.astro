@@ -324,6 +324,18 @@ const data = {
 
     playAnimation();
 
+    function loop() {
+        selector++;
+        selector %= maxElements;
+        indicators[selector].click();
+    }
+
+    var interval = setInterval(loop, 12500);
+
+    function resetInterval () {
+      clearInterval(interval)
+    }
+
     function resetValues() {
       si = 0;
       stri = 0;
@@ -382,16 +394,26 @@ const data = {
         selector = Number(indicator.id);
         resetValues();
         playAnimation();
+        resetInterval()
       });
     });
 
     if (previousButton) {
       previousButton.onclick = () => {
-        selector--;
-        selector %= maxElements;
-        if (selector < 0) selector = maxElements;
-        indicators[selector].click();
+        
+        if (selector > 0){
+          selector--;
+          indicators[selector].click();
+        }
+        else if (selector == 0) {
+          selector = maxElements;
+          indicators[selector - 1].click();
+      }
+
+      resetInterval()
+      
       };
+
     }
 
     if (nextButton) {
@@ -399,12 +421,12 @@ const data = {
         selector++;
         selector %= maxElements;
         indicators[selector].click();
+
+        resetInterval()
       };
     }
 
-    setInterval(() => {
-      if (nextButton !== null) nextButton.click();
-    }, 12500);
+
   });
 
   // Find all buttons with the `alert` class on the page.
