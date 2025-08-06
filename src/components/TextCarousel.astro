@@ -123,7 +123,7 @@ const data = {
     <!-- previous button -->
     <button
       type="button"
-      class="thePreviousButton h-52 absolute left-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-neutral-600 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:outline-offset-0 dark:bg-neutral-950/40 dark:text-neutral-300 dark:hover:bg-neutral-950/60 dark:focus-visible:outline-white"
+      class="thePreviousButton  h-52 absolute left-2 sm:left-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-neutral-600 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:outline-offset-0 dark:bg-neutral-950/40 dark:text-neutral-300 dark:hover:bg-neutral-950/60 dark:focus-visible:outline-white"
       aria-label="previous slide"
     >
       <svg
@@ -145,7 +145,7 @@ const data = {
     <!-- next button -->
     <button
       type="button"
-      class="theNextButton h-52 absolute right-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-neutral-600 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:outline-offset-0 dark:bg-neutral-950/40 dark:text-neutral-300 dark:hover:bg-neutral-950/60 dark:focus-visible:outline-white"
+      class="theNextButton h-52 absolute right-2 sm:right-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-neutral-600 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:outline-offset-0 dark:bg-neutral-950/40 dark:text-neutral-300 dark:hover:bg-neutral-950/60 dark:focus-visible:outline-white"
       aria-label="next slide"
     >
       <svg
@@ -196,25 +196,26 @@ const data = {
             </div>
             </div>
             <div
-              class="titleDiv block w-[90%] sm:relative top-[205px] sm:top-1/4 sm:w-6/12   justify-start"
+              class="titleDiv block w-[100%] sm:relative top-[205px] sm:top-1/4 sm:w-6/12"
             >
-            <h4 class="pb-0 mb-0 text-lg text-gray-300" x-text="slide.date"></h4>
               <h3
-                class="w-full h-40 text-wrap pt-0 mt-0 lg:text-6xl md:whitespace-nowrap lg:w-full lg:max-w-full lg:max-h-10 lg:h-10 sm:text-balance text-5xl font-bold text-white animatedTitle"
+                class="les-titres w-full h-12 text-left sm:h-40 text-wrap py-0 my-0 text-[1.2rem] lg:text-6xl md:whitespace-nowrap sm:w-full sm:max-w-full sm:max-h-10 lg:h-10 sm:text-balance  font-bold text-white animatedTitle"
                 x-text="slide.title"
+                
                 x-bind:aria-describedby="'slide' + (index + 1) + 'Description'"
               >
               </h3>
               <p
-                class="w-[90%] h-20 ml-8 sm:ml-0 text-pretty sm:h-20 sm:mt-10 text-neutral-300"
+                class="h-20 text-pretty sm:h-20 pb-[20%] sm:mt-10 text-neutral-300"
                 x-text="slide.description"
                 x-bind:id="'slide' + (index + 1) + 'Description'"
               >
               </p>
+            <h4 class=" absolute bottom-0 sm:bottom-auto right-[0.5rem] sm:left-0 sm:text-left py-0  text-lg text-gray-300" x-text="slide.date"></h4>
               
             </div>
             <div
-            class="flex justify-center relative -bottom-[20%]"
+            class="flex left-[50%] -translate-x-1/2 -translate-y-1/2 absolute bottom-[5vh]"
           >
             <a x-bind:href="slide.ctaUrl" 
               ><button
@@ -324,6 +325,9 @@ const data = {
     }
   }
 
+
+
+
   let selector = 0;
   const maxElements = 3;
 
@@ -337,7 +341,7 @@ const data = {
       titles[1].innerHTML,
       titles[2].innerHTML,
     ]; // Your text goes here
-    var speed = 10; // ms per frame
+    var speed = 5; // ms per frame
     var increment = 3; // frames per step. Must be >2
 
     var clen = ctnt;
