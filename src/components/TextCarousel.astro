@@ -132,7 +132,7 @@ const data = {
         stroke="currentColor"
         fill="none"
         stroke-width="3"
-        class="size-5 md:size-6 pr-0.5"
+        class="size-5 sm:size-6 pr-0.5"
         aria-hidden="true"
       >
         <path
@@ -154,7 +154,7 @@ const data = {
         stroke="currentColor"
         fill="none"
         stroke-width="3"
-        class="size-5 md:size-6 pl-0.5"
+        class="size-5 sm:size-6 pl-0.5"
         aria-hidden="true"
       >
         <path
@@ -177,7 +177,7 @@ const data = {
           <!-- Title and description -->
 
           <div
-            class="content-start flex-wrap justify-start sm:flex-nowrap md:pt-[35rem] px-0 sm:px-32 sm:pt-0 sm:flex-row lg:px-32 lg:pt-36 absolute inset-0 z-10  break-normal items-center gap-2 bg-gradient-to-t from-neutral-950/85 to-transparent pt-40"
+            class="content-start flex-wrap justify-start sm:flex-nowrap md:pt-[2rem] px-0 sm:px-32 sm:pt-0 sm:flex-row lg:px-32 lg:pt-36 absolute inset-0 z-10  break-normal items-center gap-2 bg-gradient-to-t from-neutral-950/85 to-transparent pt-40"
           >
             <!-- indicators -->
             <div
@@ -195,11 +195,13 @@ const data = {
               </template>
             </div>
             </div>
+            <h4 class=" relative block p-0 m-0 pl-5 sm:pl-0 text-lg text-gray-300" x-text="slide.date"></h4>
+
             <div
               class="titleDiv block w-[100%] sm:relative top-[205px] sm:top-1/4 sm:w-6/12"
             >
               <h3
-                class="les-titres w-full ml-5 sm:ml-0 text-left sm:h-40 text-wrap py-0 my-0 text-[1.2rem] lg:text-6xl md:whitespace-nowrap sm:w-full sm:max-w-full sm:max-h-10 lg:h-10 sm:text-balance  font-bold text-white animatedTitle"
+                class="les-titres w-full ml-5 sm:ml-0 text-left sm:h-40 text-wrap py-0 my-0 text-[1.2rem] lg:text-6xl sm:whitespace-nowrap sm:w-[90vw] sm:max-h-10 md:h-10 sm:text-balance  font-bold text-white animatedTitle"
                 x-text="slide.title"
                 
                 x-bind:aria-describedby="'slide' + (index + 1) + 'Description'"
@@ -211,7 +213,7 @@ const data = {
                 x-bind:id="'slide' + (index + 1) + 'Description'"
               >
               </p>
-            <h4 class=" absolute sm:relative bottom-0 right-[0.5rem] sm:left-0 sm:text-left py-0  text-lg text-gray-300" x-text="slide.date"></h4>
+            
               
             </div>
             <div
@@ -222,7 +224,7 @@ const data = {
                 type="button"
                 x-cloak
                 x-show="slide.ctaUrl !== null"
-                class="mt-2 text-lg cursor-pointer w-40 h-16 whitespace-nowrap rounded-md border border-white bg-transparent px-4 py-2 text-center font-medium tracking-wide text-white transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-onSurfaceDarkStrong active:opacity-100 active:outline-offset-0 md:text-lg"
+                class="mt-2 text-lg cursor-pointer w-40 h-16 whitespace-nowrap rounded-md border border-white bg-transparent px-4 py-2 text-center font-medium tracking-wide text-white transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-onSurfaceDarkStrong active:opacity-100 active:outline-offset-0 sm:text-lg"
                 x-text="slide.ctaText"></button></a
             >
           </div>
