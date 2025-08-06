@@ -196,7 +196,7 @@ const data = {
             </div>
             </div>
             <div
-              class="titleDiv block w-[90%] sm:relative sm:top-[205px] sm:w-6/12   justify-start"
+              class="titleDiv block w-[90%] sm:relative top-[205px] sm:top-1/4 sm:w-6/12   justify-start"
             >
             <h4 class="pb-0 mb-0 text-lg text-gray-300" x-text="slide.date"></h4>
               <h3
@@ -206,7 +206,7 @@ const data = {
               >
               </h3>
               <p
-                class="w-full h-20 ml-8 sm:ml-0 text-pretty sm:h-20 sm:mt-10 text-neutral-300"
+                class="w-[90%] h-20 ml-8 sm:ml-0 text-pretty sm:h-20 sm:mt-10 text-neutral-300"
                 x-text="slide.description"
                 x-bind:id="'slide' + (index + 1) + 'Description'"
               >
@@ -214,14 +214,14 @@ const data = {
               
             </div>
             <div
-            class="flex justify-center relative -bottom-1/4 xl:-bottom-1/2"
+            class="flex justify-center relative -bottom-[20%]"
           >
             <a x-bind:href="slide.ctaUrl" 
               ><button
                 type="button"
                 x-cloak
                 x-show="slide.ctaUrl !== null"
-                class="mt-2 text-lg cursor-pointer whitespace-nowrap rounded-md border border-white bg-transparent px-4 py-2 text-center font-medium tracking-wide text-white transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-onSurfaceDarkStrong active:opacity-100 active:outline-offset-0 md:text-lg"
+                class="mt-2 text-lg cursor-pointer w-40 h-16 whitespace-nowrap rounded-md border border-white bg-transparent px-4 py-2 text-center font-medium tracking-wide text-white transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-onSurfaceDarkStrong active:opacity-100 active:outline-offset-0 md:text-lg"
                 x-text="slide.ctaText"></button></a
             >
           </div>
