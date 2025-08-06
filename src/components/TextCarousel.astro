@@ -199,19 +199,19 @@ const data = {
               class="titleDiv block w-[100%] sm:relative top-[205px] sm:top-1/4 sm:w-6/12"
             >
               <h3
-                class="les-titres w-full h-12 text-left sm:h-40 text-wrap py-0 my-0 text-[1.2rem] lg:text-6xl md:whitespace-nowrap sm:w-full sm:max-w-full sm:max-h-10 lg:h-10 sm:text-balance  font-bold text-white animatedTitle"
+                class="les-titres w-full ml-5 sm:ml-0 text-left sm:h-40 text-wrap py-0 my-0 text-[1.2rem] lg:text-6xl md:whitespace-nowrap sm:w-full sm:max-w-full sm:max-h-10 lg:h-10 sm:text-balance  font-bold text-white animatedTitle"
                 x-text="slide.title"
                 
                 x-bind:aria-describedby="'slide' + (index + 1) + 'Description'"
               >
               </h3>
               <p
-                class="h-20 text-pretty sm:h-20 pb-[20%] sm:mt-10 text-neutral-300"
+                class="h-20 mx-5 sm:mx-0 text-2xl text-pretty sm:h-20 pb-[20%] sm:mt-6 text-neutral-300"
                 x-text="slide.description"
                 x-bind:id="'slide' + (index + 1) + 'Description'"
               >
               </p>
-            <h4 class=" absolute bottom-0 sm:bottom-auto right-[0.5rem] sm:left-0 sm:text-left py-0  text-lg text-gray-300" x-text="slide.date"></h4>
+            <h4 class=" absolute sm:relative bottom-0 right-[0.5rem] sm:left-0 sm:text-left py-0  text-lg text-gray-300" x-text="slide.date"></h4>
               
             </div>
             <div
