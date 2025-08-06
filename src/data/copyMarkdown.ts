@@ -29,7 +29,6 @@ export async function copyMarkdown() {
               split.forEach((fragment: string) => {
                 fuse += fragment;
               });
-              //console.log(`${pdfFolder}${dossier}/${fuse}`)
 
               readMarkdown(
                 `${blogFolder}${dossier}/`,
@@ -52,7 +51,6 @@ async function readMarkdown(
   // Le page number commence à un :( !
   var writeFlag = false;
 
-  console.log(`${nouveauDossier}${oldName}`);
 
   fs.stat(`${nouveauDossier}${oldName}`).then((statDest) => {
     fs.stat(`${ancienDossier}${oldName}`).then((stat) => {

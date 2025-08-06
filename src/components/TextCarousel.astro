@@ -17,6 +17,7 @@ interface molecular_data {
   heroImage: string;
   title: string;
   excerpt: string;
+  pubDate: Date;
 }
 
 interface IText {
@@ -35,6 +36,22 @@ interface IImageMetaData {
   excerpt: string;
   url: string;
   authors: string;
+  date: string;
+}
+
+let langue = (lang === "fr") ? "fr-CA" : "en-CA";
+
+function capitalizeFirstLetter(val) {
+    return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+}
+
+function getDate(txt: IText){
+  return txt.data.pubDate.toLocaleDateString(langue,  {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+})
 }
 
 await textes.forEach((txt: IText) => {
@@ -44,6 +61,7 @@ await textes.forEach((txt: IText) => {
     excerpt: txt.data.excerpt,
     url: txt.slug.split("/")[1],
     authors: txt.authors,
+    date: capitalizeFirstLetter(getDate(txt))
   };
 
   carousel.push(data);
@@ -68,6 +86,7 @@ const data = {
       description: carousel[0].excerpt,
       ctaUrl: carousel[0].url,
       ctaText: t("readText"),
+      date: carousel[0].date
     },
     {
       imgSrc: carousel[1].imgUrl.src,
@@ -77,6 +96,8 @@ const data = {
       description: carousel[1].excerpt,
       ctaUrl: carousel[1].url,
       ctaText: t("readText"),
+      date: carousel[1].date
+
     },
     {
       imgSrc: carousel[2].imgUrl.src,
@@ -86,6 +107,8 @@ const data = {
       description: carousel[2].excerpt,
       ctaUrl: carousel[2].url,
       ctaText: t("readText"),
+      date: carousel[2].date
+
     },
   ],
   currentSlideIndex: 1,
@@ -173,10 +196,11 @@ const data = {
             </div>
             </div>
             <div
-              class="titleDiv block w-[80%] sm:relative sm:top-[205px] sm:w-6/12   justify-start"
+              class="titleDiv block w-[90%] sm:relative sm:top-[205px] sm:w-6/12   justify-start"
             >
+            <h4 class="pb-0 mb-0 text-lg text-gray-300" x-text="slide.date"></h4>
               <h3
-                class="w-full h-40 text-wrap pt-0 sm:pt-6 lg:text-6xl md:whitespace-nowrap lg:w-full lg:max-w-full lg:max-h-10 lg:h-10 sm:text-balance text-5xl font-bold text-white animatedTitle"
+                class="w-full h-40 text-wrap pt-0 mt-0 lg:text-6xl md:whitespace-nowrap lg:w-full lg:max-w-full lg:max-h-10 lg:h-10 sm:text-balance text-5xl font-bold text-white animatedTitle"
                 x-text="slide.title"
                 x-bind:aria-describedby="'slide' + (index + 1) + 'Description'"
               >
