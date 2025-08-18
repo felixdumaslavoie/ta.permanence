@@ -29,7 +29,9 @@ export const ui = {
     'tracts': 'Zines',
     'affiches': 'Posters',
     'videos': 'Videos',
-    'siteWeb': 'Websites'
+    'siteWeb': 'Websites',
+    'link': 'Link copied!',
+    'linkDesc': 'Click outside this box to return to site',
   },
   fr: {
     'site_title': SITE_TITLE.fr,
@@ -49,8 +51,9 @@ export const ui = {
     'tracts': 'Tracts',
     'affiches': 'Affiches',
     'videos': 'Vidéos',
-    'siteWeb': 'Sites web'
-
+    'siteWeb': 'Sites web',
+    'link': 'Lien copié dans le presse papier!',
+    'linkDesc': 'Cliquez à l\'extérieur de cette boite pour sortir',
 
   },
 } as const;
