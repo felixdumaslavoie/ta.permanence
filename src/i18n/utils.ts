@@ -1,6 +1,5 @@
 import { ui, defaultLang, textsByMainPage } from './ui';
 import { howManyTexts, Languages } from "../data/fetchData";
-import type { DataCollectionKey } from 'astro:content';
 
 
 export function getLangFromUrl(url: URL) {
@@ -15,15 +14,17 @@ export function useTranslations(lang: keyof typeof ui) {
   }
 }
 
-export function computePaths(lang: string): Array<Object> {
+export function computePaths(lang: string, test): Array<Object> {
+
 
   if (!Object.values(Languages).includes(lang)) {
     throw new Error("Compute paths: language code not found")
   }
 
-  let textNumber: number = howManyTexts(lang);
+ 
 
-  let pageNumber: number = textNumber / textsByMainPage
+  let pageNumber: number = 4 / textsByMainPage
+
 
   let paramArray = new Array(Math.ceil(pageNumber)).fill({});
 
@@ -36,12 +37,12 @@ export function computePaths(lang: string): Array<Object> {
   return paramArray;
 }
 
-export function howManyMainPages(lang: string): number {
+export function howManyMainPages(lang: string, howManyTexts : number): number {
   if (!Object.values(Languages).includes(lang)) {
     throw new Error("howManyMainPages: language code not found")
   }
 
-  let textNumber: number = howManyTexts(lang);
+  let textNumber: number = howManyTexts;
 
   let pageNumber: number = Math.ceil(textNumber / textsByMainPage)
 

@@ -29,14 +29,16 @@ if (isMainPage(Astro.url)) {
 
 let doItOrNot = "";
 
-if (result.pathname === "/undefined")
+
+
+const t = useTranslations(lang);
+const { numeroPage } = Astro.props;
+
+if (result.pathname === "/undefined" || numeroPage === "")
   // Si il n'y a pas de traduction.
   doItOrNot = "opacity-0 pointerNone ";
 
 let otherClasses = " languageSwitcher sm:block";
-
-const t = useTranslations(lang);
-const { numeroPage } = Astro.props;
 ---
 
 <astro-langage-switcher

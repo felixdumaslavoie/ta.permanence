@@ -8,7 +8,14 @@ const { numeroPage } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 
-const howManyPages = howManyMainPages(lang);
+
+// Get number of texts in current language
+const globFr =  import.meta.glob(`../content/blog/fr/*.md`)
+const globEn =  import.meta.glob(`../content/blog/en/*.md`)
+
+let howmanyTextsInLang : number = (lang === "fr") ? Object.keys(globFr).length : Object.keys(globEn).length;
+
+const howManyPages = howManyMainPages(lang, howmanyTextsInLang);
 
 const no = Number(numeroPage);
 

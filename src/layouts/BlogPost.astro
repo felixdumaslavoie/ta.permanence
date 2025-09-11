@@ -14,8 +14,11 @@ import { Image } from "astro:assets";
 import localPrintImage from "../content/Icons/print-svgrepo-com.svg";
 import localMarkdownImage from "../content/Icons/markdown-svgrepo-com.svg";
 import localPDFImage from "../content/Icons/pdf-svgrepo-com.svg";
+import { undefined } from "astro:schema";
 
-const { title, slug, excerpt, authors, pubDate, heroImage } = Astro.props;
+const { title, slug, excerpt, authors, pubDate, heroImage, translation } = Astro.props;
+
+
 
 const pathNameSplit = Astro.url.pathname.split("/");
 
@@ -37,6 +40,16 @@ const imagePath: string = imageURLCorrection(heroImage);
 let resultat = await getImagesMetadata();
 
 const lang = getLangFromUrl(Astro.url);
+
+
+let otherLang =  (lang === "en") ? "fr" : "en";
+
+let translationUrl = `${otherLang}/${translation}`
+
+if (translation === undefined) {
+  translationUrl = ""
+}
+
 const t = useTranslations(lang);
 ---
 
@@ -115,7 +128,7 @@ const t = useTranslations(lang);
   </head>
 
   <body>
-    <Header numeroPage={`0`} />
+    <Header numeroPage={translationUrl} />
     <main
       class="w-full pt-0 ps-0 pe-0 max-w-fit md:max-w-[calc(100%-2rem)] md:w-[calc(100%-2rem)] md:pt-32"
     >

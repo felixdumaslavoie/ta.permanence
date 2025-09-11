@@ -3,7 +3,6 @@ const blog = defineCollection({
   type: "content",
   // Type-check frontmatter using a schema
   schema: z.object({
-    id: z.number(),
     pubDate: z.coerce.date(),
     modification: z.coerce.date(),
     title: z.string(),
@@ -12,6 +11,7 @@ const blog = defineCollection({
     editors: z.array(z.string()),
     // Transform string to Date object
     heroImage: z.string(),
+    translation: z.string().optional(),
   }),
 });
 const magazineSchema = z.record(

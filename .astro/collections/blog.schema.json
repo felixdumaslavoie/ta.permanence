@@ -4,9 +4,6 @@
     "blog": {
       "type": "object",
       "properties": {
-        "id": {
-          "type": "number"
-        },
         "pubDate": {
           "anyOf": [
             {
@@ -60,12 +57,14 @@
         "heroImage": {
           "type": "string"
         },
+        "translation": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }
       },
       "required": [
-        "id",
         "pubDate",
         "modification",
         "title",

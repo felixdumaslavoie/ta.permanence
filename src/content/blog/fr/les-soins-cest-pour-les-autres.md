@@ -1,5 +1,4 @@
 ---
-id: 65
 pubDate: 2018-02-25T23:22:28.000Z
 modification: 2025-03-06T17:19:39.000Z
 title: Les soins c’est pour les autres
@@ -15,6 +14,7 @@ editors:
   - "Cute Magazine"
 excerpt: J’aspire à faire un des métiers les plus gratifiants qui soient, un métier où je prends soin des gens dans toutes les sphères de leur vie et où je m’assure qu’ils et elles puissent vivre de la meilleure façon possible. J’ai choisi un métier, pas une vocation. J’ai choisi d’aider les autres, mais pas à mes dépens.
 heroImage: 2018/lesSoinsCestPourLesAutres.jpg
+translation: care-is-for-others
 ---
 
 J’aspire à faire un des métiers les plus gratifiants qui soient, un métier où je prends soin des gens dans toutes les sphères de leur vie et où je m’assure qu’ils et elles puissent vivre de la meilleure façon possible. J’ai choisi un métier, pas une vocation. J’ai choisi d’aider les autres, mais pas à mes dépens. J’étudie en soins infirmiers et je travaille pour étudier, parce que je n’ai pas droit aux prêts et bourses et que mes parents ne peuvent pas contribuer financièrement à mes études. Non seulement je travaille pour étudier, mais je m’endette pour étudier, parce que la conciliation travail-étude est difficile, mes horaires de stages et d’école ne me permettent pas de travailler autant qu’il le faudrait. Je n’arrête jamais. Le concept de la fin de semaine n’existe pas pour moi. Les jours de semaine, je vais à l’école, j’ai mes stages. Le soir, j’étudie, je fais mes travaux, mes préparations de cours et de stages. La fin de semaine je travaille de nuit, de jour, de soir, en rotation et toujours en fonction des besoins de l’hôpital. Après mon quart de travail, j’étudie encore, je prépare encore mes cours et je recommence, sans fin.

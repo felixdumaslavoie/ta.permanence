@@ -1,5 +1,4 @@
 ---
-id: 130
 pubDate: 2023-11-01
 modification: 2025-03-06T17:19:39.000Z
 title: Entre pitié et mépris
