@@ -1,0 +1,104 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a">;
+---
+
+<astro-vertical-navigator
+    class="z-10 fixed h-32 right-8 lg:right-52 bottom-12 transition-opacity duration-500 hover:opacity-100 opacity-50"
+>
+    <ul class="bottom-0 menu bg-base-200 rounded-box">
+        <li class="navigationVerticale">
+            <a>
+                <svg
+                    class="w-6 h-6 text-gray-800 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 8"
+                >
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 7 7.674 1.3a.91.91 0 0 0-1.348 0L1 7"></path>
+                </svg>
+            </a>
+        </li>
+        <li class="navigationVerticale2">
+            <a>
+                <svg
+                    class="w-6 h-6 text-gray-800 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 17 14"
+                >
+                    <path
+                        d="M16 2H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 0 1 0 2Z"
+                    ></path>
+                </svg>
+            </a>
+        </li>
+        <li class="navigationVerticale3">
+            <a>
+                <svg
+                    class="w-6 h-6 text-gray-800 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 8"
+                >
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"></path>
+                </svg>
+            </a>
+        </li>
+    </ul>
+</astro-vertical-navigator>
+<script>
+    let toTop = document.getElementsByClassName("navigationVerticale");
+    let toMiddle = document.getElementsByClassName("navigationVerticale2");
+
+    let toBottom = document.getElementsByClassName("navigationVerticale3");
+
+    function gotoTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function gotoMiddle() {
+        if (!(document.getElementsByClassName("prose").length > 0)) {
+            document
+                .getElementsByTagName("main")[0]
+                .scrollIntoView({ behavior: "smooth" });
+            return;
+        }
+        document
+            .getElementsByClassName("prose")[0]
+            .scrollIntoView({ behavior: "smooth" });
+    }
+
+    function gotoBottom() {
+        if (document.getElementsByClassName("footnotes").length > 0) {
+            document
+                .getElementsByClassName("footnotes")[0]
+                .scrollIntoView({ behavior: "smooth" });
+        } else {
+            window.scrollTo({
+                top: document.body.scrollHeight, // Scrolls to the maximum scrollable height of the body
+                behavior: "smooth", // Enables smooth scrolling animation
+            });
+        }
+    }
+
+    toTop[0].addEventListener("click", gotoTop);
+
+    toMiddle[0].addEventListener("click", gotoMiddle);
+
+    toBottom[0].addEventListener("click", gotoBottom);
+</script>

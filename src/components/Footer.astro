@@ -4,6 +4,7 @@ const today = new Date();
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 import LangageSwitcher from "./LangageSwitcher.astro";
+import VerticalNavigator from "./VerticalNavigator.astro";
 
 interface Props {
   numeroPage: String;
@@ -60,6 +61,7 @@ const t = useTranslations(lang);
       >
     </a>
   </div>
+  <VerticalNavigator></VerticalNavigator>
 </footer>
 <style>
   footer {
