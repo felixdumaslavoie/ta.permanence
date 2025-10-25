@@ -10,6 +10,7 @@ editors:
 excerpt: I aspire to join one of the most gratifying trades there is, a job where I take care of people in every aspect of their life and where I make sure they can live in the best way possible. I’ve chosen a trade, not a calling. I’ve chosen to help others, but not at my expense.
 heroImage: 2018/lesSoinsCestPourLesAutres.jpg
 translation: les-soins-cest-pour-les-autres
+
 ---
 
 I aspire to join one of the most gratifying trades there is, a job where I take care of people in every aspect of their life and where I make sure they can live in the best way possible. I’ve chosen a trade, not a calling. I’ve chosen to help others, but not at my expense. I study in nursing and I work to study since I do not qualify for loans and bursaries and because my parents cannot contribute financially to my studies. Not only do I work to study, but I take on debt to study, given that finding a work-study balance is hard when my school and internship hours keep me from working as much as I should. I never stop. The concept of a weekend no longer exists for me. On weekdays, I go to school, I have my internships. In the evenings, I study, I do my homework, I prepare for my courses and internships. On weekends I work night shifts, day shifts, evening shits, on rotation and always according to the hospital’s needs. After my work shift, I study more, I prepare for my courses more and I start over, endlessly.

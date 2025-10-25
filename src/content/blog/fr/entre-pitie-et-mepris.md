@@ -20,6 +20,8 @@ editors:
   - "Gabrielle Laverdière"
 
 heroImage: 2023/pitieeMepris.png
+legendes:
+  - "En adoptant les revendications pour la salarisation des stages, les fédérations étudiantes se parent des atours des revendications féministes sans pour autant s’intéresser à leur substance."
 ---
 
 Le 5 septembre dernier paraissait dans La Presse une lettre ouverte[^1] signée James Boudreau, président de la CADEUL. Dans cette lettre, James prenait la parole au nom de ces stagiaires sans salaire. Cet homme s’accordait le droit de parler au nom de stagiaires des domaines féminisés qu’il faudrait prendre en pitié. Une semaine plus tard, la présidente de l’UEQ[^2] prenait le micro à l'assemblée nationale[^3]. Elle affirmait, fièrement, prendre la parole pour les personnes stagiaires. « Brûlées à la tâche », iels méritent rémunération et représentation, mais pas voix au chapitre. Entre pitié et mépris, il n’y a qu’un pas.

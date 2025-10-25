@@ -12,6 +12,7 @@ const blog = defineCollection({
     // Transform string to Date object
     heroImage: z.string(),
     translation: z.string().optional(),
+    legendes: z.array(z.string()).optional(),
   }),
 });
 const magazineSchema = z.record(

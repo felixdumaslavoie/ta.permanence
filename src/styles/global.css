@@ -143,8 +143,8 @@ h6 {
 	margin: 0 0 0.5rem 0;
 	color: rgb(var(--black));
 	line-height: 1.2;
-  margin-bottom: 20px;
-  margin-top: 40px;
+	margin-bottom: 20px;
+	margin-top: 40px;
 }
 
 h1 {
@@ -194,6 +194,7 @@ p {
 	font-family: 'Calluna';
 	font-size: 1.25rem;
 }
+
 textarea {
 	width: 100%;
 	font-size: 16px;
@@ -222,7 +223,7 @@ code {
 pre {
 	padding: 1.5em;
 	border-radius: 8px;
-  margin-block: 30px;
+	margin-block: 30px;
 }
 
 pre>code {
@@ -259,12 +260,12 @@ ol>li::marker {
 	color: var(--accent);
 }
 
- ul.hideScripts li script {
-  display: none;
+ul.hideScripts li script {
+	display: none;
 }
 
 ul.alignLis li {
-  flex-direction: row;
+	flex-direction: row;
 }
 
 sup {
@@ -275,12 +276,13 @@ html.dark .utilitaires-texte {
 	filter: invert(100%);
 }
 
-html.dark .pageFindIsItDark  .pagefind-ui.svelte-e9gkc3, html.dark .pagefind-ui__result-title.svelte-4xnkmf .pagefind-ui__result-link.svelte-4xnkmf{
-  color: #bea963;
+html.dark .pageFindIsItDark .pagefind-ui.svelte-e9gkc3,
+html.dark .pagefind-ui__result-title.svelte-4xnkmf .pagefind-ui__result-link.svelte-4xnkmf {
+	color: #bea963;
 }
 
 input.pagefind-ui__search-input.svelte-e9gkc3 {
-  color: black;
+	color: black;
 }
 
 @media (max-width: 720px) {
@@ -291,6 +293,17 @@ input.pagefind-ui__search-input.svelte-e9gkc3 {
 	main {
 		padding: 1em;
 	}
+}
+
+p.legende {
+	font-family: 'Calluna';
+	padding-top: 15px;
+	width: 100%;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-inline: 8px;
 }
 
 .sr-only {
@@ -314,59 +327,57 @@ input.pagefind-ui__search-input.svelte-e9gkc3 {
 
 @media print {
 
-  header {
-    display: none;
-  }
+	header {
+		display: none;
+	}
 
-   main article div.hero-image {
-    width: 300px !important;
-    margin: auto;
-    display: block;
-    margin-top: 100px;
-  }
+	main article div.hero-image {
+		width: 300px !important;
+		margin: auto;
+		display: block;
+		margin-top: 100px;
+	}
 
-  main article div.title {
-    break-after: page;
-  }
+	main article div.title {
+		break-after: page;
+	}
 
-main article div.prose {
-    padding: 25px;
-  }
-
-
-
- main article div.prose p {
-break-inside: avoid; 
-    font-size: 16px;
-    color: black;
-  }
-
-  .utilitaires-texte {
-    display: none;
-  }
+	main article div.prose {
+		padding: 25px;
+	}
 
 
-a[href*="://"]::after,
-a:not([href^="/"])::after
-{
-  content: " (" attr(href) ")";
+
+	main article div.prose p {
+		break-inside: avoid;
+		font-size: 16px;
+		color: black;
+	}
+
+	.utilitaires-texte {
+		display: none;
+	}
+
+
+	a[href*="://"]::after,
+	a:not([href^="/"])::after {
+		content: " (" attr(href) ")";
+	}
+
+
+	html body footer {
+		display: none;
+	}
+
+
+
+	.data-footnote-backref {
+		display: none;
+	}
+
+	sup a::after {
+		display: none;
+	}
+
+
 }
- 
-
-html body footer  {
-    display: none;
-  }
-
-
-
-.data-footnote-backref{
-    display: none;
-}
-
-  sup a::after {
-    display: none;
-  }
-
-
-}
-

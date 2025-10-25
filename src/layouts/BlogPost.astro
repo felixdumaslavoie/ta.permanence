@@ -16,9 +16,8 @@ import localMarkdownImage from "../content/Icons/markdown-svgrepo-com.svg";
 import localPDFImage from "../content/Icons/pdf-svgrepo-com.svg";
 import { undefined } from "astro:schema";
 
-const { title, slug, excerpt, authors, pubDate, heroImage, translation } = Astro.props;
-
-
+const { title, excerpt, authors, pubDate, heroImage, translation, legendes } =
+  Astro.props;
 
 const pathNameSplit = Astro.url.pathname.split("/");
 
@@ -41,13 +40,18 @@ let resultat = await getImagesMetadata();
 
 const lang = getLangFromUrl(Astro.url);
 
+let otherLang = lang === "en" ? "fr" : "en";
 
-let otherLang =  (lang === "en") ? "fr" : "en";
-
-let translationUrl = `${otherLang}/${translation}`
+let translationUrl = `${otherLang}/${translation}`;
 
 if (translation === undefined) {
-  translationUrl = ""
+  translationUrl = "";
+}
+
+let legendesExtraites = [""];
+
+if (legendes) {
+  legendesExtraites = legendes;
 }
 
 const t = useTranslations(lang);
@@ -142,6 +146,11 @@ const t = useTranslations(lang);
             loading={"eager"}
             class="object-cover bg-fixed opacityFade"
           />
+          <div class="flex items-start xl:mx-[15%] 2xl:mx-[20%]">
+            <p class="legende text-sm opacityFade">
+              {legendesExtraites[0]}
+            </p>
+          </div>
         </div>
         <div class="prose">
           <div class="title">
@@ -184,9 +193,9 @@ const t = useTranslations(lang);
                   loading={"eager"}
                 /></a
               >
-              <Link/>
+              <Link />
             </div>
-            
+
             <hr />
           </div>
           <slot />
@@ -216,22 +225,18 @@ const t = useTranslations(lang);
                 loading={"eager"}
               /></a
             >
-            <Link/>
+            <Link />
           </div>
-          
-
         </div>
-        
       </article>
-      
     </main>
-    
+
     <Footer numeroPage={`0`} />
   </body>
 </html>
 
 <script>
-  const header = document.querySelector(".opacityFade") as HTMLElement;
+  const header = document.querySelectorAll(".opacityFade") as NodeList;
   const prose = document.querySelector(".prose") as HTMLElement;
   const article = document.querySelector("article") as HTMLElement;
 
@@ -243,7 +248,9 @@ const t = useTranslations(lang);
     if (header !== null) {
       let res = parseInt(result);
       if (res >= 0) {
-        header.style.opacity = result;
+        header.forEach((element: HTMLElement) => {
+          element.style.opacity = result;
+        });
         prose.style.translate = `0 ${1 - scrollTop}px`;
         if (res === 1) {
           if (!article.classList.contains("sufficent-margin"))
