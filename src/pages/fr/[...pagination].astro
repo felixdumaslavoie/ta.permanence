@@ -9,7 +9,6 @@ export async function getStaticPaths() {
 }
 
 const { pagination } = Astro.params;
-console.log(pagination);
 ---
 
 <MainPage numeroPage={pagination} />

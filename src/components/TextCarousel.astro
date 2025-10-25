@@ -39,19 +39,19 @@ interface IImageMetaData {
   date: string;
 }
 
-let langue = (lang === "fr") ? "fr-CA" : "en-CA";
+let langue = lang === "fr" ? "fr-CA" : "en-CA";
 
 function capitalizeFirstLetter(val) {
-    return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+  return String(val).charAt(0).toUpperCase() + String(val).slice(1);
 }
 
-function getDate(txt: IText){
-  return txt.data.pubDate.toLocaleDateString(langue,  {
-  weekday: "long",
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-})
+function getDate(txt: IText) {
+  return txt.data.pubDate.toLocaleDateString(langue, {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }
 
 await textes.forEach((txt: IText) => {
@@ -61,7 +61,7 @@ await textes.forEach((txt: IText) => {
     excerpt: txt.data.excerpt,
     url: txt.slug.split("/")[1],
     authors: txt.authors,
-    date: capitalizeFirstLetter(getDate(txt))
+    date: capitalizeFirstLetter(getDate(txt)),
   };
 
   carousel.push(data);
@@ -86,7 +86,7 @@ const data = {
       description: carousel[0].excerpt,
       ctaUrl: carousel[0].url,
       ctaText: t("readText"),
-      date: carousel[0].date
+      date: carousel[0].date,
     },
     {
       imgSrc: carousel[1].imgUrl.src,
@@ -96,8 +96,7 @@ const data = {
       description: carousel[1].excerpt,
       ctaUrl: carousel[1].url,
       ctaText: t("readText"),
-      date: carousel[1].date
-
+      date: carousel[1].date,
     },
     {
       imgSrc: carousel[2].imgUrl.src,
@@ -107,8 +106,7 @@ const data = {
       description: carousel[2].excerpt,
       ctaUrl: carousel[2].url,
       ctaText: t("readText"),
-      date: carousel[2].date
-
+      date: carousel[2].date,
     },
   ],
   currentSlideIndex: 1,
@@ -123,7 +121,7 @@ const data = {
     <!-- previous button -->
     <button
       type="button"
-      class="thePreviousButton  h-52 absolute left-2 sm:left-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-neutral-600 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:outline-offset-0 dark:bg-neutral-950/40 dark:text-neutral-300 dark:hover:bg-neutral-950/60 dark:focus-visible:outline-white"
+      class="thePreviousButton h-52 absolute left-2 sm:left-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-neutral-600 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:outline-offset-0 dark:bg-neutral-950/40 dark:text-neutral-300 dark:hover:bg-neutral-950/60 dark:focus-visible:outline-white"
       aria-label="previous slide"
     >
       <svg
@@ -177,55 +175,61 @@ const data = {
           <!-- Title and description -->
 
           <div
-            class="content-start flex-wrap justify-start sm:flex-nowrap md:pt-[18rem] px-0 sm:px-32 sm:pt-0 sm:flex-row lg:px-32 pt-80 absolute inset-0 z-10  break-normal items-center gap-2 bg-gradient-to-t from-neutral-950/85 to-transparent "
-          >              
-          <h3 class="relative mb-4 sm:mb-0 sm:top-[25%] les-titres w-full ml-[3rem] sm:ml-0 text-left sm:h-40 text-wrap py-0 my-0 text-[1.2rem] lg:text-6xl sm:whitespace-nowrap sm:w-[90vw] sm:max-h-10 md:h-10 sm:text-balance  font-bold text-white animatedTitle"
-          x-text="slide.title"
-          
-          x-bind:aria-describedby="'slide' + (index + 1) + 'Description'"></h3>
+            class="content-start flex-wrap justify-start sm:flex-nowrap md:pt-[18rem] px-0 sm:px-32 sm:pt-0 sm:flex-row lg:px-32 pt-[10rem] absolute inset-0 z-10 break-normal items-center gap-2 bg-gradient-to-t from-neutral-950/85 to-transparent"
+          >
+            <h3
+              class="relative mb-4 sm:mb-0 sm:top-[25%] les-titres w-full ml-[3rem] sm:ml-0 text-left sm:h-40 text-wrap py-0 my-0 text-[1.2rem] lg:text-6xl sm:whitespace-nowrap sm:w-[90vw] sm:max-h-10 md:h-10 sm:text-balance font-bold text-white animatedTitle"
+              x-text="slide.title"
+              x-bind:aria-describedby="'slide' + (index + 1) + 'Description'"
+            >
+            </h3>
             <!-- indicators -->
             <div
               class="theIndicators flex justify-center z-0 stroke-stone-50 top-[42%] sm:top-[48%] ounded-md bottom-3 md:bottom-5 md:gap-3 px-1.5 py-1 md:px-2"
               role="group"
               aria-label="slides"
-            ><div class="bg-[rgba(122,122,122,0.2)] rounded-2xl mix-blend-difference  px-4 py-2">
-              <template x-for="(slide, index) in slides">
-                <button
-                  class="anIndicator m-2 size-4 cursor-pointer rounded-full transition"
-                  x-on:click="(currentSlideIndex = index + 1)"
-                  x-bind:id="index"
-                  x-bind:class="[currentSlideIndex === index + 1 ? 'bg-neutral-300' : 'bg-neutral-300/50']"
-                  x-bind:aria-label="'slide ' + (index + 1)"></button>
-              </template>
+            >
+              <div
+                class="bg-[rgba(122,122,122,0.2)] rounded-2xl mix-blend-difference px-4 py-2"
+              >
+                <template x-for="(slide, index) in slides">
+                  <button
+                    class="anIndicator m-2 size-4 cursor-pointer rounded-full transition"
+                    x-on:click="(currentSlideIndex = index + 1)"
+                    x-bind:id="index"
+                    x-bind:class="[currentSlideIndex === index + 1 ? 'bg-neutral-300' : 'bg-neutral-300/50']"
+                    x-bind:aria-label="'slide ' + (index + 1)"></button>
+                </template>
+              </div>
             </div>
-            </div>
-            <h4 class="relative block p-0 m-auto sm:m-0 w-52 text-center sm:text-left sm:pl-0 text-sm sm:text-lg text-gray-100" x-text="slide.date"></h4>
+            <h4
+              class="relative block p-0 m-auto sm:m-0 w-52 text-center sm:text-left sm:pl-0 text-sm sm:text-lg text-gray-100"
+              x-text="slide.date"
+            >
+            </h4>
 
             <div
               class="titleDiv block w-[100%] sm:relative top-[205px] sm:top-1/4 sm:w-6/12"
             >
-         
               <p
                 class="h-20 mx-12 sm:mx-0 text-2xl text-pretty sm:h-20 pb-[20%] sm:-mt-14 text-neutral-300"
                 x-text="slide.description"
                 x-bind:id="'slide' + (index + 1) + 'Description'"
               >
               </p>
-            
-              
             </div>
             <div
-            class="flex left-[50%] -translate-x-1/2 -translate-y-1/2 absolute bottom-[5vh]"
-          >
-            <a x-bind:href="slide.ctaUrl" 
-              ><button
-                type="button"
-                x-cloak
-                x-show="slide.ctaUrl !== null"
-                class="mt-2 text-lg cursor-pointer w-40 h-16 whitespace-nowrap rounded-md border border-white bg-transparent px-4 py-2 text-center font-medium tracking-wide text-white transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-onSurfaceDarkStrong active:opacity-100 active:outline-offset-0 sm:text-lg"
-                x-text="slide.ctaText"></button></a
+              class="flex left-[50%] -translate-x-1/2 -translate-y-1/2 absolute bottom-[5vh]"
             >
-          </div>
+              <a x-bind:href="slide.ctaUrl"
+                ><button
+                  type="button"
+                  x-cloak
+                  x-show="slide.ctaUrl !== null"
+                  class="mt-2 text-lg cursor-pointer w-40 h-16 whitespace-nowrap rounded-md border border-white bg-transparent px-4 py-2 text-center font-medium tracking-wide text-white transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-onSurfaceDarkStrong active:opacity-100 active:outline-offset-0 sm:text-lg"
+                  x-text="slide.ctaText"></button></a
+              >
+            </div>
           </div>
 
           <img
@@ -325,9 +329,6 @@ const data = {
     }
   }
 
-
-
-
   let selector = 0;
   const maxElements = 3;
 
@@ -353,15 +354,15 @@ const data = {
     playAnimation();
 
     function loop() {
-        selector++;
-        selector %= maxElements;
-        indicators[selector].click();
+      selector++;
+      selector %= maxElements;
+      indicators[selector].click();
     }
 
     var interval = setInterval(loop, 12500);
 
-    function resetInterval () {
-      clearInterval(interval)
+    function resetInterval() {
+      clearInterval(interval);
       interval = setInterval(loop, 12500);
     }
 
@@ -423,26 +424,22 @@ const data = {
         selector = Number(indicator.id);
         resetValues();
         playAnimation();
-        resetInterval()
+        resetInterval();
       });
     });
 
     if (previousButton) {
       previousButton.onclick = () => {
-        
-        if (selector > 0){
+        if (selector > 0) {
           selector--;
           indicators[selector].click();
-        }
-        else if (selector == 0) {
+        } else if (selector == 0) {
           selector = maxElements;
           indicators[selector - 1].click();
-      }
+        }
 
-      resetInterval()
-      
+        resetInterval();
       };
-
     }
 
     if (nextButton) {
@@ -451,11 +448,9 @@ const data = {
         selector %= maxElements;
         indicators[selector].click();
 
-        resetInterval()
+        resetInterval();
       };
     }
-
-
   });
 
   // Find all buttons with the `alert` class on the page.
