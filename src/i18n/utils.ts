@@ -14,16 +14,13 @@ export function useTranslations(lang: keyof typeof ui) {
   }
 }
 
-export function computePaths(lang: string, test): Array<Object> {
-
+export function computePaths(lang: string, totalNumberOfTexts: number): Array<Object> {
 
   if (!Object.values(Languages).includes(lang)) {
     throw new Error("Compute paths: language code not found")
   }
 
- 
-
-  let pageNumber: number = 4 / textsByMainPage
+  let pageNumber: number = totalNumberOfTexts / textsByMainPage
 
 
   let paramArray = new Array(Math.ceil(pageNumber)).fill({});
@@ -37,7 +34,7 @@ export function computePaths(lang: string, test): Array<Object> {
   return paramArray;
 }
 
-export function howManyMainPages(lang: string, howManyTexts : number): number {
+export function howManyMainPages(lang: string, howManyTexts: number): number {
   if (!Object.values(Languages).includes(lang)) {
     throw new Error("howManyMainPages: language code not found")
   }

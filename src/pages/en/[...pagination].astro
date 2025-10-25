@@ -2,13 +2,10 @@
 import { computePaths } from "../../i18n/utils";
 import MainPage from "../../layouts/MainPage.astro";
 
+export async function getStaticPaths() {
+  const globEn = import.meta.glob(`../../content/blog/en/*.md`);
 
-
-export function getStaticPaths() {
-
-  const globEn = import.meta.glob(`../../content/blog/en/*.md`)
-
-  return computePaths("en", globEn.length);
+  return computePaths("en", Object.keys(globEn).length);
 }
 
 const { pagination } = Astro.params;
