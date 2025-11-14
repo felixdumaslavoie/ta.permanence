@@ -193,6 +193,8 @@ p {
 .prose p {
 	font-family: 'Calluna';
 	font-size: 1.25rem;
+	text-align: justify;
+
 }
 
 textarea {
