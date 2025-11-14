@@ -110,6 +110,7 @@ button.colorThemeToggle {
 
 .prose p.atkinson {
 	font-family: 'Atkinson', sans-serif;
+	
 }
 
 body {
@@ -189,11 +190,14 @@ a:hover {
 p {
 	margin-bottom: 1em;
 }
+.prose {
+	text-align: justify;
+}
 
 .prose p {
 	font-family: 'Calluna';
 	font-size: 1.25rem;
-	text-align: justify;
+	
 
 }
 
@@ -346,6 +350,7 @@ p.legende {
 
 	main article div.prose {
 		padding: 25px;
+		
 	}
 
 

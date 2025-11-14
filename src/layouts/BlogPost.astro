@@ -161,7 +161,7 @@ const t = useTranslations(lang);
               />
             </div>
             <h1 class="text-5xl">{title}</h1>
-            <p class="atkinson">{t("by")}</p>
+            <p class="atkinson text-center">{t("by")}</p>
             {
               autrices.map((autrice: string) => (
                 <h5 class="m-0 mb-3">{autrice}</h5>
@@ -236,7 +236,7 @@ const t = useTranslations(lang);
 </html>
 
 <script>
-  const header = document.querySelectorAll(".opacityFade") as NodeList;
+  const header = document.querySelectorAll(".opacityFade") as NodeListOf<HTMLElement>;
   const prose = document.querySelector(".prose") as HTMLElement;
   const article = document.querySelector("article") as HTMLElement;
 
@@ -260,12 +260,16 @@ const t = useTranslations(lang);
     }
 
     window.onbeforeprint = function () {
-      header.style.opacity = "1";
+      header.forEach((element: HTMLElement) =>{
+        element.style.opacity = "1";
+      })
       prose.style.translate = `0px`;
     };
 
     window.onafterprint = function () {
-      header.style.opacity = result;
+      header.forEach((element: HTMLElement) =>{
+        element.style.opacity = result;
+      })
       prose.style.translate = `0 ${1 - scrollTop}px`;
     };
   });
