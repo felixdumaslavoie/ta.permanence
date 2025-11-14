@@ -1,18 +1,17 @@
 ---
-import { Picture } from "astro:assets";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
-const { props } = Astro.props;
+const { props, title } = Astro.props;
 
 let temp = await props;
 
 const data = temp.remarkPluginFrontmatter;
 
-console.log(data.translations[Object.keys(data.translations).toString()]);
+//console.log(data.translations[Object.keys(data.translations).toString()]);
 
 let pathStr = String(Astro.url.pathname);
 
@@ -20,6 +19,8 @@ if (pathStr.charAt(0) === "/") pathStr = pathStr.substring(1, pathStr.length);
 
 if (pathStr.charAt(pathStr.length - 1) === "/")
   pathStr = pathStr.substring(0, pathStr.length - 1);
+
+console.log(data)
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -100,166 +101,32 @@ const t = useTranslations(lang);
 
   <body>
     <Header
-      numeroPage={data.translations[Object.keys(data.translations).toString()]}
+      numeroPage={data.translation}
     />
     <main
       class="w-full pt-0 ps-0 pe-0 max-w-fit md:max-w-[calc(100%-2rem)] md:w-[calc(100%-2rem)] md:pt-32"
     >
-      <article>
-        <div class="hero-image md:pt-24"></div>
+       <article>
+        <div class="hero-image md:pt-24">
+
+          <div class="flex items-start xl:mx-[15%] 2xl:mx-[25vw]">
+            <p class="legende text-[16px] opacityFade text-justify">
+         
+            </p>
+          </div>
+        </div>
         <div class="prose">
           <div class="title">
-            <div class="date"></div>
+            <div class="date">
+
+            </div>
             <h1 class="text-5xl">{data.title}</h1>
-            <p>{data.era}</p>
+  
+
             <hr />
           </div>
-
-          <p>{data.excerpt}</p>
           <slot />
-          <div class="join join-vertical bg-base-100">
-            <section
-              class="collapse collapse-arrow join-item border-base-300 border"
-            >
-              <input type="radio" name="my-accordion-4" checked="checked" />
-              <div class="collapse-title font-semibold">
-                {data.material.magazines.name}
-              </div>
 
-              <div class="collapse-content text-sm magazines">
-                <ul>
-                  {
-                    console.log(
-                      `${Astro.url.origin}/${data.material.tracts.tract[0]["Journée internationale des stagiaires (Montréal 2017.11.10)"].file}`,
-                    )
-                  }
-                  {
-                    data.material.magazines.magazine.map((magazine: any) => (
-                      <li>
-                        <p class="text-base flex justify-center">
-                          {data.material.magazines.description}
-                        </p>
-                        <a
-                          href={`${Astro.url.origin}/${
-                            magazine[Object.keys(magazine).toString()].file
-                          }`}
-                          target="_blank"
-                        >
-                          <div class="flex justify-center">
-                            <Picture
-                              src={`${Astro.url.origin}/${
-                                magazine[Object.keys(magazine).toString()]
-                                  .thumbnail
-                              }`}
-                              formats={["avif", "webp"]}
-                              width={250}
-                              height={360}
-                              alt="{}"
-                            />
-                          </div>
-                          <h4 class="title">
-                            {Object.keys(magazine).toString()}
-                          </h4>
-                        </a>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
-            </section>
-            <section
-              class="collapse collapse-arrow join-item border-base-300 border"
-            >
-              <input type="radio" name="my-accordion-4" />
-              <div class="collapse-title font-semibold">
-                {data.material.tracts.name}
-              </div>
-              <div class="collapse-content text-sm">
-                <ul>
-                  <p class="text-base flex justify-center">
-                    {data.material.tracts.description}
-                  </p>
-                  {
-                    data.material.tracts.tract.map((tract: any) => (
-                      <li>
-                        <a
-                          href={`${Astro.url.origin}/${
-                            tract[Object.keys(tract).toString()].file
-                          }`}
-                          target="_blank"
-                        >
-                          <p class="text-base">
-                            {Object.keys(tract).toString()}
-                          </p>
-                        </a>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
-            </section>
-            <section
-              class="collapse collapse-arrow join-item border-base-300 border"
-            >
-              <input type="radio" name="my-accordion-4" checked="checked" />
-              <div class="collapse-title font-semibold">
-                {data.material.affiches.name}
-              </div>
-
-              <div class="collapse-content text-sm magazines">
-                <ul>
-                  {
-                    console.log(
-                      `${Astro.url.origin}/${data.material.tracts.tract[0]["Journée internationale des stagiaires (Montréal 2017.11.10)"].file}`,
-                    )
-                  }
-                  <p class="text-base flex justify-center">
-                    {data.material.affiches.description}
-                  </p>
-                  {
-                    data.material.affiches.affiche.map((affiche: any) => (
-                      <li>
-                        <a
-                          href={`${Astro.url.origin}/${
-                            affiche[Object.keys(affiche).toString()].file
-                          }`}
-                          target="_blank"
-                        >
-                          <div class="flex justify-center">
-                            <Picture
-                              src={`${Astro.url.origin}/${
-                                affiche[Object.keys(affiche).toString()]
-                                  .thumbnail
-                              }`}
-                              formats={["avif", "webp"]}
-                              width={250}
-                              height={360}
-                              alt="{}"
-                            />
-                          </div>
-                          <h4 class="title">
-                            {Object.keys(affiche).toString()}
-                          </h4>
-                        </a>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
-            </section>
-            <section
-              class="collapse collapse-arrow join-item border-base-300 border"
-            >
-              <input type="radio" name="my-accordion-4" />
-              <div class="collapse-title font-semibold">
-                How do I update my profile information?
-              </div>
-              <div class="collapse-content text-sm">
-                Go to "My Account" settings and select "Edit Profile" to make
-                changes.
-              </div>
-            </section>
-          </div>
         </div>
       </article>
     </main>

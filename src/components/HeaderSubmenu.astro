@@ -49,21 +49,8 @@ const t = useTranslations(lang);
     <details class="archivesLinkDetails">
       <summary class="archivesLinkSummary">Archives</summary>
       <ul>
-        <li>
-          <details>
-            <summary>{t("lesCUTE")}</summary>
-            <ul>
-              <li>
-                <a href={`${routeArchives}#magazines`}>Magazines</a>
-              </li>
+        <li><a href={`${routeArchives}`}>{t("lesCUTE")}</a></li>
 
-              <li><a href={`${routeArchives}#tracts`}>{t("tracts")}</a></li>
-              <li><a href={`${routeArchives}#affiches`}>{t("affiches")}</a></li>
-              <li><a href={`${routeArchives}#videos`}>{t("videos")}</a></li>
-              <li><a href={`${routeArchives}#web`}>{t("siteWeb")}</a></li>
-            </ul>
-          </details>
-        </li>
       </ul>
     </details>
   </li>
