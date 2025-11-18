@@ -16,6 +16,19 @@ const blog = defineCollection({
   }),
 });
 
+const about = defineCollection({
+  type: "content",
+  // Type-check frontmatter using a schema
+  schema: z.object({
+    // Transform string to Date object
+    modification: z.coerce.date(),
+    title: z.string(),
+    excerpt: z.string(),
+    heroVideo: z.string(),
+    translation: z.string().optional(),
+  }),
+});
+
 const archives = defineCollection({
   type: "content",
   // Type-check frontmatter using a schema
@@ -23,10 +36,9 @@ const archives = defineCollection({
     // Transform string to Date object
     modification: z.coerce.date(),
     title: z.string(),
-    era: z.string(),
     excerpt: z.string(),
     heroVideo: z.string(),
     translation: z.string().optional(),
   }),
 });
-export const collections = { blog, archives };
+export const collections = { about, blog, archives };

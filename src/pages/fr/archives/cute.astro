@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import Archives from "../../../layouts/Informative.astro";
 
 import { getCollection } from "astro:content";
@@ -14,7 +13,12 @@ archives.forEach((archive, idx) => {
   if (archive.id.split("/")[1] === lang) index = idx;
 });
 
-const content = archives[index].render();
+const props = await archives[index].render();
+const { Content } = await archives[index].render();
 ---
 
-<Archives props={content} />
+<Archives props={props} >
+<Content />
+</Archives>
+
+

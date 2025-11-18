@@ -1,21 +1,24 @@
 ---
 import { getCollection } from "astro:content";
-import Archives from "../../../layouts/Informative.astro";
+import About from "../../layouts/Informative.astro";
 
-const archives = await getCollection("archives");
+const archives = await getCollection("about");
 
 let index = 0;
 
 const lang = "en";
 
 archives.forEach((archive, idx) => {
-  if (archive.id.split("/")[1] === lang) index = idx;
+
+  if (archive.id.split("/")[0] === lang) index = idx;
 });
+
+
 
 const props = await archives[index].render();
 const { Content } = await archives[index].render();
 ---
 
-<Archives props={props}  >
+<About props={props}  >
   <Content />
-</Archives>
+</About>
