@@ -309,7 +309,7 @@ p.legende {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-inline: 8px;
+	margin-inline: 10vw;
 }
 
 .sr-only {
