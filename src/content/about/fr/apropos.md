@@ -4,6 +4,8 @@ title: À propos
 excerpt: Between 2016 and 2019, a campaign for the recognition of work done as a student is led by the CUTE (Comités unitaires sur le travail étudiant).
 heroVideo: about/saul bass_edit.webm
 translation: en/about
+legendes:
+  - "Quest (1984) par Saul Bass"
 ---
 
 

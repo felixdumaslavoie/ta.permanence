@@ -12,13 +12,18 @@ let temp =  props;
 const data = temp.remarkPluginFrontmatter;
 
 let video = data.heroVideo
-
+let legendes = data.legendes
 
 if (video)
 {
   console.log(video)
 }
-  
+
+let legendesExtraites = [""];
+
+if (legendes) {
+  legendesExtraites = legendes;
+}
 
 
 let pathStr = String(Astro.url.pathname);
@@ -118,6 +123,12 @@ const t = useTranslations(lang);
           <div class="flex items-start xl:mx-[15%] 2xl:mx-[25vw]">
             <p class=" text-[16px] opacityFade text-justify"></p>
             <video class="w-[900px] h-[300px] object-cover m-auto flex opacityFade" preload="auto" loop autoplay src=`/${video}`></video>
+
+          </div>
+          <div class="flex items-start xl:mx-[15%] 2xl:mx-[25vw]">
+            <p class="legende text-[16px] opacityFade text-justify pb-[75px]">
+              {legendesExtraites[0]}
+            </p>
           </div>
         </div>
         <div class="prose px-[7vw] sm:px-0">

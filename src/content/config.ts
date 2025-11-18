@@ -25,6 +25,7 @@ const about = defineCollection({
     title: z.string(),
     excerpt: z.string(),
     heroVideo: z.string(),
+    legendes: z.array(z.string()).optional(),
     translation: z.string().optional(),
   }),
 });
@@ -38,6 +39,7 @@ const archives = defineCollection({
     title: z.string(),
     excerpt: z.string(),
     heroVideo: z.string(),
+    legendes: z.array(z.string()).optional(),
     translation: z.string().optional(),
   }),
 });
