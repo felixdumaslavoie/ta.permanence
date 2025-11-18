@@ -11,6 +11,14 @@ let temp =  props;
 
 const data = temp.remarkPluginFrontmatter;
 
+let video = data.heroVideo
+
+
+if (video)
+{
+  console.log(video)
+}
+  
 
 
 let pathStr = String(Astro.url.pathname);
@@ -100,13 +108,16 @@ const t = useTranslations(lang);
 
   <body>
     <Header numeroPage={data.translation} />
+    
     <main
       class="w-full pt-0 ps-0 pe-0 max-w-fit md:max-w-[calc(100%-2rem)] md:w-[calc(100%-2rem)] md:pt-32"
     >
+    
       <article>
         <div class="hero-image md:pt-24">
           <div class="flex items-start xl:mx-[15%] 2xl:mx-[25vw]">
-            <p class="legende text-[16px] opacityFade text-justify"></p>
+            <p class=" text-[16px] opacityFade text-justify"></p>
+            <video class="w-[900px] h-[300px] object-cover m-auto flex opacityFade" preload="auto" loop autoplay src=`/${video}`></video>
           </div>
         </div>
         <div class="prose px-[7vw] sm:px-0">
@@ -125,7 +136,7 @@ const t = useTranslations(lang);
 </html>
 
 <script>
-  const header = document.querySelector(".opacityFade") as HTMLElement;
+  const header = document.querySelectorAll(".opacityFade") as NodeListOf<HTMLElement>;
   const prose = document.querySelector(".prose") as HTMLElement;
   const article = document.querySelector("article") as HTMLElement;
   window.addEventListener("scroll", function () {
@@ -134,7 +145,9 @@ const t = useTranslations(lang);
     if (header !== null) {
       let res = parseInt(result);
       if (res >= 0) {
-        header.style.opacity = result;
+         header.forEach((element: HTMLElement) => {
+          element.style.opacity = result;
+        });
         prose.style.translate = `0 ${1 - scrollTop}px`;
         /*if (res === 1) {
           if (!article.classList.contains("sufficent-margin"))
@@ -142,5 +155,24 @@ const t = useTranslations(lang);
         }*/
       }
     }
+
+    window.onbeforeprint = function () {
+      header.forEach((element: HTMLElement) =>{
+        element.style.opacity = "1";
+      })
+      prose.style.translate = `0px`;
+    };
+
+    window.onafterprint = function () {
+      header.forEach((element: HTMLElement) =>{
+        element.style.opacity = result;
+      })
+      prose.style.translate = `0 ${1 - scrollTop}px`;
+    };
+
   });
+
+
+ 
+
 </script>
