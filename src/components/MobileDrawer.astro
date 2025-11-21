@@ -1,22 +1,25 @@
 ---
-import type { HTMLAttributes } from "astro/types";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+import { ROUTES_ARCHIVES_CUTE } from "../consts";
 
 import ThemeIcon from "./ThemeIcon.astro";
 import SearchModal from "./SearchModal.astro";
 import LangageSwitcher from "./LangageSwitcher.astro";
 
-type Props = HTMLAttributes<"a">;
+interface Props {
+  numeroPage: String;
+}
 
-const { href, class: className, ...props } = Astro.props;
+const { numeroPage } = Astro.props;
 
 const { pathname } = Astro.url;
-const subpath = pathname.match(/[^\/]+/g);
-const isActive = href === pathname;
+
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+let routeArchives = ROUTES_ARCHIVES_CUTE[lang];
 ---
 
 <div class="drawer drawer-end sm:hidden z-10 flex justify-end">
@@ -62,23 +65,29 @@ const t = useTranslations(lang);
         </button>
       </li>
       <li class="mt-8"><a href="">{t("nav.home")}</a></li>
-      <li><a>{t("nav.about")}</a></li>
-      <li id="archivesLink" class="z-10 pt-[0.6rem]">
-        <details id="archivesLinkDetails">
-          <summary id="archivesLinkSummary">Archives</summary>
+        <li class="pt-1">
+    <a class="display_flex w-[8rem]" href={t("link.about")}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <p class="m-0">{t("nav.about")}</p>
+    </a>
+  </li>
+      <li class="archivesLink z-10 pt-[0.6rem]">
+        <details class="archivesLinkDetails">
+          <summary class="archivesLinkSummary">Archives</summary>
           <ul>
-            <li>
-              <details>
-                <summary>Les CUTE(s)</summary>
-                <ul>
-                  <li><a>Magazines</a></li>
-                  <li><a>Tracts</a></li>
-                  <li><a>Affiches</a></li>
-                  <li><a>Vidéos</a></li>
-                  <li><a>Sites web</a></li>
-                </ul>
-              </details>
-            </li>
+            <li><a href={`${routeArchives}`}>{t("lesCUTE")}</a></li>
           </ul>
         </details>
       </li>
@@ -86,7 +95,7 @@ const t = useTranslations(lang);
       <!--<li><SearchModal></SearchModal></li> -->
       <li><SearchModal searchBarId="mobileSearchBar" /></li>
       <li><ThemeIcon /></li>
-      <li class="doIt"><LangageSwitcher numeroPage={`0`} /></li>
+      <li class="doIt"><LangageSwitcher numeroPage={numeroPage}  /></li>
     </ul>
   </div>
 </div>

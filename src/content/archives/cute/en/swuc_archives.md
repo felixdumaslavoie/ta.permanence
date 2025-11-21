@@ -7,7 +7,7 @@ heroVideo: archives/cute/video/
 translation: fr/archives/cute
 ---
 
-Between 2016 and 2019, the Student Work Unitary Committees, SWUC (CUTE in french: *Comités Unitaires sur le Travail Étudiant*), led a campaign to gain recognition for the work done by students by demanding student wages and paid internships.
+Between 2016 and 2019, the Student Work Unitary Committees, SWUC (in french: CUTE *Comités Unitaires sur le Travail Étudiant*), led a campaign to gain recognition for the work done by students by demanding student wages and paid internships.
 
 #### Website 
 

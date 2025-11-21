@@ -23,7 +23,7 @@ const { numeroPage } = Astro.props;
       <a href=`/${lang}/0`>{t("site_title")}</a>
     </h2>
 
-    <MobileDrawer />
+    <MobileDrawer numeroPage={numeroPage} />
     <div class="internal-links hidden sm:block">
       <HeaderSubmenu href=`/${lang}/0` numeroPage={numeroPage} />
     </div>
