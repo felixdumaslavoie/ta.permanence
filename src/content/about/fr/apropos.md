@@ -5,10 +5,10 @@ excerpt: Between 2016 and 2019, a campaign for the recognition of work done as a
 heroVideo: about/saul bass_edit.webm
 translation: en/about
 legendes:
-  - "Quest (1984) par Saul Bass"
+  - "Quest (1984) Saul Bass"
 ---
 
 
-*ta.permanence* est une initiative pour donner une pérénitée à des textes de travailleurEuses non rémunérés et en formation écrit dans le cadre du mouvement étudiant. Ici sont mis de l'avant les personnes écrivant en leur nom et les groupes autonomes de la bureaucratie étudiante. 
+*ta.permanence* est une initiative visant à pérennises des débats et réflexions de travailleurEuses non rémunérés en formation, communément nommés étudiant-es. Les textes sont écrit dans le cadre de luttes pour un salaire. Ici sont mises de l'avant les personnes et les groupes autonomes de la bureaucratie étudiante. 
 
-Le nom de domaine expirera en 2099 et le site web est statique; ne coute à peu près rien à héberger.
+Le nom de domaine expirera en 2099 et le site web est statique; il n'en coute à peu près rien à héberger.
