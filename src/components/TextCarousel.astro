@@ -54,12 +54,13 @@ function getDate(txt: IText) {
   });
 }
 
+
 await textes.forEach((txt: IText) => {
   let data: IImageMetaData = {
     imgUrl: images[imageURLCorrection(txt.data.heroImage)],
     title: txt.data.title,
     excerpt: txt.data.excerpt,
-    url: txt.slug.split("/")[1],
+    url: `/${lang}/${txt.slug.split("/")[1]}`,
     authors: txt.authors,
     date: capitalizeFirstLetter(getDate(txt)),
   };
