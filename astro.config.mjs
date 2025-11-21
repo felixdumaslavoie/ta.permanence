@@ -28,6 +28,10 @@ export default defineConfig({
   },
   integrations: [mdx(), sitemap(), tailwind(), alpinejs()],
   output: "static",
+  outDir: './dist', // Ensure this is correctly configured
+  build: {
+    format: "directory",
+  },
   i18n: {
     defaultLocale: "fr",
     locales: ["fr", "en"],
@@ -41,7 +45,4 @@ export default defineConfig({
   redirects: {
     "/": "/fr/0",
   },
-  server: {
-  allowedHosts: true
-}
 });
