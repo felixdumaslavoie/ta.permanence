@@ -41,4 +41,7 @@ export default defineConfig({
   redirects: {
     "/": "/fr/0",
   },
+  server: {
+  allowedHosts: true
+}
 });

@@ -301,6 +301,10 @@ input.pagefind-ui__search-input.svelte-e9gkc3 {
 	}
 }
 
+video.video-page-informative {
+	mask-image: radial-gradient(rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
 p.legende {
 	font-family: 'Calluna';
 	padding-top: 15px;
