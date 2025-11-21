@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import About from "../../layouts/Informative.astro";
+import AboutPage from "../../layouts/Informative.astro";
 
 const archives = await getCollection("about");
 
@@ -19,6 +19,6 @@ const props = await archives[index].render();
 const { Content } = await archives[index].render();
 ---
 
-<About props={props}  >
+<AboutPage props={props}  >
   <Content />
-</About>
+</AboutPage>

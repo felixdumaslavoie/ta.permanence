@@ -19,6 +19,10 @@
 	background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
+script {
+	display: none !important;
+}
+
 header#navbar {
 	transition: 1.2s;
 }
