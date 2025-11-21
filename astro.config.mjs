@@ -22,7 +22,7 @@ copyMarkdown();
 
 // https://astro.build/config
 export default defineConfig({
-  site: "http://localhost:4321",
+  site: "https://permanence.ta.ws",
   build: {
     format: "directory",
   },
