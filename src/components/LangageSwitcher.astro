@@ -42,7 +42,7 @@ if (
   doItOrNot = "opacity-0 pointerNone ";
 }
 
-let otherClasses = " languageSwitcher sm:block";
+let otherClasses = "switch-langue languageSwitcher sm:block";
 ---
 
 <astro-langage-switcher
@@ -51,7 +51,7 @@ let otherClasses = " languageSwitcher sm:block";
   data-nopage={numeroPage}
   class={doItOrNot + otherClasses}
 >
-  <label class="flex cursor-pointer gap-2 language-switcher">
+  <label class=" flex cursor-pointer gap-2 language-switcher">
     <span class="label-text text-slate-950">{t("langageSwitcherLeft")}</span>
     <input
       type="checkbox"
@@ -95,13 +95,23 @@ let otherClasses = " languageSwitcher sm:block";
         }
       }
 
+      const basculement_langue = this.querySelector(".switch-langue");
       const input = this.querySelector("input");
+
       if (input !== null) {
         input.addEventListener("click", () => {
           if (translationURL) {
             window.location.assign(translationURL);
           }
         });
+      }
+
+      if (basculement_langue){
+        basculement_langue.addEventListener("click", () =>{
+          if (translationURL) {
+            window.location.assign(translationURL);
+          }
+        })
       }
     }
   }
