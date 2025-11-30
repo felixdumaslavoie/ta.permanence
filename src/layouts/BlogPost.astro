@@ -14,7 +14,6 @@ import { Image } from "astro:assets";
 import localPrintImage from "../content/Icons/print-svgrepo-com.svg";
 import localMarkdownImage from "../content/Icons/markdown-svgrepo-com.svg";
 import localPDFImage from "../content/Icons/pdf-svgrepo-com.svg";
-import { undefined } from "astro:schema";
 
 const { title, excerpt, authors, pubDate, heroImage, translation, legendes } =
   Astro.props;
@@ -59,7 +58,7 @@ const t = useTranslations(lang);
 
 <html lang={lang}>
   <head>
-    <BaseHead title={title} description={excerpt} image={resultat[imagePath]} />
+    <BaseHead title={title} description={excerpt} image={imagePath} />
     <style>
       .hero-image {
         width: 100%;
@@ -236,7 +235,9 @@ const t = useTranslations(lang);
 </html>
 
 <script>
-  const header = document.querySelectorAll(".opacityFade") as NodeListOf<HTMLElement>;
+  const header = document.querySelectorAll(
+    ".opacityFade",
+  ) as NodeListOf<HTMLElement>;
   const prose = document.querySelector(".prose") as HTMLElement;
   const article = document.querySelector("article") as HTMLElement;
 
@@ -260,16 +261,16 @@ const t = useTranslations(lang);
     }
 
     window.onbeforeprint = function () {
-      header.forEach((element: HTMLElement) =>{
+      header.forEach((element: HTMLElement) => {
         element.style.opacity = "1";
-      })
+      });
       prose.style.translate = `0px`;
     };
 
     window.onafterprint = function () {
-      header.forEach((element: HTMLElement) =>{
+      header.forEach((element: HTMLElement) => {
         element.style.opacity = result;
-      })
+      });
       prose.style.translate = `0 ${1 - scrollTop}px`;
     };
   });
