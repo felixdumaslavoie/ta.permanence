@@ -7,8 +7,8 @@ export const SITE_TITLE = {
 } as const;
 
 export const SITE_DESCRIPTION = {
-  en: "Permanence is open to anyone, regardless of institutional affiliation to a student association, who wants to share a critical and well-argued reflection on issues linked to the student movement.",
-  fr: "... au-delà de toute affiliation institutionnelle à une association étudiante, les personnes ayant envie de partager une réflexion critique et argumentée sur des problématiques liées au mouvement étudiant.",
+  en: "ta.permanence is open to anyone, regardless of institutional affiliation to a student association, who wants to share a critical and well-argued reflection on issues linked to the student movement.",
+  fr: "ta.permanence est une initiative visant à pérenniser les réflexions stratégiques et débats de travailleurEuses actuellement non rémunérés en formation, communément appelés étudiantEs.",
 } as const;
 
 // Links to socials media. Peuvent être multilingues, si nécessaire dans le futur, ou pour un projet enfant...

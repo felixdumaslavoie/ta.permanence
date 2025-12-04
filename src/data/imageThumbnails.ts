@@ -97,14 +97,14 @@ async function writePicture(ancienDossier: string, nouveauDossier: string, oldNa
 
     if (writeFlag) {
 
-        const imageThumbnail = await thumbnail(`${ancienDossier}${oldName}`)
+        let options = { width: 1200, height: 630, fit: "inside", jpegOptions: { force: true, quality: 100 }, }
+
+        const imageThumbnail = await thumbnail(`${ancienDossier}${oldName}`, options)
 
         creerDossierSiExistePas(nouveauDossier)
 
-        console.log(imageThumbnail)
         if (imageThumbnail) {
             fs.writeFile(`${nouveauDossier}${fileName}`, imageThumbnail);
-
         }
 
     }

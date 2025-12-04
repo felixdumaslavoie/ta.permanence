@@ -15,10 +15,29 @@ const { title, description, image = "/image-site.jpg" } = Astro.props;
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-let urlImg = new URL(image, Astro.url);
+let titre: string = SITE_TITLE[lang];
+if (title !== SITE_TITLE[lang]) {
+	titre = `${title} ${SITE_TITLE[lang]}`;
+}
+let desc: string = SITE_DESCRIPTION[lang];
+if (description !== SITE_DESCRIPTION[lang]) {
+	desc = `${description}`;
+}
+
+let tempImgPath: string[] = image.split("/");
+
+let imgPath: string = `/blog/pictures/${tempImgPath.at(tempImgPath.length - 2)}/${tempImgPath.at(tempImgPath.length - 1)}`;
+
+if (image === "/image-site.jpg") {
+	imgPath = image;
+}
+
+let urlImg = new URL(imgPath, Astro.url);
 ---
 
 <!-- Global Metadata -->
@@ -47,22 +66,22 @@ let urlImg = new URL(image, Astro.url);
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{t("site_title")}</title>
-<meta name="title" content={t("site_title")} />
-<meta name="description" content={t("site_description")} />
+<title>{titre}</title>
+<meta name="title" content={titre} />
+<meta name="description" content={desc} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={t("site_title")} />
-<meta property="og:description" content={t("site_description")} />
+<meta property="og:title" content={titre} />
+<meta property="og:description" content={desc} />
 <meta property="og:image" content={urlImg.href} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={t("site_title")} />
-<meta property="twitter:description" content={t("site_description")} />
+<meta property="twitter:title" content={titre} />
+<meta property="twitter:description" content={desc} />
 <meta property="twitter:image" content={urlImg.href} />
 
 <!-- Pagefind -->
