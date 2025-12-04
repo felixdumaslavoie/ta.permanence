@@ -54,7 +54,6 @@ function getDate(txt: IText) {
   });
 }
 
-
 await textes.forEach((txt: IText) => {
   let data: IImageMetaData = {
     imgUrl: images[imageURLCorrection(txt.data.heroImage)],
@@ -204,7 +203,7 @@ const data = {
               </div>
             </div>
             <h4
-              class="relative block p-0 m-auto sm:m-0 w-52 text-center sm:text-left sm:pl-0 text-sm sm:text-lg text-gray-100"
+              class="relative block p-0 m-auto sm:-mt-4 sm:m-0 w-64 text-center sm:text-left sm:pl-0 text-sm sm:text-lg text-gray-100"
               x-text="slide.date"
             >
             </h4>
