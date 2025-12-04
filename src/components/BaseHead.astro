@@ -68,7 +68,12 @@ let urlImg = new URL(image, Astro.url);
 <!-- Pagefind -->
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
 <script src="/pagefind/pagefind-ui.js" is:inline></script>
-
+<!-- Cloudflare Web Analytics -->
+<script
+	defer
+	src="https://static.cloudflareinsights.com/beacon.min.js"
+	data-cf-beacon='{"token": "f202fadc582448778abe5c158f23c06a"}'
+></script><!-- End Cloudflare Web Analytics -->
 <!-- RSS Feed -->
 <link
 	rel="alternate"
