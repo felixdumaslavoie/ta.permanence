@@ -21,6 +21,7 @@
     "astro": "^5.14.5",
     "gray-matter": "^4.0.3",
     "html-pdf-node": "^1.0.8",
+    "image-thumbnail": "^1.0.17",
     "marked": "^15.0.12",
     "marked-footnote": "^1.2.4",
     "n-readlines": "^1.0.1",
