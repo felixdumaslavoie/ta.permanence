@@ -26,21 +26,6 @@ type Props = HTMLAttributes<"a">;
                 </svg>
             </a>
         </li>
-        <li class="navigationVerticale2">
-            <a>
-                <svg
-                    class="w-6 h-6 text-gray-800 dark:text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 17 14"
-                >
-                    <path
-                        d="M16 2H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 0 1 0 2Z"
-                    ></path>
-                </svg>
-            </a>
-        </li>
         <li class="navigationVerticale3">
             <a>
                 <svg
@@ -63,14 +48,14 @@ type Props = HTMLAttributes<"a">;
 </astro-vertical-navigator>
 <script>
     let toTop = document.getElementsByClassName("navigationVerticale");
-    let toMiddle = document.getElementsByClassName("navigationVerticale2");
+  
 
     let toBottom = document.getElementsByClassName("navigationVerticale3");
 
     function gotoTop() {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
-
+    /*let toMiddle = document.getElementsByClassName("navigationVerticale2");
     function gotoMiddle() {
         if (!(document.getElementsByClassName("prose").length > 0)) {
             document
@@ -81,7 +66,7 @@ type Props = HTMLAttributes<"a">;
         document
             .getElementsByClassName("prose")[0]
             .scrollIntoView({ behavior: "smooth" });
-    }
+    }*/
 
     function gotoBottom() {
         if (document.getElementsByClassName("footnotes").length > 0) {
@@ -98,7 +83,7 @@ type Props = HTMLAttributes<"a">;
 
     toTop[0].addEventListener("click", gotoTop);
 
-    toMiddle[0].addEventListener("click", gotoMiddle);
+    //toMiddle[0].addEventListener("click", gotoMiddle);
 
     toBottom[0].addEventListener("click", gotoBottom);
 </script>
