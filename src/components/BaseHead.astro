@@ -22,7 +22,7 @@ const t = useTranslations(lang);
 
 let titre: string = SITE_TITLE[lang];
 if (title !== SITE_TITLE[lang]) {
-	titre = `${title} - ${SITE_TITLE[lang]}`;
+	titre = `${title} - ${SITE_TITLE[lang].substring(0, 13)}`; // Couper la description du site dans le titre
 }
 let desc: string = SITE_DESCRIPTION[lang];
 if (description !== SITE_DESCRIPTION[lang]) {
@@ -36,6 +36,8 @@ let imgPath: string = `/blog/pictures/${tempImgPath.at(tempImgPath.length - 2)}/
 if (image === "/image-site.jpg") {
 	imgPath = image;
 }
+
+console.log(titre);
 
 let urlImg = new URL(imgPath, Astro.url);
 ---
