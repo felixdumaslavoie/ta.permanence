@@ -2,8 +2,8 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = {
-  en: "ta.permanence - student movement archives",
-  fr: "ta.permanence - archives du mouvement étudiant",
+  en: "ta.permanence",
+  fr: "ta.permanence",
 } as const;
 
 export const SITE_DESCRIPTION = {
