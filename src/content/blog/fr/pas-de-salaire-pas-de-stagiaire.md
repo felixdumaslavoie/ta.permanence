@@ -11,8 +11,6 @@ editors:
 tags: CUTE, magazine, Rémunération des stages, Stage, Travail étudiant
 excerpt: La reconnaissance du travail exécuté par les stagiaires, et conséquemment sa salarisation, devrait ainsi ultimement mener à l’abolition des stages. Libéré.e.s du statut de stagiaires, les nouvelles travailleuses et nouveaux travailleurs en formation pratique...
 heroImage: 2018/pasdesalairepasdestagiaires.jpg
-legendes:
-  - "Rassemblement au consulat italien en solidarité avec les stagiaires (2022)."
 ---
 
 ***Par Félix Dumas-Lavoie, Camille Marcoux Berthiaume et Etienne Simard***
