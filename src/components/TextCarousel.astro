@@ -64,6 +64,7 @@ await textes.forEach((txt: IText) => {
     date: capitalizeFirstLetter(getDate(txt)),
   };
 
+  console.log(txt.slug);
   carousel.push(data);
 });
 
