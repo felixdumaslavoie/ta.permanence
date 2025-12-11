@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = {
   en: "ta.permanence - student movement archives",
-  fr: "ta.permanence - archives du mouvement étudiant",
+  fr: "ta.permanence - archives pour les mouvements étudiants",
 } as const;
 
 export const SITE_DESCRIPTION = {
