@@ -1,6 +1,6 @@
 ---
 pubDate: 2025-09-15T17:19:39.000Z
-modification: 2015-09-15T17:19:39.000Z
+modification: 2025-09-15T17:19:39.000Z
 title: Étudier c’est se rendre malade
 authors:
   - "Rémi Grenier"
@@ -15,8 +15,8 @@ legendes:
   - "Lorsqu’on évoque le fait d’être aux études, on ne pense pas instinctivement à la maladie. Toutefois, étudier, c’est se rendre malade..."
 excerpt: Lorsqu’on évoque le fait d’être aux études, on ne pense pas instinctivement à la maladie. Toutefois, étudier, c’est se rendre malade ! Que ce soit physiquement ou mentalement, la condition étudiante influence notre santé. En explorant ces impacts, nous pouvons légitimement nous demander pourquoi le salariat étudiant n’est pas implémenté.
 heroImage: 2025/etudier-c-est-se-rendre-malade.jpg
-
 ---
+
 *Ce texte provient du journal d'automne 2025 de [La Convergence autonome et solidaire pour le salariat étudiant (CASSE)](https://salariatetudiant.org)*
 
 ---
