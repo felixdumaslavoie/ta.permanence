@@ -13,7 +13,7 @@ editors:
   - "Journal de la CASSE"
 legendes:
   - "C’est justement cette incommensurabilité entre la revendication du salariat étudiant et l’état de crise prolongé qui en fait sa force. Le salariat étudiant n’est pas seulement un objectif à atteindre, mais un outil politique."
-excerpt: C’est justement cette incommensurabilité entre la revendication du salariat étudiant et l’état de crise prolongé qui en fait sa force. Le salariat étudiant n’est pas seulement un objectif à atteindre, mais un outil politique. Il arrache des gains matériels, met en lumière les contradictions structurelles du capitalisme et sert de point d’appui stratégique pour provoquer une rupture avec l’ordre établi.
+excerpt: C’est justement cette incommensurabilité entre la revendication du salariat étudiant et l’état de crise prolongé qui en fait sa force. 
 heroImage: 2025/salariat-etudiant-strategie.jpg
 ---
 
@@ -27,7 +27,7 @@ En effet, une telle mesure représente une dépense majeure pour l’État québ
 
 D’un côté, bien que le travail étudiant soit un travail utile — producteur de richesses sociales comme des savoirs, des compétences, des prestations de service — il ne génère que rarement des profits directs pour les classes dominantes. Il n’est donc pas reconnu comme du « travail productif » au sens capitaliste, c’est-à-dire comme du travail qui valorise le capital et mérite rémunération aux yeux du patronat. 
 
-De l’autre, l’État, depuis les années 1970, fait face à une crise mondiale prolongée marquée par la suraccumulation des moyens de production et des capitaux fictifs ainsi que par un déclin tendanciel de la profitabilité.[1] Cette situation réduit la base fiscale issue de la production capitaliste et intensifie les pressions politiques pour diminuer la taxation du capital. 
+De l’autre, l’État, depuis les années 1970, fait face à une crise mondiale prolongée marquée par la suraccumulation des moyens de production et des capitaux fictifs ainsi que par un déclin tendanciel de la profitabilité[^1]. Cette situation réduit la base fiscale issue de la production capitaliste et intensifie les pressions politiques pour diminuer la taxation du capital. 
 Enfin, bien que la classe dominante concède parfois la nécessité de soutenir les plus pauvres, notamment pour préserver sa légitimité et maintenir le contrôle social, elle demeure durement opposée à toute politique qui minerait l’obligation pour les classes populaires de travailler de manière disciplinée[^2].
 
 C’est justement cette incommensurabilité entre la revendication du salariat étudiant et l’état de crise prolongé qui en fait sa force. Le salariat étudiant n’est pas seulement un objectif à atteindre, mais un outil politique. Il arrache des gains matériels, met en lumière les contradictions structurelles du capitalisme et sert de point d’appui stratégique pour provoquer une rupture avec l’ordre établi.
