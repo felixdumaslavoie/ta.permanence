@@ -3,7 +3,7 @@ title: Pas de salaire? Pas de stagiaire! Pour l'abolition des stages!
 pubDate: 2018-11-02T11:39:00.000Z
 modification: 2018-11-02T11:38:59.000Z
 authors:
-  - "Camille Marcoux Berthiaume"
+  - "Camille Marcoux"
   - "Étienne Simard"
   - "Félix Dumas-Lavoie"
 editors:
@@ -13,7 +13,7 @@ excerpt: La reconnaissance du travail exécuté par les stagiaires, et conséque
 heroImage: 2018/pasdesalairepasdestagiaires.jpg
 ---
 
-***Par Félix Dumas-Lavoie, Camille Marcoux Berthiaume et Etienne Simard***
+***Par Camille Marcoux, Étienne Simard et Félix Dumas-Lavoie***
 
 La lutte pour la rémunération des stagiaires s’appuie sur un refus de travailler gratuitement au profit d'un employeur. À ce jour, la résistance face à cette exploitation éhontée s'est principalement manifestée par la revendication d'un salaire et des protections légales qui accompagnent la reconnaissance du statut de travailleuse et de travailleur. Or, rarement les stages en soi ont été remis en question. Et s’ils étaient carrément abolis ?
 
@@ -51,6 +51,6 @@ Le ministère du Travail, de l’Emploi et de la Solidarité sociale met en plac
 
 ---
 
-[^1]: La logique de contingentement qui découle de l’imposition de stages s’exécute par l’obstacle que peut représenter leur accomplissement. [↩︎](#fnref1)
+[^1]: La logique de contingentement qui découle de l’imposition de stages s’exécute par l’obstacle que peut représenter leur accomplissement.
 
 Cet article a été publié dans le [numéro de l'automne 2018 du CUTE Magazine](https://travailetudiant.ta.ws/magazines/cutemag-4-fr-automne-2018_august_21.pdf).Pour te tenir informé.e sur la lutte pour la pleine reconnaissance du travail étudiant, pour en discuter ou pour y contribuer, tu peux nous contacter via la page [CUTE Campagne sur le travail étudiant](https://www.facebook.com/campagnetravailetudiant/).
