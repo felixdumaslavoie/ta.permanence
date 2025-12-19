@@ -7,17 +7,12 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const { props } = Astro.props;
 
-let temp =  props;
+let temp = props;
 
 const data = temp.remarkPluginFrontmatter;
 
-let video = data.heroVideo
-let legendes = data.legendes
-
-if (video)
-{
-  console.log(video)
-}
+let video = data.heroVideo;
+let legendes = data.legendes;
 
 let legendesExtraites = [""];
 
@@ -25,14 +20,12 @@ if (legendes) {
   legendesExtraites = legendes;
 }
 
-
 let pathStr = String(Astro.url.pathname);
 
 if (pathStr.charAt(0) === "/") pathStr = pathStr.substring(1, pathStr.length);
 
 if (pathStr.charAt(pathStr.length - 1) === "/")
   pathStr = pathStr.substring(0, pathStr.length - 1);
-
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -113,17 +106,21 @@ const t = useTranslations(lang);
 
   <body>
     <Header numeroPage={data.translation} />
-    
+
     <main
       class="w-full pt-0 ps-0 pe-0 max-w-fit md:max-w-[calc(100%-2rem)] md:w-[calc(100%-2rem)] md:pt-32"
     >
-    
       <article>
         <div class="hero-image md:pt-24">
           <div class="flex items-start xl:mx-[15%] 2xl:mx-[25vw]">
-            <p class=" text-[16px] opacityFade text-justify"></p>
-            <video class="w-[900px] h-[300px] object-cover m-auto flex opacityFade rounded-full video-page-informative" preload="auto" loop autoplay muted src=`/${video}`></video>
-
+            <p class="text-[16px] opacityFade text-justify"></p>
+            <video
+              class="w-[900px] h-[300px] object-cover m-auto flex opacityFade rounded-full video-page-informative"
+              preload="auto"
+              loop
+              autoplay
+              muted
+              src=`/${video}`></video>
           </div>
           <div class="flex items-start xl:mx-[15%] 2xl:mx-[25vw]">
             <p class="legende text-[16px] opacityFade text-justify pb-[75px]">
@@ -134,7 +131,6 @@ const t = useTranslations(lang);
         <div class="prose px-[7vw] sm:px-0">
           <div class="title">
             <h1 class="text-5xl">{data.title}</h1>
-            
 
             <hr />
           </div>
@@ -147,7 +143,9 @@ const t = useTranslations(lang);
 </html>
 
 <script>
-  const header = document.querySelectorAll(".opacityFade") as NodeListOf<HTMLElement>;
+  const header = document.querySelectorAll(
+    ".opacityFade",
+  ) as NodeListOf<HTMLElement>;
   const prose = document.querySelector(".prose") as HTMLElement;
   const article = document.querySelector("article") as HTMLElement;
   window.addEventListener("scroll", function () {
@@ -156,7 +154,7 @@ const t = useTranslations(lang);
     if (header !== null) {
       let res = parseInt(result);
       if (res >= 0) {
-         header.forEach((element: HTMLElement) => {
+        header.forEach((element: HTMLElement) => {
           element.style.opacity = result;
         });
         prose.style.translate = `0 ${1 - scrollTop}px`;
@@ -168,22 +166,17 @@ const t = useTranslations(lang);
     }
 
     window.onbeforeprint = function () {
-      header.forEach((element: HTMLElement) =>{
+      header.forEach((element: HTMLElement) => {
         element.style.opacity = "1";
-      })
+      });
       prose.style.translate = `0px`;
     };
 
     window.onafterprint = function () {
-      header.forEach((element: HTMLElement) =>{
+      header.forEach((element: HTMLElement) => {
         element.style.opacity = result;
-      })
+      });
       prose.style.translate = `0 ${1 - scrollTop}px`;
     };
-
   });
-
-
- 
-
 </script>

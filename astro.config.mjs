@@ -7,7 +7,7 @@ import { externalAnchorPlugin } from "./remarkplugins/external-anchor-plugin.mjs
 import { dataGen } from "./flxplugins/dataGen.mjs";
 
 // Thumbnais
-import { generateThumbnails } from "./src/data/generateThumbnails";
+import { generateThumbnails } from "./src/data/imageThumbnails.ts";
 // pdf
 import { generatePDF } from "./src/data/generatePDF";
 // markdown
