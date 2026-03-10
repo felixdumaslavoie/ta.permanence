@@ -3,7 +3,7 @@ pubDate: 2026-03-09T05:05:13.000Z
 modification: 2026-03-09T05:05:13.000Z
 title: Vers l’abolition du travail gratuit.
 authors:
-    - "Comité RÉAX"
+    - "Collectif"
 topics:
   - "travail etudiant"
   - "Rémunération des stages"
@@ -55,3 +55,6 @@ C’est aussi lors de ces assemblées générales que le RÉAX pourra aller se f
 
 Finalement, grâce à tout cela, une mobilisation ainsi qu’une sensibilisation sera faite. L’étape logique suivante est la grêve. Le moment de la grève reste aussi un élément important. Le Québec va connaître une campagne référendaire au cours de l’automne 2026, ce qui pourrait être un moment idéal pour que la communauté étudiante se fasse entendre sur cet enjeu. Toutefois, si la mobilisation est assez forte et l’envie se fait ressentir, rien n'exclut de faire une grève avant, le but du comité étant de défendre les étudiantEs. Dans tous les cas les  militantEs du comité répondront à l'appel.
 
+Benjamin Legault,
+Florence Lepage et 
+Félix Dumas-Lavoie
