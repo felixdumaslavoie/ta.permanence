@@ -3,7 +3,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SOCIALS_MEDIA } from '../consts'
 
 export const defaultLang = 'fr';
 
-export const textsByMainPage: number = 25
+export const textsByMainPage: number = 50
 
 export const languages = {
   en: 'English',

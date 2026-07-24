@@ -4,7 +4,7 @@ modification: 2019-09-03T05:05:13.000Z
 title: Puisque la permanence embourbe la vitalité
 authors:
     - "MilitantEs des CUTE"
-    - "MilitantES du CRIS-UQO"
+    - "MilitantEs du CRIS-UQO"
 topics: 
   - "cris"
   - "cute"
