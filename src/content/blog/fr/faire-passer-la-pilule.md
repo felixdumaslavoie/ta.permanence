@@ -32,7 +32,7 @@ Les problèmes de santé mentale des étudiant·e·s font les choux gras de la p
 
 Le METSUL (Mouvement des étudiant·e·s en travail social de l'Université Laval) met le doigt sur le problème dans leur première vidéo[^9]. On y dit les deux phrases suivantes : « on est étudiantes en travail social, c'est sûr que nos stages sont pas payés » et un peu plus tard « on est étudiantes en travail social, c'est sûr qu'on a un suivi au centre d'aide ». Faire côtoyer ces deux affirmations dans une même vidéo est lourd de sens, même si l’association étudiante en question échoue à établir le parallèle elle-même.
 
-**À l’école comme à l’asile**
+> À l’école comme à l’asile
 
 Je commencerai par prendre pour exemple La campagne _Ça va aller[^10]_ de la FAÉCUM (Fédération des associations étudiantes du campus de l'Université de Montréal). En collaboration avec le centre de santé et de consultation psychologique de l’UdeM (Université de Montréal), la fédération étudiante organise à partir de 2019 une large campagne de sensibilisation à la santé mentale. En quelques semaines, les personnes qui fréquentaient l’université en question ont été assénées de dépliants et de murales plus esthétiques qu’utiles sur l’importance d’être là les uns pour les autres. Ces murales poussaient l’audace jusque dans les toilettes[^11]. Cette initiative enjoignait les étudiant·e·s à « relaxer » avec des ateliers de détente en ligne et à tisser des amitiés durables malgré l’isolement de la pandémie[^12]. La FAÉCUM se faisait ainsi complice de l'État et du rectorat en remettant la responsabilité aux étudiant·e·s pour leur mal-être. L’hypothèse qui sous-tendait cet exercice persiste depuis longtemps. Le problème serait une pression de performance intérieure que les étudiant·e·s doivent apprendre à dompter. L’école ne serait donc pas un milieu particulièrement angoissant. Tout ça, _c’est dans notre tête._
 
@@ -48,7 +48,7 @@ La psychiatrie est un château de cartes bâti au royaume de l’imposture. Pour
 
 Au mieux, avec beaucoup de chance, la psychiatrie sera une béquille fragile à l’exploitation. Cette béquille et celleux qui la prennent par le choix ou par la force n’est pas ce qui est dénoncé ici. Ce qu’il faut dénoncer, c’est le complexe industriel de la santé mentale[^20][^21] et la façon[^22] dont il prescrit des médicaments psychoactifs aux effets secondaires substantiels[^23] (et parfois irréversibles[^24]) pour pallier les effets inévitables de l’accumulation et de l’école. Nos conditions de vie et de travail sont manifestement insoutenables. La psychiatrie prescrit les molécules qui rendent le quotidien un peu plus tolérable, mais en restreint également l’accès. Les patient·e·s sont jugé·e·s sur leur moralité et leurs facteurs de risque pour avoir accès aux ingrédients qui permettent une réalité chimiquement acceptable. Une question demeure: qui sommes-nous pour avoir besoin d’autant de psychologie et de psychiatrie[^25]?  Nous, étudiant·e·s, sommes des travailleureuses qui s’ignorent, épuisé·e·s, à court de temps, qui poursuivons nos études envers et contre nos corps.
 
-**À l’école comme à la mine**
+> À l’école comme à la mine
 
 Pourquoi alors continuer de référer les étudiant·e·s aussi massivement vers la psychiatrie et la psychologie? Une analyse idéologique et politique des sciences-psy et du rôle qu’elles jouent dans l’éducation s’impose. L’école est une usine[^26], elle nous prépare à accepter les conditions que le marché du travail nous réserve. Les longues heures de travail, les angoisses, la subordination à des supérieurs intraitables sont toutes vécues par les personnes inscrites à une forme d’école ou une autre. De la garderie au doctorat, on nous prépare à plier l’échine. Toutes les conditions sont réunies dès la plus tendre enfance pour faire passer la pilule de l’exploitation.
 
@@ -60,10 +60,7 @@ Concevoir les milieux d’apprentissages comme des mines et non comme des labora
 
 * * *
 
- 
-
 **Notes:**
-
 [^1]:  [Trickey, 2023](https://ici.radio-canada.ca/nouvelle/2006027/sante-mentale-etudiants-postsecondaires) - L’accès aux soins en santé mentale reste difficile pour les étudiants postsecondaires 
 [^2]:  [Le Devoir, 2023](https://www.ledevoir.com/bis/797512/cultiver-la-sante-mentale-positive-des-jeunes-un-outil-a-la-fois) - Cultiver la santé mentale positive des jeunes : un outil à la fois 
 [^3]:  [Nadeau, 2022](https://www.ledevoir.com/societe/773780/societe-parler-de-sante-mentale-dans-les-ecoles-pour-sauver-des-vies) - Parler de santé mentale dans les écoles pour «sauver des vies» 
